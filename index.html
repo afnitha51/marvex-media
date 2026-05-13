@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marvex Media — Engineering Tomorrow's Digital Reality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" onclick="showPage('home')">
+      <img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/>
+      <span class="nav-logo-text">MARVEX MEDIA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+      <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+      <li><a onclick="showPage('portfolio')" id="nav-portfolio">Portfolio</a></li>
+      <li><a onclick="showPage('careers')" id="nav-careers">Careers</a></li>
+      <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+      <li><a onclick="showPage('faq')" id="nav-faq">FAQ</a></li>
+      <li><a onclick="showPage('team')" id="nav-team">Team</a></li>
+    </ul>
+    <button class="nav-cta" onclick="showPage('contact')">Get Started &#8594;</button>
+    <div class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');closeMenu()">Home</a>
+  <a onclick="showPage('services');closeMenu()">Services</a>
+  <a onclick="showPage('about');closeMenu()">About</a>
+  <a onclick="showPage('portfolio');closeMenu()">Portfolio</a>
+  <a onclick="showPage('careers');closeMenu()">Careers</a>
+  <a onclick="showPage('contact');closeMenu()">Contact</a>
+  <a onclick="showPage('faq');closeMenu()">FAQ</a>
+  <a onclick="showPage('team');closeMenu()">Team</a>
+</div>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+
+<section class="hero" id="hero-section">
+    <div class="hero-slides">
+
+      <!-- Slide 0: Server Room / Engineering -->
+      <div class="hero-slide active" id="hs-0">
+        <div class="slide-bg"><img src="hero1.png" alt="Hero 1"/><div class="slide-overlay"></div></div>
+        <div class="slide-content">
+          <div class="hero-eyebrow">Next-Gen Technology Solutions</div>
+          <h1 class="hero-h1">ENGINEERING<br>TOMORROW'S<br><span class="red">DIGITAL</span><br>REALITY.</h1>
+          <p class="hero-sub">We architect high-performance websites, scalable applications, and AI-powered marketing systems that dominate the digital landscape.</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="showPage('contact')">Start Your Project →</button>
+            <button class="btn-outline" onclick="showPage('portfolio')">View Our Work</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 1: Architectural Corridor -->
+      <div class="hero-slide" id="hs-1">
+        <div class="slide-bg"><img src="hero2.png" alt="Hero 2"/><div class="slide-overlay"></div></div>
+        <div class="slide-content">
+          <div class="hero-eyebrow">Strategic Brand Engineering</div>
+          <h1 class="hero-h1">BUILDING<br>BRAND<br><span class="red">LEGACIES</span><br>THAT LAST.</h1>
+          <p class="hero-sub">From startups disrupting markets to enterprises scaling globally — we craft digital ecosystems that generate measurable results.</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="showPage('about')">Our Story →</button>
+            <button class="btn-outline" onclick="showPage('services')">What We Do</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Digital Orb -->
+      <div class="hero-slide" id="hs-2">
+        <div class="slide-bg"><img src="hero3.png" alt="Hero 3"/><div class="slide-overlay"></div></div>
+        <div class="slide-content">
+          <div class="hero-eyebrow">AI & Automation Pioneers</div>
+          <h1 class="hero-h1">TECHNOLOGY<br>THAT<br><span class="red">EVOLVES</span><br>WITH YOU.</h1>
+          <p class="hero-sub">Custom AI models, intelligent automation, and data-driven frameworks that eliminate bottlenecks and accelerate exponential growth.</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="showPage('services')">Explore AI Services →</button>
+            <button class="btn-outline" onclick="showPage('contact')">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats-bar" id="heroStatsBar">
+      <div class="hero-stat-item"><div class="num"><span class="stat-count" data-target="500" data-suffix="+">0</span></div><div class="lbl">Projects Delivered</div></div>
+      <div class="hero-stat-item"><div class="num"><span class="stat-count" data-target="200" data-suffix="+">0</span></div><div class="lbl">Happy Clients</div></div>
+      <div class="hero-stat-item"><div class="num"><span class="stat-count" data-target="8" data-suffix="+">0</span></div><div class="lbl">Years Excellence</div></div>
+      <div class="hero-stat-item"><div class="num"><span class="stat-count" data-target="99.9" data-suffix="%" data-decimals="1">0</span></div><div class="lbl">Uptime SLA</div></div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="hero-progress"><div class="hero-progress-fill"></div></div>
+
+    <!-- Controls -->
+    <div class="carousel-nav">
+      <button class="c-btn" onclick="carouselPrev()" aria-label="Previous">&#8249;</button>
+      <div class="c-dots">
+        <button class="c-dot on" onclick="goToSlide(0)"></button>
+        <button class="c-dot" onclick="goToSlide(1)"></button>
+        <button class="c-dot" onclick="goToSlide(2)"></button>
+      </div>
+      <button class="c-btn" onclick="carouselNext()" aria-label="Next">&#8250;</button>
+    </div>
+    <div class="slide-num"><span id="slide-num-current">01</span> / 03</div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span class="marquee-item">WEB DEVELOPMENT</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">MOBILE APPS</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">AI &amp; AUTOMATION</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">SEO &amp; GROWTH</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">CLOUD INFRASTRUCTURE</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">BRANDING &amp; DESIGN</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">WEB DEVELOPMENT</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">MOBILE APPS</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">AI &amp; AUTOMATION</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">SEO &amp; GROWTH</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">CLOUD INFRASTRUCTURE</span><span class="marquee-sep">&#10022;</span>
+      <span class="marquee-item">BRANDING &amp; DESIGN</span><span class="marquee-sep">&#10022;</span>
+    </div>
+  </div>
+
+  
+
+
+  <div class="services-scroll-section"><div class="services-header-row"><div><div class="section-tag">What We Do</div><h2 class="section-title">SERVICES</h2></div><div class="services-header-right"><p>End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p><button class="btn-link" style="margin-top:20px" onclick="showPage('services')">Full Services Overview</button></div></div><div class="services-scroll-inner">    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">01</div>
+        <div>
+          <div class="ssi-name">WEBSITE<br>DEVELOPMENT</div>
+          <div class="ssi-tags"><span class="ssi-tag">Next.js</span><span class="ssi-tag">React</span><span class="ssi-tag">Vue</span><span class="ssi-tag">CMS</span><span class="ssi-tag">SEO</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Build blazing-fast, conversion-optimised sites engineered for performance and SEO dominance.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">NEXT<br>WEB<br>FAST</div></div>
+        <div class="ssi-visual" id="ssi-visual-01"><canvas id="ssi-canvas-01" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">02</div>
+        <div>
+          <div class="ssi-name">MOBILE<br>APPLICATIONS</div>
+          <div class="ssi-tags"><span class="ssi-tag">Flutter</span><span class="ssi-tag">React Native</span><span class="ssi-tag">iOS</span><span class="ssi-tag">Android</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Cross-platform apps delivering native-grade experiences at scale across iOS and Android.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">APP<br>MOBILE<br>CROSS</div></div>
+        <div class="ssi-visual" id="ssi-visual-02"><canvas id="ssi-canvas-02" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">03</div>
+        <div>
+          <div class="ssi-name">SEO<br>OPTIMISATION</div>
+          <div class="ssi-tags"><span class="ssi-tag">Technical SEO</span><span class="ssi-tag">Content</span><span class="ssi-tag">GCC</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">AI-powered strategies that dominate search rankings and compound organic growth.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">RANK<br>SEARCH<br>SEO</div></div>
+        <div class="ssi-visual" id="ssi-visual-03"><canvas id="ssi-canvas-03" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">04</div>
+        <div>
+          <div class="ssi-name">SOCIAL MEDIA<br>MARKETING</div>
+          <div class="ssi-tags"><span class="ssi-tag">Instagram</span><span class="ssi-tag">TikTok</span><span class="ssi-tag">Meta Ads</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Viral-ready content systems and influencer pipelines to amplify your brand presence.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">SOCIAL<br>VIRAL<br>GROW</div></div>
+        <div class="ssi-visual" id="ssi-visual-04"><canvas id="ssi-canvas-04" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">05</div>
+        <div>
+          <div class="ssi-name">CLOUD<br>INFRASTRUCTURE</div>
+          <div class="ssi-tags"><span class="ssi-tag">AWS</span><span class="ssi-tag">GCP</span><span class="ssi-tag">Azure</span><span class="ssi-tag">DevOps</span><span class="ssi-tag">Docker</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Enterprise-grade scalability with 99.9% availability and 24/7 monitoring built in from day one.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">CLOUD<br>AWS<br>SCALE</div></div>
+        <div class="ssi-visual" id="ssi-visual-05"><canvas id="ssi-canvas-05" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">06</div>
+        <div>
+          <div class="ssi-name">AI &amp;<br>AUTOMATION</div>
+          <div class="ssi-tags"><span class="ssi-tag">LLM</span><span class="ssi-tag">Chatbots</span><span class="ssi-tag">RPA</span><span class="ssi-tag">Analytics</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Custom AI models and automation frameworks that eliminate bottlenecks and accelerate growth.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">AI<br>DATA<br>AUTO</div></div>
+        <div class="ssi-visual" id="ssi-visual-06"><canvas id="ssi-canvas-06" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">07</div>
+        <div>
+          <div class="ssi-name">E-COMMERCE<br>SOLUTIONS</div>
+          <div class="ssi-tags"><span class="ssi-tag">Shopify</span><span class="ssi-tag">WooCommerce</span><span class="ssi-tag">Payments</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">High-converting stores with seamless checkout, inventory management, and retargeting.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">SHOP<br>SELL<br>CONVERT</div></div>
+        <div class="ssi-visual" id="ssi-visual-07"><canvas id="ssi-canvas-07" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">08</div>
+        <div>
+          <div class="ssi-name">BRANDING<br>&amp; DESIGN</div>
+          <div class="ssi-tags"><span class="ssi-tag">Logo</span><span class="ssi-tag">UI/UX</span><span class="ssi-tag">Figma</span><span class="ssi-tag">Identity</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Memorable brand identities — from logo and visual language to full brand systems.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">BRAND<br>DESIGN<br>IDENTITY</div></div>
+        <div class="ssi-visual" id="ssi-visual-08"><canvas id="ssi-canvas-08" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div></div></div>
+
+  <div class="highlight-section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center" class="about-grid-home">
+      <div>
+        <div class="section-tag">Who We Are</div>
+        <h2 class="section-title">BUILT BY ENGINEERS.<br>DRIVEN BY INNOVATION.</h2>
+        <p style="color:var(--text-muted);line-height:1.9;margin:28px 0 14px;font-weight:300">Marvex Media is a full-stack technology company at the intersection of design, engineering, and strategy. We craft digital ecosystems that generate measurable results.</p>
+        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:32px;font-weight:300">From startups disrupting markets to enterprises scaling globally — we deliver technology that works and compounds.</p>
+        <button class="btn-link" onclick="showPage('about')">Learn More About Us</button>
+      </div>
+      <div>
+        <div style="border:1px solid var(--border-light);padding:40px">
+          <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px">TECH STACK</p>
+          <div class="tech-grid">
+            <div class="tech-badge">React</div><div class="tech-badge">Next.js</div>
+            <div class="tech-badge">Flutter</div><div class="tech-badge">Node.js</div>
+            <div class="tech-badge">AWS</div><div class="tech-badge">Python</div>
+            <div class="tech-badge">TypeScript</div><div class="tech-badge">MongoDB</div>
+            <div class="tech-badge">Figma</div><div class="tech-badge">GraphQL</div>
+            <div class="tech-badge">Docker</div><div class="tech-badge">TensorFlow</div>
+          </div>
+          <p style="color:var(--text-light);font-size:11px;margin-top:16px;text-align:center;letter-spacing:1px">+ 30 MORE MODERN TECHNOLOGIES</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:64px">
+      <div class="section-tag" style="justify-content:center">Our Process</div>
+      <h2 class="section-title">FROM IDEA TO LAUNCH IN 4 STEPS</h2>
+    </div>
+    <div class="grid-4">
+      <div class="process-card"><div class="process-num">01</div><h3>Discovery</h3><p>Deep-dive into your goals, audience &amp; competitive landscape to define a winning strategy.</p></div>
+      <div class="process-card"><div class="process-num">02</div><h3>Architecture</h3><p>System design, wireframing, tech stack selection, and detailed technical specifications.</p></div>
+      <div class="process-card"><div class="process-num">03</div><h3>Development</h3><p>Agile sprints with continuous integration, weekly demos, and real-time collaboration.</p></div>
+      <div class="process-card"><div class="process-num">04</div><h3>Launch &amp; Scale</h3><p>Production deployment, monitoring, performance optimisation, and ongoing growth support.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>READY TO BUILD SOMETHING EXTRAORDINARY?</h2>
+    <p>Let's engineer your vision into a powerful digital product that drives real, measurable results.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo" style="margin-bottom:16px"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality. A full-stack technology partner for businesses that demand excellence.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js &middot; AWS &middot; React</span></li><li><span>Flutter &middot; Node &middot; Docker</span></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
+
+</div>
+
+<!-- SERVICES -->
+<div id="page-services" class="page">
+  <div class="page-hero">
+    <div class="section-tag">Our Services</div>
+    <h1 class="section-title">TECH SOLUTIONS<br>THAT SCALE</h1>
+    <p class="section-subtitle">End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p>
+  </div>
+
+<!-- FLOW DIAGRAM ANIMATION -->
+  <div class="flow-section" id="flowSection">
+
+    <div class="flow-header">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">YOUR VISION. OUR <span class="red">ENGINE.</span></h2>
+      <p class="flow-subtitle">Every brief flows through our process and becomes a high-impact digital product.</p>
+    </div>
+
+    <div class="flow-wrap" id="flowWrap">
+
+      <!-- Central glow -->
+      <div class="flow-center-glow"></div>
+
+      <!-- LEFT PILLS -->
+      <div class="flow-col flow-col--left">
+        <div class="flow-pill" id="fp-brief">
+          <span class="material-icons-round">description</span>Brief
+        </div>
+        <div class="flow-pill" id="fp-goals">
+          <span class="material-icons-round">flag</span>Goals
+        </div>
+        <div class="flow-pill" id="fp-budget">
+          <span class="material-icons-round">account_balance_wallet</span>Budget
+        </div>
+        <div class="flow-pill" id="fp-vision">
+          <span class="material-icons-round">lightbulb</span>Vision
+        </div>
+      </div>
+
+      <!-- CENTER BOXES -->
+      <div class="flow-col flow-col--center">
+        <div class="flow-boxes">
+          <div class="flow-box-sq" id="fb-client">
+            <span class="material-icons-round flow-sq-icon">person</span>
+            <span class="flow-sq-label">Client</span>
+          </div>
+          <div class="flow-box-sq flow-box-sq--core" id="fb-core">
+            <img src="logo_new (2).png" alt="Marvex" class="flow-core-img"/>
+            <div class="flow-core-glow"></div>
+          </div>
+          <div class="flow-box-sq" id="fb-launch">
+            <span class="material-icons-round flow-sq-icon">rocket_launch</span>
+            <span class="flow-sq-label">Launch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PILLS -->
+      <div class="flow-col flow-col--right">
+        <div class="flow-pill flow-pill--right" id="fp-web">
+          <span class="material-icons-round">laptop_mac</span>Website
+        </div>
+        <div class="flow-pill flow-pill--right" id="fp-app">
+          <span class="material-icons-round">phone_iphone</span>Mobile App
+        </div>
+        <div class="flow-pill flow-pill--right" id="fp-ai">
+          <span class="material-icons-round">psychology</span>AI System
+        </div>
+        <div class="flow-pill flow-pill--right" id="fp-growth">
+          <span class="material-icons-round">trending_up</span>Growth
+        </div>
+      </div>
+
+      <!-- SVG canvas for paths -->
+      <svg class="flow-svg" id="flowSvg" xmlns="http://www.w3.org/2000/svg" overflow="visible"></svg>
+
+    </div>
+  </div>
+
+
+  <div class="services-scroll-section"><div class="services-header-row"><div><div class="section-tag">What We Do</div><h2 class="section-title">SERVICES</h2></div><div class="services-header-right"><p>End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p></div></div><div class="services-scroll-inner">    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">01</div>
+        <div>
+          <div class="ssi-name">WEBSITE<br>DEVELOPMENT</div>
+          <div class="ssi-tags"><span class="ssi-tag">Next.js</span><span class="ssi-tag">React</span><span class="ssi-tag">Vue</span><span class="ssi-tag">CMS</span><span class="ssi-tag">SEO</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Build blazing-fast, conversion-optimised sites engineered for performance and SEO dominance.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">NEXT<br>WEB<br>FAST</div></div>
+        <div class="ssi-visual" id="ssi-visual-01"><canvas id="ssi-canvas-01" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">02</div>
+        <div>
+          <div class="ssi-name">MOBILE<br>APPLICATIONS</div>
+          <div class="ssi-tags"><span class="ssi-tag">Flutter</span><span class="ssi-tag">React Native</span><span class="ssi-tag">iOS</span><span class="ssi-tag">Android</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Cross-platform apps delivering native-grade experiences at scale across iOS and Android.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">APP<br>MOBILE<br>CROSS</div></div>
+        <div class="ssi-visual" id="ssi-visual-02"><canvas id="ssi-canvas-02" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">03</div>
+        <div>
+          <div class="ssi-name">SEO<br>OPTIMISATION</div>
+          <div class="ssi-tags"><span class="ssi-tag">Technical SEO</span><span class="ssi-tag">Content</span><span class="ssi-tag">GCC</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">AI-powered strategies that dominate search rankings and compound organic growth.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">RANK<br>SEARCH<br>SEO</div></div>
+        <div class="ssi-visual" id="ssi-visual-03"><canvas id="ssi-canvas-03" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">04</div>
+        <div>
+          <div class="ssi-name">SOCIAL MEDIA<br>MARKETING</div>
+          <div class="ssi-tags"><span class="ssi-tag">Instagram</span><span class="ssi-tag">TikTok</span><span class="ssi-tag">Meta Ads</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Viral-ready content systems and influencer pipelines to amplify your brand presence.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">SOCIAL<br>VIRAL<br>GROW</div></div>
+        <div class="ssi-visual" id="ssi-visual-04"><canvas id="ssi-canvas-04" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">05</div>
+        <div>
+          <div class="ssi-name">CLOUD<br>INFRASTRUCTURE</div>
+          <div class="ssi-tags"><span class="ssi-tag">AWS</span><span class="ssi-tag">GCP</span><span class="ssi-tag">Azure</span><span class="ssi-tag">DevOps</span><span class="ssi-tag">Docker</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Enterprise-grade scalability with 99.9% availability and 24/7 monitoring built in from day one.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">CLOUD<br>AWS<br>SCALE</div></div>
+        <div class="ssi-visual" id="ssi-visual-05"><canvas id="ssi-canvas-05" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">06</div>
+        <div>
+          <div class="ssi-name">AI &amp;<br>AUTOMATION</div>
+          <div class="ssi-tags"><span class="ssi-tag">LLM</span><span class="ssi-tag">Chatbots</span><span class="ssi-tag">RPA</span><span class="ssi-tag">Analytics</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Custom AI models and automation frameworks that eliminate bottlenecks and accelerate growth.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">AI<br>DATA<br>AUTO</div></div>
+        <div class="ssi-visual" id="ssi-visual-06"><canvas id="ssi-canvas-06" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">07</div>
+        <div>
+          <div class="ssi-name">E-COMMERCE<br>SOLUTIONS</div>
+          <div class="ssi-tags"><span class="ssi-tag">Shopify</span><span class="ssi-tag">WooCommerce</span><span class="ssi-tag">Payments</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">High-converting stores with seamless checkout, inventory management, and retargeting.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">SHOP<br>SELL<br>CONVERT</div></div>
+        <div class="ssi-visual" id="ssi-visual-07"><canvas id="ssi-canvas-07" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+      <div class="ssi-left">
+        <div class="ssi-num">08</div>
+        <div>
+          <div class="ssi-name">BRANDING<br>&amp; DESIGN</div>
+          <div class="ssi-tags"><span class="ssi-tag">Logo</span><span class="ssi-tag">UI/UX</span><span class="ssi-tag">Figma</span><span class="ssi-tag">Identity</span></div>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+        </div>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Memorable brand identities — from logo and visual language to full brand systems.</p>
+      </div>
+      <div class="ssi-right">
+        <div class="ssi-placeholder"><div class="ssi-placeholder-text">BRAND<br>DESIGN<br>IDENTITY</div></div>
+        <div class="ssi-visual" id="ssi-visual-08"><canvas id="ssi-canvas-08" style="width:100%;height:100%;display:block;"></canvas></div>
+      </div>
+    </div></div></div>
+  <div class="cta-section"><h2>READY TO BUILD SOMETHING EXTRAORDINARY?</h2><p>Let's engineer your vision into a powerful digital product.</p><button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button></div>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo" style="margin-bottom:16px"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality. A full-stack technology partner for businesses that demand excellence.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js &middot; AWS &middot; React</span></li><li><span>Flutter &middot; Node &middot; Docker</span></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
+</div>
+
+<!-- ABOUT -->
+
+
+
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div>
+      <div class="section-tag">Who We Are</div>
+      <h1 class="section-title">BUILT BY ENGINEERS.<br>DRIVEN BY <span class="red">RESULTS.</span></h1>
+      <p style="color:var(--text-muted);line-height:1.9;margin:28px 0 14px;font-weight:300">Marvex Media is a full-stack technology company at the intersection of design, engineering, and strategy — headquartered in Ajman, UAE, with operations across Qatar and India. We build digital ecosystems that generate measurable, compounding results.</p>
+      <p style="color:var(--text-muted);line-height:1.9;margin-bottom:32px;font-weight:300">Founded in 2016, we've partnered with over 200 businesses — from bold startups disrupting markets to established enterprises scaling globally — delivering technology that works on day one and grows over time.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap"><button class="btn-primary" onclick="showPage('contact')">Work With Us →</button><button class="btn-outline" onclick="showPage('services')">Our Services</button></div>
+    </div>
+    <div><div style="border:1px solid var(--border-light);padding:40px"><p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px">TECH STACK</p><div class="tech-grid"><div class="tech-badge">React</div><div class="tech-badge">Next.js</div><div class="tech-badge">Flutter</div><div class="tech-badge">Node.js</div><div class="tech-badge">AWS</div><div class="tech-badge">Python</div><div class="tech-badge">TypeScript</div><div class="tech-badge">MongoDB</div><div class="tech-badge">Figma</div><div class="tech-badge">GraphQL</div><div class="tech-badge">Docker</div><div class="tech-badge">TensorFlow</div></div><p style="color:var(--text-light);font-size:11px;margin-top:16px;text-align:center;letter-spacing:1px">+ 30 MORE MODERN TECHNOLOGIES</p></div></div>
+  </div>
+  
+  <section><div style="text-align:center;margin-bottom:56px"><div class="section-tag" style="justify-content:center">Our Values</div><h2 class="section-title">WHAT DRIVES US FORWARD</h2></div><div class="grid-3"><div class="card"><div class="card-num">01</div><h3>Client Success First</h3><p>Your growth is our growth. Every line of code, every campaign, every decision is made with your business outcomes in mind.</p></div><div class="card"><div class="card-num">02</div><h3>Engineering Excellence</h3><p>We hold ourselves to the highest technical standards. Clean code, scalable architecture, and rigorous testing are non-negotiable.</p></div><div class="card"><div class="card-num">03</div><h3>Continuous Innovation</h3><p>We stay ahead of the curve — adopting emerging technologies and methodologies to give our clients a competitive edge.</p></div><div class="card"><div class="card-num">04</div><h3>Transparent Partnership</h3><p>No black boxes. We communicate openly, report honestly, and build long-term relationships built on trust and mutual respect.</p></div><div class="card"><div class="card-num">05</div><h3>Design-Led Thinking</h3><p>Great technology is nothing without great UX. We obsess over the user experience at every touchpoint of every product we ship.</p></div><div class="card"><div class="card-num">06</div><h3>Global Mindset</h3><p>With operations across UAE, Qatar, and India, we bring regional expertise with global-grade execution to every engagement.</p></div></div></section>
+  
+  <!-- LET'S WORK TOGETHER -->
+  <div class="lwt-section">
+    <div class="lwt-inner">
+      <div class="lwt-headline-row lwt-row-top">
+        <span class="lwt-word">LET'S</span>
+        <span class="lwt-word">WORK</span>
+      </div>
+      <div class="lwt-headline-row lwt-row-bottom">
+        <span class="lwt-word red">TOGETHER</span>
+      </div>
+    </div>
+    <div class="lwt-right">
+      <p class="lwt-tagline">Work with us if average isn't your thing.<br>Drop it, we'll build it.</p>
+      <a class="lwt-cta" onclick="showPage('contact')">SAY HELLO &nbsp;→</a>
+    </div>
+  </div>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js · AWS · React</span></li><li><span>Flutter · Node · Docker</span></li></ul></div></div><div class="footer-bottom"><p>© 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
+</div>
+
+
+
+
+
+
+<!-- PORTFOLIO -->
+
+
+
+<div id="page-portfolio" class="page">
+  <div class="page-hero">
+    <div class="section-tag">Our Work</div>
+    <h1 class="section-title">PROJECTS THAT MOVE THE NEEDLE</h1>
+    <p class="section-subtitle">A selection of high-impact digital products we've engineered for ambitious clients across the globe.</p>
+  </div>
+  <section>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)" class="portfolio-main-grid">
+      <div class="portfolio-card"><div class="portfolio-img">🛒</div><div class="portfolio-body"><h3>LuxCart E-Commerce Platform</h3><p>Shopify + Next.js storefront for a luxury retailer — 3.2x conversion uplift post-launch.</p><div class="portfolio-tags"><span class="portfolio-tag">Next.js</span><span class="portfolio-tag">Shopify</span><span class="portfolio-tag">React</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img"><span class="material-icons-round perk-icon">local_hospital</span></div><div class="portfolio-body"><h3>MedConnect Patient App</h3><p>Flutter app connecting 50,000+ patients with healthcare providers in the GCC region.</p><div class="portfolio-tags"><span class="portfolio-tag">Flutter</span><span class="portfolio-tag">Firebase</span><span class="portfolio-tag">AWS</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">📊</div><div class="portfolio-body"><h3>FinTrack Analytics Dashboard</h3><p>Real-time financial analytics platform handling $2B+ in transaction data.</p><div class="portfolio-tags"><span class="portfolio-tag">React</span><span class="portfolio-tag">Python</span><span class="portfolio-tag">PostgreSQL</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">🏗️</div><div class="portfolio-body"><h3>BuildRight Construction CRM</h3><p>Custom CRM for a UAE construction firm managing 200+ active projects.</p><div class="portfolio-tags"><span class="portfolio-tag">Node.js</span><span class="portfolio-tag">MongoDB</span><span class="portfolio-tag">Vue.js</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">🎓</div><div class="portfolio-body"><h3>EduPath Learning Platform</h3><p>AI-powered e-learning platform serving 100,000+ students with personalised paths.</p><div class="portfolio-tags"><span class="portfolio-tag">React</span><span class="portfolio-tag">TensorFlow</span><span class="portfolio-tag">AWS</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">🍔</div><div class="portfolio-body"><h3>FoodRush Delivery App</h3><p>On-demand food delivery app launched across 5 cities in 90 days.</p><div class="portfolio-tags"><span class="portfolio-tag">React Native</span><span class="portfolio-tag">Node.js</span><span class="portfolio-tag">Google Maps</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">🏨</div><div class="portfolio-body"><h3>Prestige Hotels Website</h3><p>Luxury hotel booking platform achieving 98/100 PageSpeed score.</p><div class="portfolio-tags"><span class="portfolio-tag">Next.js</span><span class="portfolio-tag">Prisma</span><span class="portfolio-tag">Stripe</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">🤖</div><div class="portfolio-body"><h3>AutoServ AI Chatbot</h3><p>Custom-trained LLM chatbot reducing support tickets by 65%.</p><div class="portfolio-tags"><span class="portfolio-tag">Python</span><span class="portfolio-tag">OpenAI</span><span class="portfolio-tag">FastAPI</span></div></div></div>
+      <div class="portfolio-card"><div class="portfolio-img">📦</div><div class="portfolio-body"><h3>LogiPro Supply Chain</h3><p>Supply chain visibility platform tracking 10,000+ daily shipments across MENA.</p><div class="portfolio-tags"><span class="portfolio-tag">React</span><span class="portfolio-tag">GraphQL</span><span class="portfolio-tag">Docker</span></div></div></div>
+    </div>
+  </section>
+  <div class="cta-section"><h2>YOUR PROJECT COULD BE NEXT</h2><p>Let's talk about what we can build together.</p><button class="btn-white" onclick="showPage('contact')">Start a Conversation →</button></div>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js · AWS · React</span></li><li><span>Flutter · Node · Docker</span></li></ul></div></div><div class="footer-bottom"><p>© 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
+</div>
+
+
+
+
+
+
+<!-- CONTACT -->
+
+
+
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <div class="section-tag">Get In Touch</div>
+    <h1 class="section-title">LET'S BUILD SOMETHING<br>EXTRAORDINARY TOGETHER</h1>
+    <p class="section-subtitle">Tell us about your project and we'll get back to you within 24 hours with a tailored proposal.</p>
+  </div>
+  <div class="contact-body">
+    <div>
+      <h3 style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:32px">Contact Information</h3>
+      <div class="contact-item"><span class="material-icons-round contact-icon">mail</span><div class="contact-item-text"><h4>Email Us</h4><a href="mailto:info@marvexmedia.com">info@marvexmedia.com</a></div></div>
+      <div class="contact-item"><span class="material-icons-round contact-icon">call</span><div class="contact-item-text"><h4>Call Us</h4><a href="tel:+971501814436">+971 501 814 436</a></div></div>
+      <div class="contact-item"><div class="contact-icon">◉</div><div class="contact-item-text"><h4>Headquarters</h4><p>Ajman, United Arab Emirates</p></div></div>
+      <div class="contact-item"><div class="contact-icon">⊙</div><div class="contact-item-text"><h4>Support Hours</h4><p>24/7 Technical Support Available</p></div></div>
+      <div style="margin-top:40px;border:1px solid var(--border-light);padding:28px">
+        <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px">OUR LOCATIONS</p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:13px"><span>🇦🇪</span> UAE — Ajman (Headquarters)</div>
+          <div style="display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:13px"><span>🇶🇦</span> Qatar — Doha (Regional Office)</div>
+          <div style="display:flex;align-items:center;gap:12px;color:var(--text-muted);font-size:13px"><span>🇮🇳</span> India — Tech Development Hub</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:28px">Send Us a Message</h3>
+      <div class="form-row"><div class="form-group"><label>First Name *</label><input type="text" id="f-fname" placeholder="John"/></div><div class="form-group"><label>Last Name</label><input type="text" id="f-lname" placeholder="Smith"/></div></div>
+      <div class="form-group"><label>Email Address *</label><input type="email" id="f-email" placeholder="john@company.com"/></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" id="f-phone" placeholder="+971 50 000 0000"/></div>
+      <div class="form-group"><label>Service Interested In</label><select id="f-service"><option value="">Select a service...</option><option>Website Development</option><option>Mobile App Development</option><option>SEO Optimisation</option><option>Social Media Marketing</option><option>Cloud Infrastructure</option><option>AI &amp; Automation</option><option>E-Commerce Solutions</option><option>CRM Implementation</option><option>Branding &amp; Design</option><option>Other / Multiple Services</option></select></div>
+      <div class="form-group"><label>Tell Us About Your Project *</label><textarea id="f-msg" placeholder="Describe your project, goals, and timeline..."></textarea></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;font-size:12px;padding:18px" onclick="submitContact()">Send Message →</button>
+      <div class="contact-loader" id="contact-loader">
+        <div class="cl-spinner"></div>
+        <span class="cl-text">Sending your message<span class="cl-dots"><span>.</span><span>.</span><span>.</span></span></span>
+      </div>
+      <div class="form-success" id="contact-success">✓ Thank you! We'll be in touch within 24 hours.</div>
+    </div>
+  </div>
+  <div class="cta-section" style="padding:80px 5%"><h2>PREFER TO JUMP ON A CALL?</h2><p>Book a free 30-minute strategy call with one of our senior engineers.</p><button class="btn-white" onclick="openConsult()">BOOK A FREE CONSULTATION &nbsp;→</button></div>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js · AWS · React</span></li><li><span>Flutter · Node · Docker</span></li></ul></div></div><div class="footer-bottom"><p>© 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
+</div>
+
+
+
+
+
+
+<!-- CAREERS -->
+
+
+
+<div id="page-careers" class="page">
+  <div class="page-hero">
+    <div class="section-tag">Join Our Team</div>
+    <h1 class="section-title">BUILD THE FUTURE.<br>WITH THE BEST.</h1>
+    <p class="section-subtitle">We're a team of engineers, designers, and growth hackers on a mission to redefine digital. If you're exceptional — we want to hear from you.</p>
+  </div>
+  <div class="highlight-section" style="margin:0;padding:72px 5%">
+    <div style="text-align:center;margin-bottom:48px"><div class="section-tag" style="justify-content:center">Life at Marvex</div><h2 class="section-title">WHY JOIN US?</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)" class="perks-main-grid">
+      <div class="perk-card"><span class="icon"><span class="material-icons-round perk-icon">payments</span></span><h4>Competitive Compensation</h4><p>Market-leading salaries, performance bonuses, and equity options for senior hires.</p></div>
+      <div class="perk-card"><span class="icon"><span class="material-icons-round perk-icon">public</span></span><h4>Remote-Friendly</h4><p>Work from anywhere in UAE, Qatar, or India. Flexible hours, no micromanagement.</p></div>
+      <div class="perk-card"><span class="icon"><span class="material-icons-round perk-icon">menu_book</span></span><h4>Learning & Growth</h4><p>Annual learning budget, conference sponsorships, and internal knowledge-sharing sessions.</p></div>
+      <div class="perk-card"><span class="icon"><span class="material-icons-round perk-icon">rocket_launch</span></span><h4>High-Impact Work</h4><p>Build products used by 200+ companies and millions of end users across the globe.</p></div>
+      <div class="perk-card"><span class="icon"><span class="material-icons-round perk-icon">local_hospital</span></span><h4>Health Benefits</h4><p>Comprehensive health insurance coverage for you and your dependents.</p></div>
+      <div class="perk-card"><span class="icon"><span class="material-icons-round perk-icon">flag</span></span><h4>Ownership Culture</h4><p>Your ideas matter here. We give ownership and autonomy to everyone on the team.</p></div>
+    </div>
+  </div>
+  <section>
+    <div class="section-tag" style="margin-bottom:32px">Open Positions</div>
+    <h2 style="font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:var(--white);margin-bottom:32px">CURRENT OPENINGS</h2>
+    <div class="job-card"><div><div class="job-title">Senior Full-Stack Engineer</div><div class="job-meta"><span class="job-tag">Engineering</span><span class="job-tag gray">Remote — UAE / India</span><span class="job-tag gray">Full-Time</span><span class="job-tag gray">$5,000 – $8,000/mo</span></div></div><button class="btn-primary" onclick="openApply('Senior Full-Stack Engineer')">Apply Now →</button></div>
+    <div class="job-card"><div><div class="job-title">Flutter Mobile Developer</div><div class="job-meta"><span class="job-tag">Engineering</span><span class="job-tag gray">Remote — India</span><span class="job-tag gray">Full-Time</span><span class="job-tag gray">$3,000 – $5,500/mo</span></div></div><button class="btn-primary" onclick="openApply('Flutter Mobile Developer')">Apply Now →</button></div>
+    <div class="job-card"><div><div class="job-title">SEO Specialist</div><div class="job-meta"><span class="job-tag">Marketing</span><span class="job-tag gray">Hybrid — UAE / Qatar</span><span class="job-tag gray">Full-Time</span><span class="job-tag gray">$2,500 – $4,000/mo</span></div></div><button class="btn-primary" onclick="openApply('SEO Specialist')">Apply Now →</button></div>
+    <div class="job-card"><div><div class="job-title">UI/UX Designer</div><div class="job-meta"><span class="job-tag">Design</span><span class="job-tag gray">Remote — Anywhere</span><span class="job-tag gray">Full-Time</span><span class="job-tag gray">$2,500 – $4,500/mo</span></div></div><button class="btn-primary" onclick="openApply('UI/UX Designer')">Apply Now →</button></div>
+    <div class="job-card"><div><div class="job-title">Business Development Manager</div><div class="job-meta"><span class="job-tag">Sales</span><span class="job-tag gray">On-site — UAE / Qatar</span><span class="job-tag gray">Full-Time</span><span class="job-tag gray">Base + Commission</span></div></div><button class="btn-primary" onclick="openApply('Business Development Manager')">Apply Now →</button></div>
+    <div class="job-card"><div><div class="job-title">AI/ML Engineer</div><div class="job-meta"><span class="job-tag">Engineering</span><span class="job-tag gray">Remote — India / UAE</span><span class="job-tag gray">Full-Time</span><span class="job-tag gray">$4,500 – $7,000/mo</span></div></div><button class="btn-primary" onclick="openApply('AI/ML Engineer')">Apply Now →</button></div>
+    <div style="margin-top:1px;background:var(--bg2);border:1px solid var(--border-light);padding:40px;text-align:center">
+      <h3 style="font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:0.5px">Don't See Your Role?</h3>
+      <p style="color:var(--text-muted);margin-bottom:24px;font-weight:300">We're always looking for exceptional talent. Send us your CV and tell us how you can contribute.</p>
+      <button class="btn-outline" onclick="openApply('General Application')">Send Open Application →</button>
+    </div>
+  </section>
+
+  <div class="apply-modal" id="applyModal">
+    <div class="apply-modal-inner">
+      <button class="modal-close" onclick="closeApply()">✕</button>
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:8px">Apply Now</div>
+      <h2 style="font-family:var(--font-display);font-size:28px;letter-spacing:1px;color:var(--white);margin-bottom:28px" id="applyTitle">Job Title</h2>
+      <div class="form-row"><div class="form-group"><label>First Name *</label><input type="text" id="a-fname" placeholder="John"/></div><div class="form-group"><label>Last Name *</label><input type="text" id="a-lname" placeholder="Smith"/></div></div>
+      <div class="form-group"><label>Email *</label><input type="email" id="a-email" placeholder="john@email.com"/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="a-phone" placeholder="+971 50 000 0000"/></div>
+      <div class="form-group"><label>LinkedIn Profile</label><input type="url" id="a-linkedin" placeholder="https://linkedin.com/in/..."/></div>
+      <div class="form-group"><label>Portfolio / GitHub</label><input type="url" id="a-portfolio" placeholder="https://github.com/..."/></div>
+      <div class="form-group"><label>Cover Letter</label><textarea id="a-cover" placeholder="Why do you want to join Marvex Media?..." style="min-height:100px"></textarea></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;font-size:12px;padding:16px" onclick="submitApply()">Submit Application →</button>
+      <div class="form-success" id="apply-success">✓ Application received! We'll review it and contact you soon.</div>
+    </div>
+  </div>
+
+  <div class="cta-section"><h2>READY TO JOIN THE TEAM?</h2><p>We're growing fast. Don't miss your chance to be part of something big.</p><button class="btn-white" onclick="openApply('General Application')">Apply Today →</button></div>
+  <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js · AWS · React</span></li><li><span>Flutter · Node · Docker</span></li></ul></div></div><div class="footer-bottom"><p>© 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
+</div>
+
+
+
+
+
+
+
+<!-- FAQ -->
+
+<div id="page-faq" class="page">
+  <div class="page-hero">
+    <div class="section-tag">Got Questions?</div>
+    <h1 class="section-title">FREQUENTLY ASKED<br><span class="red">QUESTIONS</span></h1>
+    <p class="section-subtitle">Everything you need to know about working with Marvex Media. Can't find your answer? <a onclick="showPage('contact')" style="color:var(--red-bright);cursor:pointer;text-decoration:none">Contact us directly.</a></p>
+  </div>
+
+  <section class="faq-section">
+    <div class="faq-category">
+      <div class="faq-category-label">Getting Started</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do I start a project with Marvex Media?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Starting is simple. Click "Get Started" or head to our Contact page and fill in the project brief form. One of our consultants will reach out within 24 hours to schedule a free discovery call. No pressure, no commitment at this stage — just a conversation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you offer a free consultation?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we offer a complimentary 45-minute discovery call for every new project inquiry. During this session we scope your requirements, discuss your goals, and provide an honest assessment of the best approach. No sales pitch, just real advice.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What information should I prepare before our first call?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>It helps to have a rough idea of: (1) what problem you're trying to solve, (2) your target audience, (3) your budget range, and (4) your desired timeline. Even rough answers are fine — we'll help you refine everything during the call.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-label">Pricing &amp; Timelines</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How much does a website or app cost?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Pricing varies by scope. A professional marketing website typically starts at AED 8,000–18,000. A custom web application or mobile app usually starts at AED 25,000+. We provide detailed, transparent quotes after our discovery call — no vague estimates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long does a typical project take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>A standard marketing website takes 3–6 weeks. A complex web application or mobile app typically takes 8–20 weeks depending on features. We always provide a detailed project timeline in your proposal, with milestones and delivery dates agreed upfront.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you offer payment plans?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes. We typically structure payments in milestones: 30% upfront, 40% at midpoint, and 30% on delivery. For larger projects, we can arrange custom payment schedules. We accept bank transfer (UAE, Qatar, India), Wise, and major cards.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-label">Process &amp; Collaboration</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do you manage projects and keep clients updated?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Every client gets a dedicated project manager and access to a shared Notion workspace where you can see real-time progress, timelines, and deliverables. We hold weekly check-in calls and provide written updates every Friday. You'll never be left wondering what's happening.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I see design concepts before development begins?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Absolutely. Our design phase happens before any development work. You'll receive Figma mockups for every key screen and we iterate until you're 100% satisfied. Development only starts once designs are signed off.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What if I need changes after launch?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>All projects include a 30-day post-launch support window at no extra cost. After that, we offer flexible maintenance retainers starting at AED 1,500/month, covering updates, bug fixes, security patches, and performance monitoring.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-category-label">Technical &amp; Hosting</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Who hosts the website after it's built?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>You own all code and assets — fully. We can deploy to your preferred hosting provider (Vercel, AWS, DigitalOcean, etc.) or manage hosting on your behalf. We recommend solutions that give you the best performance for your region and traffic levels.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Will my website be mobile-friendly and fast?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Always. Mobile-first, responsive design is standard on every project. We target 90+ Google PageSpeed scores across mobile and desktop, and conduct cross-browser testing before launch. Speed is a priority — it directly impacts your SEO and conversion rates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you build with open-source or proprietary technology?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We use battle-tested open-source stacks (React, Next.js, Flutter, Node.js, Python) wherever possible so you're never locked into our services. Your codebase is clean, documented, and transferable — you can take it to any developer in the future.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <h3>Still have questions?</h3>
+      <p>Our team is happy to help. Reach out directly and we'll get back to you within one business day.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Contact Us →</button>
+    </div>
+  </section>
+
+  <div class="cta-section"><h2>READY TO GET STARTED?</h2><p>Let's turn your vision into a product people love.</p><button class="btn-white" onclick="showPage('contact')">Start Free Consultation →</button></div>
+  <footer><div class="footer-grid"><div class="footer-brand"><span class="nav-logo-text" style="font-size:18px;letter-spacing:3px">MARVEX MEDIA</span><p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.8;margin-top:16px">Engineering tomorrow's digital reality.<br>UAE · Qatar · India</p></div><div><p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:20px">Quick Links</p><div style="display:flex;flex-direction:column;gap:10px"><a onclick="showPage('home')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Home</a><a onclick="showPage('services')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Services</a><a onclick="showPage('about')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">About</a><a onclick="showPage('portfolio')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Portfolio</a><a onclick="showPage('faq')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">FAQ</a><a onclick="showPage('contact')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Contact</a></div></div><div><p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:20px">Contact</p><div style="display:flex;flex-direction:column;gap:10px"><p style="color:var(--text-muted);font-size:13px">hello@marvexmedia.com</p><p style="color:var(--text-muted);font-size:13px">+971 50 000 0000</p><p style="color:var(--text-muted);font-size:13px">Ajman, UAE</p></div></div></div><div style="border-top:1px solid var(--border);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><p style="color:var(--text-light);font-size:11px;letter-spacing:1px">© 2026 MARVEX MEDIA. ALL RIGHTS RESERVED.</p><p style="color:var(--text-light);font-size:11px;letter-spacing:1px">ENGINEERED WITH PRECISION.</p></div></footer>
+</div>
+
+
+<!-- TEAM -->
+<div id="page-team" class="page">
+
+  <!-- Drag hint bar -->
+  <div class="tm-drag-bar">
+    <span class="tm-drag-arrow">&#8592;</span>
+    <span class="tm-drag-label">Drag</span>
+    <span class="tm-drag-arrow">&#8594;</span>
+  </div>
+
+  <!-- Card track -->
+  <div class="tm-track" id="tmTrack">
+
+    <!-- Card 1 – Founder -->
+    <div class="tm-card">
+      <div class="tm-role-tag">Founder &amp; MD</div>
+      <div class="tm-num">01</div>
+      <div class="tm-photo-wrap">
+        <img src="Gemini_Generated_Image_qw6k46qw6k46qw6k-Photoroom.png" alt="Muhammed Salman" class="tm-photo"/>
+      </div>
+      <div class="tm-photo-fade"></div>
+      <div class="tm-info">
+        <h2 class="tm-name">Muhammed Salman</h2>
+        <p class="tm-title">Founder &amp; Managing Director</p>
+        <p class="tm-bio">Visionary entrepreneur driving Marvex Media's mission to engineer tomorrow's digital reality across UAE, Qatar and India.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 – Quote -->
+    <div class="tm-card tm-card--text">
+      <div class="tm-role-tag">Leadership</div>
+      <div class="tm-card-quote">
+        <div class="tm-big-letter">&ldquo;</div>
+        <p class="tm-quote-text">We don&rsquo;t just build products &mdash; we architect outcomes that matter.</p>
+        <div class="tm-quote-rule"></div>
+        <p class="tm-quote-attr">&mdash; Marvex Media</p>
+      </div>
+      <div class="tm-num">02</div>
+    </div>
+
+  </div><!-- /tm-track -->
+
+  <!-- Progress bar -->
+  <div class="tm-progress-wrap">
+    <div class="tm-progress-bar" id="tmProgress"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background:#000">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo-text" style="font-size:18px;letter-spacing:3px">MARVEX MEDIA</span>
+        <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.8;margin-top:16px">Engineering tomorrow&rsquo;s digital reality.<br>UAE &middot; Qatar &middot; India</p>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:20px">Quick Links</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a onclick="showPage('home')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Home</a>
+          <a onclick="showPage('services')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Services</a>
+          <a onclick="showPage('team')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Team</a>
+          <a onclick="showPage('contact')" style="color:var(--text-muted);font-size:13px;cursor:pointer;text-decoration:none">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:20px">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <p style="color:var(--text-muted);font-size:13px">hello@marvexmedia.com</p>
+          <p style="color:var(--text-muted);font-size:13px">+971 50 000 0000</p>
+          <p style="color:var(--text-muted);font-size:13px">Ajman, UAE</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <p style="color:var(--text-light);font-size:11px;letter-spacing:1px">&copy; 2026 MARVEX MEDIA. ALL RIGHTS RESERVED.</p>
+      <p style="color:var(--text-light);font-size:11px;letter-spacing:1px">ENGINEERED WITH PRECISION.</p>
+    </div>
+  </footer>
+
+</div><!-- /page-team -->
+
+<!-- LEGAL MODAL -->
+<div id="legalModal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.88);overflow-y:auto" onclick="if(event.target===this)closeLegal()">
+  <div style="max-width:720px;margin:60px auto;background:var(--bg2);border:1px solid var(--border-light);padding:56px 48px;position:relative">
+    <button onclick="closeLegal()" style="position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;line-height:1">&times;</button>
+    <h2 style="font-family:var(--font-display);font-size:28px;margin-bottom:32px">Legal &amp; Compliance</h2>
+    <h3 style="font-size:14px;letter-spacing:2px;color:var(--red);margin-bottom:12px">PRIVACY POLICY</h3>
+    <p style="color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:24px">Marvex Media collects only the information you voluntarily provide. We do not sell or share your personal data with third parties. All data is stored securely and used solely to respond to your enquiries and improve our services.</p>
+    <h3 style="font-size:14px;letter-spacing:2px;color:var(--red);margin-bottom:12px">TERMS OF SERVICE</h3>
+    <p style="color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:24px">By engaging Marvex Media, you agree that all deliverables remain the intellectual property of Marvex Media until full payment is received. Projects are governed by a signed agreement. Marvex Media reserves the right to display completed work in its portfolio unless otherwise agreed in writing.</p>
+    <h3 style="font-size:14px;letter-spacing:2px;color:var(--red);margin-bottom:12px">COOKIE POLICY</h3>
+    <p style="color:var(--text-muted);font-size:14px;line-height:1.8">This website uses minimal cookies necessary for basic functionality. No tracking or advertising cookies are used.</p>
+  </div>
+</div>
+
+<!-- APPLY MODAL -->
+<div id="applyModal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.88);overflow-y:auto">
+  <div style="max-width:640px;margin:60px auto;background:var(--bg2);border:1px solid var(--border-light);padding:56px 48px;position:relative">
+    <button onclick="closeApply()" style="position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;line-height:1">&times;</button>
+    <h2 style="font-family:var(--font-display);font-size:28px;margin-bottom:8px">Apply Now</h2>
+    <p id="applyTitle" style="color:var(--red);font-size:13px;letter-spacing:2px;margin-bottom:32px"></p>
+    <div style="display:flex;gap:16px;margin-bottom:16px">
+      <input id="a-fname" type="text" placeholder="First Name *" style="flex:1;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px"/>
+      <input id="a-lname" type="text" placeholder="Last Name" style="flex:1;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px"/>
+    </div>
+    <input id="a-email" type="email" placeholder="Email Address *" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;box-sizing:border-box"/>
+    <input id="a-phone" type="tel" placeholder="Phone Number" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;box-sizing:border-box"/>
+    <input id="a-linkedin" type="url" placeholder="LinkedIn Profile URL" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;box-sizing:border-box"/>
+    <input id="a-portfolio" type="url" placeholder="Portfolio / Website URL" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;box-sizing:border-box"/>
+    <textarea id="a-cover" placeholder="Cover Letter *" rows="5" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:14px 16px;border-radius:8px;font-size:14px;margin-bottom:24px;box-sizing:border-box;resize:vertical"></textarea>
+    <div id="apply-success" style="display:none;text-align:center;padding:20px">
+      <p style="color:var(--red);font-size:14px;letter-spacing:1px">APPLICATION RECEIVED — WE'LL BE IN TOUCH.</p>
+    </div>
+    <button onclick="submitApply()" style="width:100%;background:var(--red);color:#fff;border:none;padding:16px;border-radius:8px;font-size:14px;letter-spacing:2px;cursor:pointer;font-weight:600">SUBMIT APPLICATION</button>
+  </div>
+</div>
+
+
+<!-- CONSULTATION MODAL -->
+<div id="consultModal" class="consult-overlay" onclick="if(event.target===this)closeConsult()">
+  <div class="consult-box">
+
+    <!-- Close -->
+    <button class="consult-close" onclick="closeConsult()">&#10005;</button>
+
+    <!-- Header -->
+    <div class="consult-header">
+      <p class="consult-eyebrow">Free Strategy Call</p>
+      <h2 class="consult-title">LET'S TALK.</h2>
+      <p class="consult-sub">Drop your details — we'll reach out within 24 hours.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="consult-form" id="consultForm">
+      <div class="consult-field">
+        <label>Full Name</label>
+        <input id="c-name" type="text" placeholder="Muhammed Salman"/>
+      </div>
+      <div class="consult-field">
+        <label>Email Address</label>
+        <input id="c-email" type="email" placeholder="you@company.com"/>
+      </div>
+      <div class="consult-field">
+        <label>Phone / WhatsApp</label>
+        <input id="c-phone" type="tel" placeholder="+971 50 000 0000"/>
+      </div>
+      <button class="consult-submit" onclick="submitConsult()">
+        <span id="c-btn-text">BOOK MY CALL &nbsp;→</span>
+      </button>
+    </div>
+
+    <!-- Loader -->
+    <div class="consult-loader" id="consultLoader">
+      <div class="c-orbit">
+        <div class="c-orbit-ring"></div>
+        <div class="c-orbit-dot"></div>
+      </div>
+      <p class="c-loader-text">Sending your request…</p>
+    </div>
+
+    <!-- Success -->
+    <div class="consult-success" id="consultSuccess">
+      <div class="c-success-icon">✓</div>
+      <h3>You're booked in!</h3>
+      <p>We'll be in touch within 24 hours to confirm your call.</p>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+(function(){
+  var dot  = document.getElementById('cursor-dot');
+    var dotX = 0, dotY = 0;
+  var raf;
+
+  document.addEventListener('mousemove', function(e){
+    dotX = e.clientX; dotY = e.clientY;
+    dot.style.left  = dotX + 'px';
+    dot.style.top   = dotY + 'px';
+  });
+
+  // Hover state on interactive elements
+  var interactives = 'a, button, [onclick], input, textarea, select, label';
+  document.addEventListener('mouseover', function(e){
+    if(e.target.closest(interactives)) document.body.classList.add('cursor-hover');
+  });
+  document.addEventListener('mouseout', function(e){
+    if(e.target.closest(interactives)) document.body.classList.remove('cursor-hover');
+  });
+
+  // Click pulse
+  document.addEventListener('mousedown', function(){ document.body.classList.add('cursor-click'); });
+  document.addEventListener('mouseup',   function(){ document.body.classList.remove('cursor-click'); });
+
+  // Hide when leaving window
+  document.addEventListener('mouseleave', function(){ dot.style.opacity='0'; });
+  document.addEventListener('mouseenter', function(){ dot.style.opacity='1'; });
+})();
+</script>
+</body>
+</html>
