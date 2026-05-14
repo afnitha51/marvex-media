@@ -646,7 +646,7 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// ── FLOW DIAGRAM ─────────────────────────────────────
+// ── FLOW DIAGRAM (AI Neural Process) ──────────────────────
 function initFlowDiagram() {
   var svg  = document.getElementById('flowSvg');
   var wrap = document.getElementById('flowWrap');
@@ -671,14 +671,10 @@ function initFlowDiagram() {
     return { x: r.left - wRect.left, y: r.top + r.height/2 - wRect.top };
   }
 
-  var clientC = centerOf('fb-client');
-  var coreC   = centerOf('fb-core');
-  var launchC = centerOf('fb-launch');
-  if (!clientC || !coreC || !launchC) return;
+  var coreC = centerOf('fb-core');
+  if (!coreC) return;
 
-  var lineY = clientC.y;
-
-  /* ─── helper: draw a path with draw-on anim + travelling dot ─── */
+  /* ─── helper: draw a neural path ─── */
   function drawLine(d, stroke, sw, drawDelay, dotDur, dotBegin, dotCount) {
     dotCount = dotCount || 1;
     // ghost track
@@ -693,24 +689,24 @@ function initFlowDiagram() {
     anim.setAttribute('d',d); anim.setAttribute('fill','none');
     anim.setAttribute('stroke', stroke);
     anim.setAttribute('stroke-width', sw);
-    var len = ghost.getTotalLength ? ghost.getTotalLength() : 400;
+    var len = 600; // rough estimate, getTotalLength fails if not attached
     anim.style.strokeDasharray  = len;
     anim.style.strokeDashoffset = len;
     anim.style.animation = 'flowDraw 1.2s '+drawDelay+'s cubic-bezier(0.4,0,0.2,1) forwards';
     svg.appendChild(anim);
 
-    // motion path (invisible)
+    // motion path
     var mpId = 'mp'+Math.random().toString(36).slice(2,7);
     var mp = document.createElementNS('http://www.w3.org/2000/svg','path');
     mp.setAttribute('id',mpId); mp.setAttribute('d',d);
     mp.setAttribute('fill','none'); mp.setAttribute('stroke','none');
     svg.appendChild(mp);
 
-    // travelling dots — all going same direction (path direction = left→right)
+    // travelling dots
     for (var k = 0; k < dotCount; k++) {
       var dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
       dot.setAttribute('r','3.5'); dot.setAttribute('fill','#d03028');
-      dot.style.filter = 'drop-shadow(0 0 7px rgba(220,40,40,1))';
+      dot.style.filter = 'drop-shadow(0 0 7px rgba(255,50,50,1))';
       var am = document.createElementNS('http://www.w3.org/2000/svg','animateMotion');
       am.setAttribute('dur', dotDur+'s');
       am.setAttribute('repeatCount','indefinite');
@@ -722,42 +718,22 @@ function initFlowDiagram() {
       mpath.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','#'+mpId);
       am.appendChild(mpath); dot.appendChild(am); svg.appendChild(dot);
     }
-    return mpId;
   }
 
-  /* ─── 1. LEFT PILLS → CLIENT  (data enters here first) ─── */
+  /* ─── 1. LEFT PILLS → CORE  (Inputs) ─── */
   var leftPills = ['fp-brief','fp-goals','fp-budget','fp-vision'];
   leftPills.forEach(function(id, i) {
     var pt = rightOf(id); if (!pt) return;
-    var dx = clientC.x - pt.x;
-    var cp1x = pt.x + dx*0.55, cp2x = clientC.x - dx*0.1;
-    var d = 'M'+pt.x+','+pt.y+' C'+cp1x+','+pt.y+' '+cp2x+','+lineY+' '+clientC.x+','+lineY;
-    drawLine(d, 'rgba(165,30,30,0.6)', 1.5, 0.1+i*0.12, 2.4, 0.3+i*0.6, 1);
+    var d = 'M'+pt.x+','+pt.y+' L'+coreC.x+','+coreC.y;
+    drawLine(d, 'rgba(200,30,30,0.6)', 1.5, 0.1+i*0.1, 2.0, 0.2+i*0.4, 2);
   });
 
-  /* ─── 2. Main spine: CLIENT → MARVEX → LAUNCH  (the highway) ─── */
-  var mainD = 'M'+clientC.x+','+lineY+' L'+launchC.x+','+lineY;
-  drawLine(mainD, 'rgba(200,35,35,0.75)', 2.5, 0.5, 2.0, 0.9, 3);
-
-  /* ─── 3. LAUNCH → RIGHT PILLS  (data exits here) ─── */
+  /* ─── 2. CORE → RIGHT PILLS  (Outputs) ─── */
   var rightPills = ['fp-web','fp-app','fp-ai','fp-growth'];
   rightPills.forEach(function(id, i) {
     var pt = leftOf(id); if (!pt) return;
-    var dx = pt.x - launchC.x;
-    var cp1x = launchC.x + dx*0.1, cp2x = pt.x - dx*0.55;
-    var d = 'M'+launchC.x+','+lineY+' C'+cp1x+','+lineY+' '+cp2x+','+pt.y+' '+pt.x+','+pt.y;
-    drawLine(d, 'rgba(165,30,30,0.6)', 1.5, 0.6+i*0.12, 2.4, 1.2+i*0.6, 1);
-  });
-
-  /* ─── 4. Node junction dots at CLIENT and LAUNCH ─── */
-  [clientC, launchC].forEach(function(pt) {
-    var c = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    c.setAttribute('cx',pt.x); c.setAttribute('cy',pt.y);
-    c.setAttribute('r','5');
-    c.setAttribute('fill','rgba(155,27,27,0.75)');
-    c.setAttribute('stroke','rgba(220,60,60,0.8)');
-    c.setAttribute('stroke-width','1.5');
-    svg.appendChild(c);
+    var d = 'M'+coreC.x+','+coreC.y+' L'+pt.x+','+pt.y;
+    drawLine(d, 'rgba(200,30,30,0.6)', 1.5, 0.6+i*0.1, 2.2, 1.0+i*0.5, 2);
   });
 }
 
@@ -853,55 +829,6 @@ window.addEventListener('resize', function() {
 })();
 
 
-// ── CONSULTATION MODAL ───────────────────────────────
-function openConsult() {
-  var m = document.getElementById('consultModal');
-  m.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  // reset state
-  document.getElementById('consultForm').style.display   = 'block';
-  document.getElementById('consultLoader').style.display  = 'none';
-  document.getElementById('consultSuccess').style.display = 'none';
-  ['c-name','c-email','c-phone'].forEach(function(id){
-    var el = document.getElementById(id); if(el) el.value = '';
-  });
-}
-
-function closeConsult() {
-  document.getElementById('consultModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function submitConsult() {
-  var name  = document.getElementById('c-name').value.trim();
-  var email = document.getElementById('c-email').value.trim();
-  var phone = document.getElementById('c-phone').value.trim();
-
-  if (!name || !email || !phone) {
-    // shake the empty fields
-    ['c-name','c-email','c-phone'].forEach(function(id){
-      var el = document.getElementById(id);
-      if (el && !el.value.trim()) {
-        el.style.borderColor = 'var(--red-bright)';
-        el.style.animation = 'none';
-        setTimeout(function(){ el.style.animation = ''; }, 10);
-      }
-    });
-    return;
-  }
-
-  // Show loader, hide form
-  document.getElementById('consultForm').style.display   = 'none';
-  document.getElementById('consultLoader').style.display = 'flex';
-
-  // Simulate API call
-  setTimeout(function() {
-    document.getElementById('consultLoader').style.display  = 'none';
-    document.getElementById('consultSuccess').style.display = 'flex';
-    // Auto-close after 3.5s
-    setTimeout(function() { closeConsult(); }, 3500);
-  }, 2200);
-}
 
 
 // ── STATS COUNTER ANIMATION ──────────────────────────
@@ -953,3 +880,32 @@ function submitConsult() {
     setTimeout(animateCounters, 800);
   }
 })();
+
+/* -- 3D CUBES SCROLL ANIMATION ------------------------ */
+(function(){
+  var lastScrollY = window.scrollY;
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY;
+    var cubes = document.querySelectorAll('.sh-cubes .cube');
+    if(!cubes.length) return;
+    
+    // Check if services page is active
+    var sp = document.getElementById('page-services');
+    if (!sp || !sp.classList.contains('active')) return;
+    
+    cubes.forEach(function(cube, index) {
+      // Rotate and float based on scroll position
+      var rotateX = 45 + (scrollY * (0.05 + index * 0.02));
+      var rotateY = 45 + (scrollY * (0.08 - index * 0.01));
+      var translateY = (scrollY * (-0.15 * ((index % 3) + 1)));
+      
+      cube.style.transform = 'translateY(' + translateY + 'px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    });
+  }, {passive: true});
+})();
+
+
+
+
+
+

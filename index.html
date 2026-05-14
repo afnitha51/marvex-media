@@ -8,11 +8,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="styles.css?v=2"/>
 </head>
 <body>
 
 <div id="cursor-dot"></div>
+<canvas id="cursor-ring" width="64" height="64"></canvas>
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">
@@ -292,6 +293,42 @@
     </div>
   </section>
 
+  <!-- HOME TEAM SECTION -->
+  <section class="home-team-section">
+
+    <div class="home-team-header">
+      <div class="section-tag" style="justify-content:center">Our Team</div>
+      <h2 class="section-title">MEET THE MIND BEHIND MARVEX</h2>
+      <p class="home-team-sub">The person behind Marvex — building quietly, growing steadily, and staying focused on what actually matters.</p>
+    </div>
+
+    <!-- Reuse exact team page card design -->
+    <div class="home-tm-stage">
+      <div class="tm-card">
+        <div class="tm-role-tag">Founder &amp; MD</div>
+        <div class="tm-num">01</div>
+        <div class="tm-photo-wrap">
+          <img src="Gemini_Generated_Image_qw6k46qw6k46qw6k-Photoroom.png" alt="Muhammed Salman" class="tm-photo"/>
+        </div>
+        <div class="tm-photo-fade"></div>
+        <div class="tm-info">
+          <h2 class="tm-name">Muhammed Salman</h2>
+          <p class="tm-title">Founder &amp; Managing Director</p>
+          <p class="tm-bio">Visionary entrepreneur driving Marvex Media's mission to engineer tomorrow's digital reality across UAE, Qatar and India.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journey + CTA below card -->
+    <div class="home-team-journey-row">
+      <p class="home-team-journey-text">
+        Muhammed started Marvex with a simple belief — that good work, done honestly, builds something lasting. From early client projects to leading a cross-border team, every step has been about staying curious, staying grounded, and doing right by the people we work with.
+      </p>
+      <button class="btn-outline-red" onclick="showPage('team')">View Full Team &nbsp;→</button>
+    </div>
+
+  </section>
+
   <div class="cta-section">
     <h2>READY TO BUILD SOMETHING EXTRAORDINARY?</h2>
     <p>Let's engineer your vision into a powerful digital product that drives real, measurable results.</p>
@@ -304,19 +341,29 @@
 
 <!-- SERVICES -->
 <div id="page-services" class="page">
-  <div class="page-hero">
-    <div class="section-tag">Our Services</div>
-    <h1 class="section-title">TECH SOLUTIONS<br>THAT SCALE</h1>
-    <p class="section-subtitle">End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p>
+  
+  <div class="services-hero-new">
+    <div class="sh-content">
+      <div class="sh-pill"><span class="pill-badge">SERVICES</span> Built for ambitious brands</div>
+      <h1 class="sh-title">Elevate your<br>business.</h1>
+      <p class="sh-subtitle">We craft software, AI systems, and digital experiences that transform how your business grows and competes.</p>
+      <div class="sh-form">
+        <button class="sh-btn" onclick="showPage('contact')">Get Started →</button>
+      </div>
+    </div>
+    <div class="sh-cubes">
+      <img src="magnific_create-a-dark-futuristic-_2972465238.png" class="sh-hero-img" alt="">
+    </div>
+    <div class="sh-grid-bg"></div>
   </div>
 
 <!-- FLOW DIAGRAM ANIMATION -->
   <div class="flow-section" id="flowSection">
 
     <div class="flow-header">
-      <div class="section-tag" style="justify-content:center">How We Work</div>
-      <h2 class="section-title">YOUR VISION. OUR <span class="red">ENGINE.</span></h2>
-      <p class="flow-subtitle">Every brief flows through our process and becomes a high-impact digital product.</p>
+      <div class="section-tag" style="justify-content:center">AI-Powered Process</div>
+      <h2 class="section-title">INTELLIGENT. EFFICIENT. <span class="red">SCALABLE.</span></h2>
+      <p class="flow-subtitle">Watch how our team and AI systems process raw concepts into high-impact digital solutions.</p>
     </div>
 
     <div class="flow-wrap" id="flowWrap">
@@ -324,53 +371,48 @@
       <!-- Central glow -->
       <div class="flow-center-glow"></div>
 
-      <!-- LEFT PILLS -->
+      <!-- LEFT PILLS (Inputs) -->
       <div class="flow-col flow-col--left">
         <div class="flow-pill" id="fp-brief">
-          <span class="material-icons-round">description</span>Brief
+          <span class="material-icons-round">data_object</span>Raw Data
         </div>
         <div class="flow-pill" id="fp-goals">
-          <span class="material-icons-round">flag</span>Goals
+          <span class="material-icons-round">architecture</span>Strategy
         </div>
         <div class="flow-pill" id="fp-budget">
-          <span class="material-icons-round">account_balance_wallet</span>Budget
+          <span class="material-icons-round">lightbulb</span>Concept
         </div>
         <div class="flow-pill" id="fp-vision">
-          <span class="material-icons-round">lightbulb</span>Vision
+          <span class="material-icons-round">groups</span>User Needs
         </div>
       </div>
 
-      <!-- CENTER BOXES -->
+      <!-- CENTER AI CORE -->
       <div class="flow-col flow-col--center">
-        <div class="flow-boxes">
-          <div class="flow-box-sq" id="fb-client">
-            <span class="material-icons-round flow-sq-icon">person</span>
-            <span class="flow-sq-label">Client</span>
-          </div>
-          <div class="flow-box-sq flow-box-sq--core" id="fb-core">
-            <img src="logo_new (2).png" alt="Marvex" class="flow-core-img"/>
+        <div class="ai-core-container" id="fb-core">
+          <div class="ai-orbit orbit-1"></div>
+          <div class="ai-orbit orbit-2"></div>
+          <div class="ai-orbit orbit-3"></div>
+          <div class="flow-box-sq flow-box-sq--core" style="position:relative; z-index:2; border-radius:50%;">
+            <img src="logo_new (2).png" alt="Marvex Engine" class="flow-core-img"/>
             <div class="flow-core-glow"></div>
           </div>
-          <div class="flow-box-sq" id="fb-launch">
-            <span class="material-icons-round flow-sq-icon">rocket_launch</span>
-            <span class="flow-sq-label">Launch</span>
-          </div>
         </div>
       </div>
 
-      <!-- RIGHT PILLS -->
+      <!-- RIGHT PILLS (Outputs) -->
       <div class="flow-col flow-col--right">
         <div class="flow-pill flow-pill--right" id="fp-web">
-          <span class="material-icons-round">laptop_mac</span>Website
+          <span class="material-icons-round">smart_toy</span>AI Automation
         </div>
         <div class="flow-pill flow-pill--right" id="fp-app">
-          <span class="material-icons-round">phone_iphone</span>Mobile App
+          <span class="material-icons-round">layers</span>Scalable Apps
         </div>
         <div class="flow-pill flow-pill--right" id="fp-ai">
-          <span class="material-icons-round">psychology</span>AI System
+          <span class="material-icons-round">show_chart</span>Predictive Growth
         </div>
         <div class="flow-pill flow-pill--right" id="fp-growth">
-          <span class="material-icons-round">trending_up</span>Growth
+          <span class="material-icons-round">dashboard_customize</span>Smart UI/UX
         </div>
       </div>
 
@@ -613,7 +655,7 @@
       <div class="form-success" id="contact-success">✓ Thank you! We'll be in touch within 24 hours.</div>
     </div>
   </div>
-  <div class="cta-section" style="padding:80px 5%"><h2>PREFER TO JUMP ON A CALL?</h2><p>Book a free 30-minute strategy call with one of our senior engineers.</p><button class="btn-white" onclick="openConsult()">BOOK A FREE CONSULTATION &nbsp;→</button></div>
+  <div class="cta-section" style="padding:80px 5%"><h2>PREFER TO JUMP ON A CALL?</h2><p>Book a free 30-minute strategy call with one of our senior engineers.</p><button class="btn-white" onclick="showPage('contact')">BOOK A FREE CONSULTATION &nbsp;→</button></div>
   <footer><div class="footer-grid"><div class="footer-brand"><div class="nav-logo"><img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/><span class="nav-logo-text" style="color:white">MARVEX MEDIA</span></div><p>Engineering Tomorrow's Digital Reality.</p><div class="footer-social"><a class="social-link" href="https://www.instagram.com/marvexmedia" target="_blank" rel="noopener" title="Instagram">In</a><a class="social-link" href="https://www.linkedin.com/company/marvexmedia" target="_blank" rel="noopener" title="LinkedIn">Li</a><a class="social-link" href="https://www.twitter.com/marvexmedia" target="_blank" rel="noopener" title="Twitter / X">Tw</a><a class="social-link" href="https://www.behance.net/marvexmedia" target="_blank" rel="noopener" title="Behance">Be</a></div></div><div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Website Development</a></li><li><a onclick="showPage('services')">Mobile Apps</a></li><li><a onclick="showPage('services')">SEO Optimisation</a></li><li><a onclick="showPage('services')">AI &amp; Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li><li><a onclick="showPage('about')" style="cursor:pointer">About Us</a></li><li><a onclick="showPage('portfolio')" style="cursor:pointer">Portfolio</a></li><li><a onclick="showPage('careers')" style="cursor:pointer">Careers</a></li><li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li><li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><span>info@marvexmedia.com</span></li><li><span>+971 501 814 436</span></li><li><span>UAE | Qatar | India</span></li></ul></div><div class="footer-col"><h4>Powered by</h4><ul><li><span style="color:#777">Next.js · AWS · React</span></li><li><span>Flutter · Node · Docker</span></li></ul></div></div><div class="footer-bottom"><p>© 2026 Marvex Media. All rights reserved.</p><p><a onclick="showLegal('privacy')" style="color:#555;text-decoration:none;cursor:pointer">Privacy Policy</a>&nbsp;|&nbsp;<a onclick="showLegal('terms')" style="color:#555;text-decoration:none;cursor:pointer">Terms of Service</a></p></div></footer>
 </div>
 
@@ -943,7 +985,7 @@
     <h3 style="font-size:14px;letter-spacing:2px;color:var(--red);margin-bottom:12px">PRIVACY POLICY</h3>
     <p style="color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:24px">Marvex Media collects only the information you voluntarily provide. We do not sell or share your personal data with third parties. All data is stored securely and used solely to respond to your enquiries and improve our services.</p>
     <h3 style="font-size:14px;letter-spacing:2px;color:var(--red);margin-bottom:12px">TERMS OF SERVICE</h3>
-    <p style="color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:24px">By engaging Marvex Media, you agree that all deliverables remain the intellectual property of Marvex Media until full payment is received. Projects are governed by a signed agreement. Marvex Media reserves the right to display completed work in its portfolio unless otherwise agreed in writing.</p>
+    <p style="color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:24px">By engaging Marvex Media, you agree that all deliverables remain the intellectual property of Marvex Media until full payment is received. Projects are governed by a signed agreement.</p>
     <h3 style="font-size:14px;letter-spacing:2px;color:var(--red);margin-bottom:12px">COOKIE POLICY</h3>
     <p style="color:var(--text-muted);font-size:14px;line-height:1.8">This website uses minimal cookies necessary for basic functionality. No tracking or advertising cookies are used.</p>
   </div>
@@ -971,88 +1013,94 @@
   </div>
 </div>
 
-
-<!-- CONSULTATION MODAL -->
-<div id="consultModal" class="consult-overlay" onclick="if(event.target===this)closeConsult()">
-  <div class="consult-box">
-
-    <!-- Close -->
-    <button class="consult-close" onclick="closeConsult()">&#10005;</button>
-
-    <!-- Header -->
-    <div class="consult-header">
-      <p class="consult-eyebrow">Free Strategy Call</p>
-      <h2 class="consult-title">LET'S TALK.</h2>
-      <p class="consult-sub">Drop your details — we'll reach out within 24 hours.</p>
-    </div>
-
-    <!-- Form -->
-    <div class="consult-form" id="consultForm">
-      <div class="consult-field">
-        <label>Full Name</label>
-        <input id="c-name" type="text" placeholder="Muhammed Salman"/>
-      </div>
-      <div class="consult-field">
-        <label>Email Address</label>
-        <input id="c-email" type="email" placeholder="you@company.com"/>
-      </div>
-      <div class="consult-field">
-        <label>Phone / WhatsApp</label>
-        <input id="c-phone" type="tel" placeholder="+971 50 000 0000"/>
-      </div>
-      <button class="consult-submit" onclick="submitConsult()">
-        <span id="c-btn-text">BOOK MY CALL &nbsp;→</span>
-      </button>
-    </div>
-
-    <!-- Loader -->
-    <div class="consult-loader" id="consultLoader">
-      <div class="c-orbit">
-        <div class="c-orbit-ring"></div>
-        <div class="c-orbit-dot"></div>
-      </div>
-      <p class="c-loader-text">Sending your request…</p>
-    </div>
-
-    <!-- Success -->
-    <div class="consult-success" id="consultSuccess">
-      <div class="c-success-icon">✓</div>
-      <h3>You're booked in!</h3>
-      <p>We'll be in touch within 24 hours to confirm your call.</p>
-    </div>
-
-  </div>
-</div>
-
 <script src="script.js"></script>
+
 <script>
 (function(){
-  var dot  = document.getElementById('cursor-dot');
-    var dotX = 0, dotY = 0;
-  var raf;
+  var dot    = document.getElementById('cursor-dot');
+  var canvas = document.getElementById('cursor-ring');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
 
+  /* canvas size & orbit params */
+  var W = 64, H = 64, CX = 32, CY = 32, R = 24;
+
+  /* shape pattern — repeating mix of dot / square / triangle */
+  var SHAPES = [
+    'dot','square','dot','triangle',
+    'dot','square','dot','triangle',
+    'dot','square','dot','triangle',
+    'dot','square'
+  ];
+  var N = SHAPES.length;
+
+  var mx = 0, my = 0, rx = 0, ry = 0;
+  var rot = 0;
+  var isHover = false;
+
+  /* mouse tracking */
   document.addEventListener('mousemove', function(e){
-    dotX = e.clientX; dotY = e.clientY;
-    dot.style.left  = dotX + 'px';
-    dot.style.top   = dotY + 'px';
+    mx = e.clientX; my = e.clientY;
+    if (dot) { dot.style.left = mx+'px'; dot.style.top = my+'px'; }
   });
 
-  // Hover state on interactive elements
-  var interactives = 'a, button, [onclick], input, textarea, select, label';
-  document.addEventListener('mouseover', function(e){
-    if(e.target.closest(interactives)) document.body.classList.add('cursor-hover');
-  });
-  document.addEventListener('mouseout', function(e){
-    if(e.target.closest(interactives)) document.body.classList.remove('cursor-hover');
-  });
+  /* interactive states */
+  var q = 'a,button,[onclick],input,textarea,select,label';
+  document.addEventListener('mouseover',  function(e){ if(e.target.closest(q)){ document.body.classList.add('cursor-hover');  isHover=true;  }});
+  document.addEventListener('mouseout',   function(e){ if(e.target.closest(q)){ document.body.classList.remove('cursor-hover'); isHover=false; }});
+  document.addEventListener('mousedown',  function(){ document.body.classList.add('cursor-click'); });
+  document.addEventListener('mouseup',    function(){ document.body.classList.remove('cursor-click'); });
+  document.addEventListener('mouseleave', function(){ canvas.style.opacity='0'; if(dot) dot.style.opacity='0'; });
+  document.addEventListener('mouseenter', function(){ canvas.style.opacity='1'; if(dot) dot.style.opacity='1'; });
 
-  // Click pulse
-  document.addEventListener('mousedown', function(){ document.body.classList.add('cursor-click'); });
-  document.addEventListener('mouseup',   function(){ document.body.classList.remove('cursor-click'); });
+  /* draw one frame */
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    rot += isHover ? 0.028 : 0.009;
 
-  // Hide when leaving window
-  document.addEventListener('mouseleave', function(){ dot.style.opacity='0'; });
-  document.addEventListener('mouseenter', function(){ dot.style.opacity='1'; });
+    /* red with slight opacity variation */
+    var baseR = 155, baseG = 27, baseB = 27;
+
+    for (var i = 0; i < N; i++) {
+      var angle = rot + (i / N) * Math.PI * 2;
+      var x = CX + R * Math.cos(angle);
+      var y = CY + R * Math.sin(angle);
+      var alpha = isHover ? 0.95 : 0.82;
+
+      ctx.fillStyle = 'rgba('+baseR+','+baseG+','+baseB+','+alpha+')';
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle + Math.PI / 2);
+
+      var t = SHAPES[i];
+      if (t === 'dot') {
+        ctx.beginPath();
+        ctx.arc(0, 0, 1.6, 0, Math.PI * 2);
+        ctx.fill();
+      } else if (t === 'square') {
+        ctx.fillRect(-2.2, -2.2, 4.4, 4.4);
+      } else {
+        /* triangle pointing outward */
+        ctx.beginPath();
+        ctx.moveTo(0, -3);
+        ctx.lineTo(2.4, 2.2);
+        ctx.lineTo(-2.4, 2.2);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+
+  /* main loop: lerp ring + draw shapes */
+  (function loop(){
+    rx += (mx - rx) * 0.14;
+    ry += (my - ry) * 0.14;
+    canvas.style.left = rx + 'px';
+    canvas.style.top  = ry + 'px';
+    draw();
+    requestAnimationFrame(loop);
+  })();
 })();
 </script>
 </body>
