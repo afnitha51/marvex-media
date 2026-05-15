@@ -46,19 +46,48 @@ function submitContact() {
     setTimeout(function () { success.style.display = 'none'; }, 5000);
   }, 2000);
 }
-function openApply(title){document.getElementById('applyTitle').textContent=title;document.getElementById('applyModal').classList.add('open');document.getElementById('apply-success').style.display='none';['a-fname','a-lname','a-email','a-phone','a-linkedin','a-portfolio','a-cover'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});document.body.style.overflow='hidden';}
+function openApply(title){
+  document.getElementById('applyTitle').textContent = title;
+  document.getElementById('applyModal').classList.add('open');
+  document.getElementById('apply-success').style.display = 'none';
+  ['a-fname','a-lname','a-email','a-phone','a-linkedin','a-portfolio','a-cover'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  document.body.style.overflow = 'hidden';
+}
 function closeApply(){document.getElementById('applyModal').classList.remove('open');document.body.style.overflow='';}
-function submitApply(){const f=document.getElementById('a-fname').value,e=document.getElementById('a-email').value;if(!f||!e){alert('Please fill in required fields.');return;}document.getElementById('apply-success').style.display='block';setTimeout(()=>closeApply(),2800);}
-var _applyModalEl=document.getElementById('applyModal');if(_applyModalEl)_applyModalEl.addEventListener('click',function(e){if(e.target===this)closeApply();});
-function checkGrid(){const g=document.querySelector('.about-grid-home');if(!g)return;g.style.gridTemplateColumns=window.innerWidth<768?'1fr':'1fr 1fr';}
-window.addEventListener('resize',checkGrid);checkGrid();
-function checkGrid(){const g=document.querySelector('.about-grid-home');if(!g)return;g.style.gridTemplateColumns=window.innerWidth<768?'1fr':'1fr 1fr';}
-window.addEventListener('resize',checkGrid);checkGrid();
+function submitApply(){
+  var fname = document.getElementById('a-fname').value.trim();
+  var email = document.getElementById('a-email').value.trim();
+  if(!fname || !email){
+    alert('Please fill in the required fields.');
+    return;
+  }
+  var btn = document.querySelector('.apply-modal .btn-primary');
+  var success = document.getElementById('apply-success');
+  btn.style.opacity = '0.5';
+  btn.innerText = 'Submitting...';
+  
+  setTimeout(function(){
+    btn.style.display = 'none';
+    success.style.display = 'block';
+    setTimeout(function(){
+      closeApply();
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+      btn.innerText = 'Submit Application →';
+    }, 2500);
+  }, 1500);
+}
 
-// carousel handled below
-
-function checkGrid(){const g=document.querySelector('.about-grid-home');if(!g)return;g.style.gridTemplateColumns=window.innerWidth<768?'1fr':'1fr 1fr';}
-window.addEventListener('resize',checkGrid);checkGrid();
+function checkGrid(){
+  var g=document.querySelector('.about-grid-home');
+  if(!g)return;
+  g.style.gridTemplateColumns=window.innerWidth<768?'1fr':'1fr 1fr';
+}
+window.addEventListener('resize',checkGrid);
+checkGrid();
 
 /* ══ CANVAS SLIDE PAINTER ═══════════════════════════ */
 (function() {
@@ -470,7 +499,7 @@ function carouselNext() { goToSlide(currentSlide + 1); }
 function carouselPrev() { goToSlide(currentSlide - 1); }
 function resetTimer() { clearInterval(carouselTimer); carouselTimer = setInterval(carouselNext, 5000); }
 
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('loaderFinished', function() {
   goToSlide(0);
   // keyboard
   document.addEventListener('keydown', function(e){ if(e.key==='ArrowRight') carouselNext(); if(e.key==='ArrowLeft') carouselPrev(); });
@@ -516,7 +545,7 @@ window.addEventListener('resize',checkGrid);checkGrid();
     setTimeout(tryRun,500);
   };
   window.addEventListener('scroll',tryRun,{passive:true});
-  window.addEventListener('load',function(){ setTimeout(tryRun,700); });
+  window.addEventListener('loaderFinished', function(){ setTimeout(tryRun, 300); });
 })();
 
 /* ══ SERVICE HOVER CANVAS ═══════════════════════════ */
@@ -582,20 +611,19 @@ window.addEventListener('resize',checkGrid);checkGrid();
   });
 })();
 
-function checkGrid(){var g=document.querySelector('.about-grid-home');if(!g)return;g.style.gridTemplateColumns=window.innerWidth<768?'1fr':'1fr 1fr';}
-window.addEventListener('resize',checkGrid);checkGrid();
+
 // ── FAQ ACCORDION ────────────────────────────────────
 function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
   // close all
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
   // open this one if it was closed
   if (!isOpen) item.classList.add('open');
 }
 
 // ── LEGAL MODAL (Privacy Policy / Terms of Service) ──────────────────────
-const legalContent = {
+var legalContent = {
   privacy: `
     <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:8px">Legal</div>
     <h2 style="font-family:var(--font-display);font-size:32px;letter-spacing:1px;color:var(--white);margin-bottom:28px">PRIVACY POLICY</h2>
@@ -626,8 +654,61 @@ const legalContent = {
   `
 };
 
+// ── CONSULTATION MODAL ───────────────────────────────────
+function openConsult() {
+  var m = document.getElementById('consultModal');
+  if (!m) return;
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('consultForm').style.display = 'block';
+  document.getElementById('consultLoader').style.display = 'none';
+  document.getElementById('consultSuccess').style.display = 'none';
+  ['c-name', 'c-email', 'c-phone'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+}
+
+function closeConsult() {
+  var m = document.getElementById('consultModal');
+  if (!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitConsult() {
+  var name  = (document.getElementById('c-name')  || {}).value  || '';
+  var email = (document.getElementById('c-email') || {}).value || '';
+  var phone = (document.getElementById('c-phone') || {}).value || '';
+
+  if (!name.trim()) {
+    alert('Please enter your name.');
+    return;
+  }
+  if (!email.trim() || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  document.getElementById('consultForm').style.display   = 'none';
+  document.getElementById('consultLoader').style.display = 'block';
+  document.getElementById('consultSuccess').style.display = 'none';
+
+  setTimeout(function() {
+    document.getElementById('consultLoader').style.display  = 'none';
+    var success = document.getElementById('consultSuccess');
+    success.style.display = 'block';
+    // restart SVG animations
+    var circle = success.querySelector('.c-success-circle');
+    var check  = success.querySelector('.c-success-check');
+    if (circle) { circle.style.animation = 'none'; void circle.offsetWidth; circle.style.animation = ''; }
+    if (check)  { check.style.animation  = 'none'; void check.offsetWidth;  check.style.animation  = ''; }
+    setTimeout(function() { closeConsult(); }, 3200);
+  }, 1800);
+}
+
 function showLegal(type) {
-  const modal = document.getElementById('legalModal');
+  var modal = document.getElementById('legalModal');
   document.getElementById('legalContent').innerHTML = legalContent[type] || '';
   modal.style.display = 'block';
   document.body.style.overflow = 'hidden';
@@ -643,97 +724,136 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLegal();
     closeApply();
+    closeConsult();
   }
 });
 
-// ── FLOW DIAGRAM (AI Neural Process) ──────────────────────
+// ── FLOW DIAGRAM (Client → Marvex → Output) ───────────────
 function initFlowDiagram() {
   var svg  = document.getElementById('flowSvg');
   var wrap = document.getElementById('flowWrap');
   if (!svg || !wrap) return;
   svg.innerHTML = '';
 
+  // Don't draw on stacked mobile layout
+  if (window.innerWidth <= 820) return;
+
+  /* ── Resize the SVG to exactly match the wrap's rendered dimensions ── */
   var wRect = wrap.getBoundingClientRect();
+  var W = wRect.width;
+  var H = wRect.height;
+  svg.setAttribute('width',   W);
+  svg.setAttribute('height',  H);
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  /* overflow:visible lets dots/glows bleed outside without being clipped */
+  svg.setAttribute('overflow', 'visible');
 
-  function centerOf(id) {
-    var el = document.getElementById(id); if (!el) return null;
+  /* Helper: converts an element's viewport rect → SVG coordinate space */
+  function cx(el) {
     var r = el.getBoundingClientRect();
-    return { x: r.left + r.width/2 - wRect.left, y: r.top + r.height/2 - wRect.top };
+    return { x: r.left + r.width  / 2 - wRect.left,
+             y: r.top  + r.height / 2 - wRect.top  };
   }
-  function rightOf(id) {
-    var el = document.getElementById(id); if (!el) return null;
+  function re(el) { /* right-centre edge */
     var r = el.getBoundingClientRect();
-    return { x: r.right - wRect.left, y: r.top + r.height/2 - wRect.top };
+    return { x: r.right - wRect.left, y: r.top + r.height / 2 - wRect.top };
   }
-  function leftOf(id) {
-    var el = document.getElementById(id); if (!el) return null;
+  function le(el) { /* left-centre edge */
     var r = el.getBoundingClientRect();
-    return { x: r.left - wRect.left, y: r.top + r.height/2 - wRect.top };
+    return { x: r.left  - wRect.left, y: r.top + r.height / 2 - wRect.top };
   }
+  function byId(id) { return document.getElementById(id); }
 
-  var coreC = centerOf('fb-core');
-  if (!coreC) return;
+  var coreEl = byId('fb-core');
+  if (!coreEl) return;
+  var core = cx(coreEl);
+  if (!core) return;
 
-  /* ─── helper: draw a neural path ─── */
-  function drawLine(d, stroke, sw, drawDelay, dotDur, dotBegin, dotCount) {
-    dotCount = dotCount || 1;
-    // ghost track
-    var ghost = document.createElementNS('http://www.w3.org/2000/svg','path');
-    ghost.setAttribute('d',d); ghost.setAttribute('fill','none');
-    ghost.setAttribute('stroke','rgba(155,27,27,0.1)');
-    ghost.setAttribute('stroke-width', sw);
-    svg.appendChild(ghost);
+  /* Hub-and-spoke: every pill connects to the SAME Marvex center point.
+     Left  pills → straight line → core → straight line → right pills
+     All spokes radiate from one origin — creating the mind-map / neural-hub look.
+     The dot travels: pill ──► core ──► paired output pill, continuously. */
+  var pairs = [
+    { left: 'fp-brief',  right: 'fp-web'    }, // Raw Data    → AI Automation
+    { left: 'fp-goals',  right: 'fp-app'    }, // Strategy    → Scalable Apps
+    { left: 'fp-budget', right: 'fp-ai'     }, // Concept     → Predictive Growth
+    { left: 'fp-vision', right: 'fp-growth' }  // User Needs  → Smart UI/UX
+  ];
 
-    // animated draw-on
-    var anim = document.createElementNS('http://www.w3.org/2000/svg','path');
-    anim.setAttribute('d',d); anim.setAttribute('fill','none');
-    anim.setAttribute('stroke', stroke);
-    anim.setAttribute('stroke-width', sw);
-    var len = 600; // rough estimate, getTotalLength fails if not attached
-    anim.style.strokeDasharray  = len;
-    anim.style.strokeDashoffset = len;
-    anim.style.animation = 'flowDraw 1.2s '+drawDelay+'s cubic-bezier(0.4,0,0.2,1) forwards';
-    svg.appendChild(anim);
+  var DOT_R    = 5;      // dot radius px
+  var DOT_DUR  = 5.0;    // seconds for full left → right journey
+  var STAGGER  = 1.25;   // seconds between each pair's dot
+  var PAUSE_F  = 0.44;   // fraction at which dot arrives at core (brief dwell)
+  var PAUSE_T  = 0.08;   // fraction of total time spent dwelling at core
 
-    // motion path
-    var mpId = 'mp'+Math.random().toString(36).slice(2,7);
-    var mp = document.createElementNS('http://www.w3.org/2000/svg','path');
-    mp.setAttribute('id',mpId); mp.setAttribute('d',d);
-    mp.setAttribute('fill','none'); mp.setAttribute('stroke','none');
+  pairs.forEach(function(pair, i) {
+    var lEl = byId(pair.left);
+    var rEl = byId(pair.right);
+    if (!lEl || !rEl) return;
+    var lPt = re(lEl);   /* right-centre edge of the left pill  */
+    var rPt = le(rEl);   /* left-centre  edge of the right pill */
+    if (!lPt || !rPt) return;
+
+    /* Two-segment spoke: left edge → core → right edge (straight lines) */
+    var d = 'M ' + lPt.x + ',' + lPt.y
+          + ' L ' + core.x + ',' + core.y
+          + ' L ' + rPt.x  + ',' + rPt.y;
+
+    /* ── Glow layer (wider, very soft) ── */
+    var glow = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    glow.setAttribute('d', d);
+    glow.setAttribute('fill', 'none');
+    glow.setAttribute('stroke', 'rgba(200,30,30,0.10)');
+    glow.setAttribute('stroke-width', '5');
+    glow.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(glow);
+
+    /* ── Main track line ── */
+    var track = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    track.setAttribute('d', d);
+    track.setAttribute('fill', 'none');
+    track.setAttribute('stroke', 'rgba(190,30,30,0.55)');
+    track.setAttribute('stroke-width', '1.2');
+    track.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(track);
+
+    /* ── Hidden motion path for the dot ── */
+    var mpId = 'mp_' + i;
+    var mp   = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    mp.setAttribute('id', mpId);
+    mp.setAttribute('d',  d);
+    mp.setAttribute('fill',   'none');
+    mp.setAttribute('stroke', 'none');
     svg.appendChild(mp);
 
-    // travelling dots
-    for (var k = 0; k < dotCount; k++) {
-      var dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
-      dot.setAttribute('r','3.5'); dot.setAttribute('fill','#d03028');
-      dot.style.filter = 'drop-shadow(0 0 7px rgba(255,50,50,1))';
-      var am = document.createElementNS('http://www.w3.org/2000/svg','animateMotion');
-      am.setAttribute('dur', dotDur+'s');
-      am.setAttribute('repeatCount','indefinite');
-      am.setAttribute('calcMode','spline');
-      am.setAttribute('keyTimes','0;1');
-      am.setAttribute('keySplines','0.4 0 0.6 1');
-      am.setAttribute('begin', (dotBegin + k * (dotDur/dotCount))+'s');
-      var mpath = document.createElementNS('http://www.w3.org/2000/svg','mpath');
-      mpath.setAttributeNS('http://www.w3.org/1999/xlink','xlink:href','#'+mpId);
-      am.appendChild(mpath); dot.appendChild(am); svg.appendChild(dot);
-    }
-  }
+    /* ── Glowing dot ── */
+    var dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('r',    DOT_R);
+    dot.setAttribute('fill', '#e82020');
+    dot.style.filter = 'drop-shadow(0 0 5px rgba(240,40,40,1)) drop-shadow(0 0 12px rgba(200,20,20,0.8))';
 
-  /* ─── 1. LEFT PILLS → CORE  (Inputs) ─── */
-  var leftPills = ['fp-brief','fp-goals','fp-budget','fp-vision'];
-  leftPills.forEach(function(id, i) {
-    var pt = rightOf(id); if (!pt) return;
-    var d = 'M'+pt.x+','+pt.y+' L'+coreC.x+','+coreC.y;
-    drawLine(d, 'rgba(200,30,30,0.6)', 1.5, 0.1+i*0.1, 2.0, 0.2+i*0.4, 2);
-  });
+    /* Dot travels at uniform speed but dwells briefly at the core midpoint */
+    var am = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+    am.setAttribute('dur',         DOT_DUR + 's');
+    am.setAttribute('repeatCount','indefinite');
+    am.setAttribute('calcMode',   'linear');
+    am.setAttribute('keyTimes',   '0; ' + PAUSE_F + '; ' + (PAUSE_F + PAUSE_T) + '; 1');
+    am.setAttribute('keyPoints',  '0; 0.5; 0.5; 1');
+    am.setAttribute('begin',      (i * STAGGER) + 's');
 
-  /* ─── 2. CORE → RIGHT PILLS  (Outputs) ─── */
-  var rightPills = ['fp-web','fp-app','fp-ai','fp-growth'];
-  rightPills.forEach(function(id, i) {
-    var pt = leftOf(id); if (!pt) return;
-    var d = 'M'+coreC.x+','+coreC.y+' L'+pt.x+','+pt.y;
-    drawLine(d, 'rgba(200,30,30,0.6)', 1.5, 0.6+i*0.1, 2.2, 1.0+i*0.5, 2);
+    var mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+    mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#' + mpId);
+    am.appendChild(mpath);
+    dot.appendChild(am);
+    svg.appendChild(dot);
+
+    /* ── Small static dot at core junction — shows the convergence point ── */
+    var jDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    jDot.setAttribute('cx',   core.x);
+    jDot.setAttribute('cy',   core.y);
+    jDot.setAttribute('r',    '3');
+    jDot.setAttribute('fill', 'rgba(220,30,30,0.5)');
+    svg.appendChild(jDot);
   });
 }
 
@@ -798,6 +918,13 @@ window.addEventListener('resize', function() {
     t._tmInit = true;
     t.addEventListener('mousedown', onMouseDown);
     t.addEventListener('scroll', updateProgress);
+    
+    // Add global scroll function for arrows
+    window.scrollTeamTrack = function(dir) {
+      var amount = t.clientWidth * 0.7;
+      t.scrollBy({ left: amount * dir, behavior: 'smooth' });
+    };
+
     /* Touch */
     var ts = 0, tScroll = 0;
     t.addEventListener('touchstart', function(e) {
@@ -883,29 +1010,498 @@ window.addEventListener('resize', function() {
 
 /* -- 3D CUBES SCROLL ANIMATION ------------------------ */
 (function(){
-  var lastScrollY = window.scrollY;
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY;
     var cubes = document.querySelectorAll('.sh-cubes .cube');
     if(!cubes.length) return;
     
-    // Check if services page is active
     var sp = document.getElementById('page-services');
     if (!sp || !sp.classList.contains('active')) return;
     
     cubes.forEach(function(cube, index) {
-      // Rotate and float based on scroll position
       var rotateX = 45 + (scrollY * (0.05 + index * 0.02));
       var rotateY = 45 + (scrollY * (0.08 - index * 0.01));
       var translateY = (scrollY * (-0.15 * ((index % 3) + 1)));
-      
       cube.style.transform = 'translateY(' + translateY + 'px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
     });
   }, {passive: true});
 })();
 
 
+/* ══ TRANSLATION ENGINE — FULL SITE ════════════════ */
 
+/* ── selector map: [cssSelector, english, arabic, useInnerHTML] ── */
+var SELECTOR_MAP = [
+  /* ── HOME hero eyebrows ── */
+  ['#hs-0 .hero-eyebrow','Next-Gen Technology Solutions','حلول التقنية من الجيل القادم',false],
+  ['#hs-1 .hero-eyebrow','Strategic Brand Engineering','هندسة استراتيجية للعلامات التجارية',false],
+  ['#hs-2 .hero-eyebrow','AI & Automation Pioneers','روّاد الذكاء الاصطناعي والأتمتة',false],
 
+  /* ── HOME highlight/about snippet ── */
+  ['#page-home .highlight-section .section-tag','Who We Are','من نحن',false],
+  ['#page-home .highlight-section .section-title','BUILT BY ENGINEERS.<br>DRIVEN BY INNOVATION.','بُنينا بأيدي المهندسين.<br>مدفوعون بـ<span class="red">الابتكار.</span>',true],
+  ['#page-home .highlight-section .about-grid-home > div > p:first-of-type','Marvex Media is a full-stack technology company at the intersection of design, engineering, and strategy. We craft digital ecosystems that generate measurable results.','مارفيكس ميديا شركة تقنية متكاملة عند تقاطع التصميم والهندسة والاستراتيجية. نبني أنظمة رقمية تُحقق نتائج قابلة للقياس.',false],
+  ['#page-home .highlight-section .about-grid-home > div > p:last-of-type','From startups disrupting markets to enterprises scaling globally — we deliver technology that works and compounds.','من الشركات الناشئة التي تُحدث ثورة في الأسواق إلى المؤسسات العالمية — نُقدّم تقنيات تعمل وتتضاعف.',false],
+  ['#page-home .highlight-section .btn-link','Learn More About Us','اعرف المزيد عنّا',false],
+  ['#page-home .highlight-section .tech-grid + p','+ 30 MORE MODERN TECHNOLOGIES','+ 30 تقنية حديثة أخرى',false],
+  ['#page-home .highlight-section > div > div > div > p:first-child','TECH STACK','مجموعة التقنيات',false],
 
+  /* ── HOME process section ── */
+  ['#page-home > section:not(.home-team-section) .section-tag','Our Process','عمليتنا',false],
+  ['#page-home > section:not(.home-team-section) .section-title','FROM IDEA TO LAUNCH IN 4 STEPS','من الفكرة إلى الإطلاق في 4 خطوات',false],
 
+  /* ── HOME team section ── */
+  ['#page-home .home-team-section .section-tag','Our Team','فريقنا',false],
+  ['#page-home .home-team-section .section-title','MEET THE MIND BEHIND MARVEX','تعرف على العقل خلف مارفيكس',false],
+  ['#page-home .home-team-sub','The person behind Marvex — building quietly, growing steadily, and staying focused on what actually matters.','الشخص خلف مارفيكس — يبني بهدوء، وينمو بثبات، ويركز على ما يهم فعلاً.',false],
+  ['#page-home .tm-role-tag','Founder & MD','المؤسس والمدير الإداري',false],
+  ['#page-home .tm-name','Muhammed Salman','محمد سلمان',false],
+  ['#page-home .tm-title','Founder & Managing Director','المؤسس والمدير الإداري',false],
+  ['#page-home .tm-bio','Visionary entrepreneur driving Marvex Media\'s mission to engineer tomorrow\'s digital reality across UAE, Qatar and India.','رائد أعمال ذو رؤية يقود مسيرة مارفيكس ميديا لهندسة الواقع الرقمي لأعمال الغد في الإمارات وقطر والهند.',false],
+  ['#page-home .home-team-journey-text','Muhammed started Marvex with a simple belief — that good work, done honestly, builds something lasting. From early client projects to leading a cross-border team, every step has been about staying curious, staying grounded, and doing right by the people we work with.','بدأ محمد مارفيكس بقناعة بسيطة — أن العمل الجيد المنجز بأمانة يبني شيئاً راسخاً. من المشاريع الأولى إلى قيادة فريق عبر الحدود، كانت كل خطوة تتمحور حول الفضول والثبات والالتزام بمن نعمل معهم.',false],
+
+  /* ── HOME services section header ── */
+  ['#page-home .services-scroll-section .section-tag','What We Do','ماذا نفعل',false],
+  ['#page-home .services-scroll-section .section-title','SERVICES','الخدمات',false],
+  ['#page-home .services-header-right > p','End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.','هندسة رقمية متكاملة للعلامات التجارية الطموحة في الإمارات وقطر والهند.',false],
+
+  /* ── HOME CTA ── */
+  ['#page-home .cta-section h2','READY TO BUILD SOMETHING EXTRAORDINARY?','هل أنت مستعد لبناء شيء استثنائي؟',false],
+  ['#page-home .cta-section p',"Let's engineer your vision into a powerful digital product that drives real, measurable results.",'دعنا نُحوّل رؤيتك إلى منتج رقمي قوي يحقق نتائج حقيقية وقابلة للقياس.',false],
+
+  /* ── SERVICES PAGE hero ── */
+  ['#page-services .sh-pill','<span class="pill-badge">SERVICES</span> Built for ambitious brands','<span class="pill-badge">الخدمات</span> مصممة للعلامات الطموحة',true],
+  ['#page-services .sh-title','Elevate your<br>business.','ارتقِ<br>بأعمالك.',true],
+  ['#page-services .sh-subtitle','We craft software, AI systems, and digital experiences that transform how your business grows and competes.','نصنع برمجيات وأنظمة ذكاء اصطناعي وتجارب رقمية تُحوّل طريقة نمو أعمالك.',false],
+
+  /* ── SERVICES flow section ── */
+  ['#page-services .flow-header .section-tag','AI-Powered Process','عملية مدعومة بالذكاء الاصطناعي',false],
+  ['#page-services .flow-header .section-title','INTELLIGENT. EFFICIENT. <span class="red">SCALABLE.</span>','ذكي. فعّال. <span class="red">قابل للتوسع.</span>',true],
+  ['#page-services .flow-subtitle','Watch how our team and AI systems process raw concepts into high-impact digital solutions.','شاهد كيف يحوّل فريقنا وأنظمة الذكاء الاصطناعي المفاهيم الخام إلى حلول رقمية عالية التأثير.',false],
+
+  /* ── SERVICES services-section ── */
+  ['#page-services .services-scroll-section .section-tag','What We Do','ماذا نفعل',false],
+  ['#page-services .services-scroll-section .section-title','SERVICES','الخدمات',false],
+
+  /* ── SERVICES CTA ── */
+  ['#page-services .cta-section h2','READY TO BUILD SOMETHING EXTRAORDINARY?','هل أنت مستعد لبناء شيء استثنائي؟',false],
+  ['#page-services .cta-section p',"Let's engineer your vision into a powerful digital product.",'دعنا نُحوّل رؤيتك إلى منتج رقمي قوي.',false],
+
+  /* ── ABOUT hero ── */
+  ['#page-about .about-hero .section-tag','Who We Are','من نحن',false],
+  ['#page-about .about-hero .section-title','BUILT BY ENGINEERS.<br>DRIVEN BY <span class="red">RESULTS.</span>','بُنينا بأيدي المهندسين.<br>مدفوعون بـ<span class="red">النتائج.</span>',true],
+  ['#page-about .about-hero > div > p:first-of-type','Marvex Media is a full-stack technology company at the intersection of design, engineering, and strategy — headquartered in Ajman, UAE, with operations across Qatar and India. We build digital products that generate real, measurable results for the businesses we work with.','مارفيكس ميديا شركة تقنية متكاملة عند تقاطع التصميم والهندسة والاستراتيجية — مقرها الرئيسي في عجمان بالإمارات مع عمليات في قطر والهند. نبني منتجات رقمية تحقق نتائج حقيقية وقابلة للقياس للشركات التي نعمل معها.',false],
+  ['#page-about .about-hero > div > p:last-of-type',"Over 5 years, we've delivered 25+ projects for 20+ clients — from early-stage startups finding their footing to growing businesses ready to scale. Every engagement is built on honest work, clear communication, and a genuine commitment to client success.",'على مدار أكثر من 5 سنوات، قدّمنا أكثر من 25 مشروعاً لأكثر من 20 عميلاً — من الشركات الناشئة التي تبحث عن مسارها إلى الشركات الجاهزة للتوسع. كل مشاركة مبنية على عمل صادق وتواصل واضح والتزام حقيقي بنجاح العميل.',false],
+
+  /* ── ABOUT values ── */
+  ['#page-about section .section-tag','Our Values','قيمنا',false],
+  ['#page-about section .section-title','WHAT DRIVES US FORWARD','ما يدفعنا للأمام',false],
+
+  /* ── ABOUT LWT ── */
+  ['#page-about .lwt-tagline',"Work with us if average isn't your thing.<br>Drop it, we'll build it.",'اعمل معنا إن لم يكن المتوسط خيارك.<br>أخبرنا، سنبنيه لك.',true],
+
+  /* ── PORTFOLIO hero ── */
+  ['#page-portfolio .page-hero .section-tag','Our Work','أعمالنا',false],
+  ['#page-portfolio .page-hero .section-title','PROJECTS THAT MOVE THE NEEDLE','مشاريع تُحدث فارقاً',false],
+  ['#page-portfolio .page-hero .section-subtitle',"A selection of high-impact digital products we've engineered for ambitious clients across the globe.",'مجموعة مختارة من المنتجات الرقمية عالية التأثير التي صممناها لعملاء طموحين حول العالم.',false],
+  ['#page-portfolio .cta-section h2','YOUR PROJECT COULD BE NEXT','مشروعك القادم قد يكون هنا',false],
+  ['#page-portfolio .cta-section p',"Let's talk about what we can build together.",'دعنا نتحدث عمّا يمكننا بناؤه معاً.',false],
+
+  /* ── CONTACT page ── */
+  ['#page-contact .contact-body .contact-item-text p:first-of-type','Ajman, United Arab Emirates','عجمان، الإمارات العربية المتحدة',false],
+  ['#page-contact .contact-item-text p:last-of-type','24/7 Technical Support Available','دعم فني متاح على مدار الساعة طوال أيام الأسبوع',false],
+  ['#page-contact .contact-body > div > div[style*="margin-top:40px"] > p','OUR LOCATIONS','مواقعنا',false],
+
+  ['#page-contact .page-hero .section-tag','Get In Touch','تواصل معنا',false],
+  ['#page-contact .page-hero .section-title',"LET'S BUILD SOMETHING<br>EXTRAORDINARY TOGETHER",'لنبنِ شيئاً<br>استثنائياً معاً',true],
+  ['#page-contact .page-hero .section-subtitle',"Tell us about your project and we'll get back to you within 24 hours with a tailored proposal.",'أخبرنا عن مشروعك وسنعود إليك خلال 24 ساعة بعرض مخصص.',false],
+  ['#page-contact .contact-body > div > h3','Contact Information','معلومات الاتصال',false],
+  ['#page-contact .contact-form > h3','Send Us a Message','أرسل لنا رسالة',false],
+  ['#page-contact .cta-section h2','PREFER TO JUMP ON A CALL?','تفضّل التحدث عبر مكالمة؟',false],
+  ['#page-contact .cta-section p','Book a free 30-minute strategy call with one of our senior engineers.','احجز مكالمة استراتيجية مجانية مدتها 30 دقيقة مع أحد كبار مهندسينا.',false],
+
+  /* ── CAREERS hero ── */
+  ['#page-careers .page-hero .section-tag','Join Our Team','انضم لفريقنا',false],
+  ['#page-careers .page-hero .section-title','BUILD THE FUTURE.<br>WITH THE BEST.','ابنِ المستقبل.<br>مع الأفضل.',true],
+  ['#page-careers .page-hero .section-subtitle',"We're a team of engineers, designers, and growth hackers on a mission to redefine digital. If you're exceptional — we want to hear from you.",'نحن فريق من المهندسين والمصممين وخبراء النمو في مهمة لإعادة تعريف الرقمي. إذا كنت استثنائياً — نريد سماعك.',false],
+
+  /* ── CAREERS perks section ── */
+  ['#page-careers .highlight-section .section-tag','Life at Marvex','الحياة في مارفيكس',false],
+  ['#page-careers .highlight-section .section-title','WHY JOIN US?','لماذا تنضم إلينا؟',false],
+
+  /* ── CAREERS openings ── */
+  ['#page-careers section .section-tag','Open Positions','الوظائف المتاحة',false],
+  ['#page-careers section > h2','CURRENT OPENINGS','الشواغر الحالية',false],
+  ['#page-careers section > div:last-of-type h3',"Don't See Your Role?",'لا تجد دورك؟',false],
+  ['#page-careers section > div:last-of-type p',"We're always looking for exceptional talent. Send us your CV and tell us how you can contribute.",'نحن دائماً نبحث عن المواهب الاستثنائية. أرسل لنا سيرتك الذاتية وأخبرنا كيف يمكنك المساهمة.',false],
+  ['#page-careers .cta-section h2','READY TO JOIN THE TEAM?','هل أنت مستعد للانضمام للفريق؟',false],
+  ['#page-careers .cta-section p',"We're growing fast. Don't miss your chance to be part of something big.",'نحن ننمو بسرعة. لا تفوّت فرصتك لتكون جزءاً من شيء كبير.',false],
+
+  /* ── FAQ hero ── */
+  ['#page-faq .page-hero .section-tag','Got Questions?','هل لديك أسئلة؟',false],
+  ['#page-faq .page-hero .section-title','FREQUENTLY ASKED<br><span class="red">QUESTIONS</span>','الأسئلة<br><span class="red">الشائعة</span>',true],
+  ['#page-faq .page-hero .section-subtitle',"Everything you need to know about working with Marvex Media.",'كل ما تحتاج معرفته حول العمل مع مارفيكس ميديا.',false],
+  ['#page-faq .faq-cta h3','Still have questions?','هل لا تزال لديك أسئلة؟',false],
+  ['#page-faq .faq-cta p',"Our team is happy to help. Reach out directly and we'll get back to you within one business day.",'فريقنا سعيد بالمساعدة. تواصل معنا مباشرة وسنعود إليك خلال يوم عمل واحد.',false],
+  ['#page-faq .cta-section h2','READY TO GET STARTED?','هل أنت مستعد للبدء؟',false],
+  ['#page-faq .cta-section p',"Let's turn your vision into a product people love.",'دعنا نُحوّل رؤيتك إلى منتج يُحبه الناس.',false],
+
+  /* ── TEAM quote ── */
+  ['.tm-card--text .tm-quote-text',"We don't just build products — we architect outcomes that matter.",'نحن لا نبني منتجات فحسب — بل نهندس نتائج تُحدث فارقاً.',false],
+
+  /* ── FOOTER ── */
+  ['.footer-brand > p',"Engineering Tomorrow's Digital Reality. A full-stack technology partner for businesses that demand excellence.",'هندسة الواقع الرقمي للغد. شريك تقني متكامل للشركات التي تسعى للتميز.',false],
+  ['.footer-bottom p:first-child','© 2026 Marvex Media. All rights reserved.','© 2026 مارفيكس ميديا. جميع الحقوق محفوظة.',false]
+];
+
+/* ── contact form labels & info headings (by index) ── */
+var CONTACT_LABELS_EN = ['First Name *','Last Name','Email Address *','Phone Number','Service Interested In','Tell Us About Your Project *'];
+var CONTACT_LABELS_AR = ['الاسم الأول *','اسم العائلة','البريد الإلكتروني *','رقم الهاتف','الخدمة التي تهمك','أخبرنا عن مشروعك *'];
+var CONTACT_INFO_EN   = ['Email Us','Call Us','Headquarters','Support Hours'];
+var CONTACT_INFO_AR   = ['راسلنا','اتصل بنا','المقر الرئيسي','ساعات الدعم'];
+var CONTACT_PLACEHOLDERS_EN = ['John','Smith','john@company.com','+971 50 000 0000'];
+var CONTACT_PLACEHOLDERS_AR = ['محمد','العمري','you@company.com','+971 50 000 0000'];
+
+/* ── careers job cards (by index) ── */
+var JOB_TITLES_EN = ['UI/UX Designer','Backend Developer','Frontend Developer'];
+var JOB_TITLES_AR = ['مصمم UI/UX','مطوّر خلفيات','مطوّر واجهات'];
+var JOB_META_EN   = [['Design','Remote — UAE / India','Full-Time'],['Engineering','Remote — India','Full-Time'],['Engineering','Remote — UAE / India','Full-Time']];
+var JOB_META_AR   = [['تصميم','عن بُعد — الإمارات / الهند','دوام كامل'],['هندسة','عن بُعد — الهند','دوام كامل'],['هندسة','عن بُعد — الإمارات / الهند','دوام كامل']];
+
+var TRANSLATIONS = {
+  en: {
+    "nav-home":"Home","nav-services":"Services","nav-about":"About","nav-portfolio":"Portfolio",
+    "nav-careers":"Careers","nav-contact":"Contact","nav-faq":"FAQ","nav-team":"Team",
+    "m-nav-home":"Home","m-nav-services":"Services","m-nav-about":"About","m-nav-portfolio":"Portfolio",
+    "m-nav-careers":"Careers","m-nav-contact":"Contact","m-nav-faq":"FAQ","m-nav-team":"Team",
+    "nav-cta-btn":"Get Started →",
+    "hero-btn-0-0":"Start Your Project →","hero-btn-0-1":"View Our Work",
+    "hero-btn-1-0":"Our Story →","hero-btn-1-1":"What We Do",
+    "hero-btn-2-0":"Explore AI Services →","hero-btn-2-1":"Get Started",
+    "services-overview-btn":"Full Services Overview",
+    "home-team-view-all":"View Full Team →",
+    "home-consult-btn":"Start Free Consultation →",
+    "services-cta-btn":"Get Started →",
+    "services-footer-cta":"Start Free Consultation →",
+    "about-work-btn":"Work With Us →","about-services-btn":"Our Services",
+    "about-lwt-cta":"SAY HELLO →",
+    "portfolio-cta-btn":"Start a Conversation →",
+    "careers-open-app-btn":"Send Open Application →","careers-footer-cta":"Apply Today →",
+    "faq-contact-btn":"Contact Us →","faq-footer-cta":"Start Free Consultation →",
+    "hero-h1-0":"ENGINEERING<br>TOMORROW'S<br><span class=\"red\">DIGITAL</span><br>REALITY.",
+    "hero-sub-0":"We architect high-performance websites, scalable applications, and AI-powered marketing systems that dominate the digital landscape.",
+    "hero-h1-1":"BUILDING<br>BRAND<br><span class=\"red\">LEGACIES</span><br>THAT LAST.",
+    "hero-sub-1":"From startups disrupting markets to enterprises scaling globally — we craft digital ecosystems that generate measurable results.",
+    "hero-h1-2":"TECHNOLOGY<br>THAT<br><span class=\"red\">EVOLVES</span><br>WITH YOU.",
+    "hero-sub-2":"Custom AI models, intelligent automation, and data-driven frameworks that eliminate bottlenecks and accelerate exponential growth.",
+    "tm-intro-tag":"Marvex Media","tm-intro-title":"MEET THE<br><span class=\"red\">TEAM</span>",
+    "tm-intro-sub":"The visionaries, engineers, and creatives building the next generation of digital excellence.",
+    "tm-name-01":"Salman Asharaf","tm-title-01":"Founder & Managing Director",
+    "tm-bio-01":"A visionary entrepreneur and strategist, Salman leads Marvex Media with a focus on engineering high-impact digital solutions and scaling brands across the GCC through technical excellence and innovation.",
+    "tm-name-02":"Ahammed","tm-title-02":"Co-Founder & Digital Marketing Expert",
+    "tm-bio-02":"Performance-driven marketing expert specializing in data-driven growth and digital strategy. Leading the marketing initiatives at Marvex to deliver high-impact campaigns and optimized ROI.",
+    "tm-name-03":"Afnitha Jaleel","tm-title-03":"Co-Founder & CEO",
+    "tm-bio-03":"With a sharp focus on business growth and client experience, Afnitha spearheads the strategic vision and operational excellence at Marvex, building lasting partnerships and leading the team toward global success.",
+    "presence-tag":"Our Presence","presence-title":"WHERE WE OPERATE",
+    "pi-name-ae":"UAE — Headquarters","pi-loc-ae":"Ajman, UAE","pi-tag-ae":"PRIMARY OPERATIONS HUB",
+    "pi-name-qa":"Qatar — Regional Office","pi-loc-qa":"Doha, Qatar","pi-tag-qa":"GCC CLIENT SERVICES",
+    "pi-name-in":"India — Tech Hub","pi-loc-in":"Development Centre, India","pi-tag-in":"ENGINEERING & DEVELOPMENT",
+    "fp-brief":"<span class=\"material-icons-round\">data_object</span>Raw Data",
+    "fp-goals":"<span class=\"material-icons-round\">architecture</span>Strategy",
+    "fp-budget":"<span class=\"material-icons-round\">lightbulb</span>Concept",
+    "fp-vision":"<span class=\"material-icons-round\">groups</span>User Needs",
+    "fp-web":"<span class=\"material-icons-round\">smart_toy</span>AI Automation",
+    "fp-app":"<span class=\"material-icons-round\">layers</span>Scalable Apps",
+    "fp-ai":"<span class=\"material-icons-round\">show_chart</span>Predictive Growth",
+    "fp-growth":"<span class=\"material-icons-round\">dashboard_customize</span>Smart UI/UX",
+    "c-btn-text":"BOOK MY CALL  →",
+    "stats":["Projects Delivered","Happy Clients","Years Excellence","Client Satisfaction","Avg. Delivery"],
+    "ssi-names":["WEBSITE<br>DEVELOPMENT","MOBILE<br>APPLICATIONS","SEO<br>OPTIMISATION","SOCIAL MEDIA<br>MARKETING","CLOUD<br>INFRASTRUCTURE","AI &amp;<br>AUTOMATION","E-COMMERCE<br>SOLUTIONS","BRANDING<br>&amp; DESIGN"],
+    "ssi-descs":["Build blazing-fast, conversion-optimised sites engineered for performance and SEO dominance.","Cross-platform apps delivering native-grade experiences at scale across iOS and Android.","AI-powered strategies that dominate search rankings and compound organic growth.","Viral-ready content systems and influencer pipelines to amplify your brand presence.","Enterprise-grade scalability with 99.9% availability and 24/7 monitoring built in from day one.","Custom AI models and automation frameworks that eliminate bottlenecks and accelerate growth.","High-converting stores with seamless checkout, inventory management, and retargeting.","Memorable brand identities — from logo and visual language to full brand systems."],
+    "value-titles":["Client Success First","Engineering Excellence","Continuous Innovation","Transparent Partnership","Design-Led Thinking","Global Mindset"],
+    "value-descs":["Your growth is our growth. Every line of code, every campaign, every decision is made with your business outcomes in mind.","We hold ourselves to the highest technical standards. Clean code, scalable architecture, and rigorous testing are non-negotiable.","We stay ahead of the curve — adopting emerging technologies and methodologies to give our clients a competitive edge.","No black boxes. We communicate openly, report honestly, and build long-term relationships built on trust and mutual respect.","Great technology is nothing without great UX. We obsess over the user experience at every touchpoint of every product we ship.","With operations across UAE, Qatar, and India, we bring regional expertise with global-grade execution to every engagement."],
+    "perk-titles":["Competitive Compensation","Remote-Friendly","Learning & Growth","High-Impact Work","Health Benefits","Ownership Culture"],
+    "perk-descs":["Market-leading salaries, performance bonuses, and equity options for senior hires.","Work from anywhere in UAE, Qatar, or India. Flexible hours, no micromanagement.","Annual learning budget, conference sponsorships, and internal knowledge-sharing sessions.","Build products used by 200+ companies and millions of end users across the globe.","Comprehensive health insurance coverage for you and your dependents.","Your ideas matter here. We give ownership and autonomy to everyone on the team."],
+    "faq-cats":["Getting Started","Pricing & Timelines","Process & Collaboration","Technical & Hosting"],
+    "faq-qs":["How do I start a project with Marvex Media?","Do you offer a free consultation?","What information should I prepare before our first call?","How much does a website or app cost?","How long does a typical project take?","Do you offer payment plans?","How do you manage projects and keep clients updated?","Can I see design concepts before development begins?","What if I need changes after launch?","Who hosts the website after it's built?","Will my website be mobile-friendly and fast?","Do you build with open-source or proprietary technology?"],
+    "faq-as":["Starting is simple. Click 'Get Started' or head to our Contact page and fill in the project brief form. One of our consultants will reach out within 24 hours to schedule a free discovery call. No pressure, no commitment at this stage — just a conversation.","Yes — we offer a complimentary 45-minute discovery call for every new project inquiry. During this session we scope your requirements, discuss your goals, and provide an honest assessment of the best approach. No sales pitch, just real advice.","It helps to have a rough idea of: (1) what problem you're trying to solve, (2) your target audience, (3) your budget range, and (4) your desired timeline. Even rough answers are fine — we'll help you refine everything during the call.","Pricing varies by scope. A professional marketing website typically starts at AED 8,000–18,000. A custom web application or mobile app usually starts at AED 25,000+. We provide detailed, transparent quotes after our discovery call — no vague estimates.","A standard marketing website takes 3–6 weeks. A complex web application or mobile app typically takes 8–20 weeks depending on features. We always provide a detailed project timeline in your proposal, with milestones and delivery dates agreed upfront.","Yes. We typically structure payments in milestones: 30% upfront, 40% at midpoint, and 30% on delivery. For larger projects, we can arrange custom payment schedules. We accept bank transfer (UAE, Qatar, India), Wise, and major cards.","Every client gets a dedicated project manager and access to a shared Notion workspace where you can see real-time progress, timelines, and deliverables. We hold weekly check-in calls and provide written updates every Friday.","Absolutely. Our design phase happens before any development work. You'll receive Figma mockups for every key screen and we iterate until you're 100% satisfied. Development only starts once designs are signed off.","All projects include a 30-day post-launch support window at no extra cost. After that, we offer flexible maintenance retainers starting at AED 1,500/month, covering updates, bug fixes, security patches, and performance monitoring.","You own all code and assets — fully. We can deploy to your preferred hosting provider (Vercel, AWS, DigitalOcean, etc.) or manage hosting on your behalf.","Always. Mobile-first, responsive design is standard on every project. We target 90+ Google PageSpeed scores across mobile and desktop, and conduct cross-browser testing before launch.","We use battle-tested open-source stacks (React, Next.js, Flutter, Node.js, Python) wherever possible so you're never locked into our services. Your codebase is clean, documented, and transferable."],
+    "footer-h4s":["Services","Company","Contact","Powered by"],
+    "process-titles":["Discovery","Architecture","Development","Launch & Scale"],
+    "process-descs":["Deep-dive into your goals, audience & competitive landscape to define a winning strategy.","System design, wireframing, tech stack selection, and detailed technical specifications.","Agile sprints with continuous integration, weekly demos, and real-time collaboration.","Production deployment, monitoring, performance optimisation, and ongoing growth support."],
+    "portfolio-titles":["LuxCart E-Commerce Platform","MedConnect Patient App","FinTrack Analytics Dashboard","BuildRight Construction CRM","EduPath Learning Platform","FoodRush Delivery App","Prestige Hotels Website","AutoServ AI Chatbot","LogiPro Supply Chain"],
+    "portfolio-descs":["Shopify + Next.js storefront for a luxury retailer — 3.2x conversion uplift post-launch.","Flutter app connecting 50,000+ patients with healthcare providers in the GCC region.","Real-time financial analytics platform handling $2B+ in transaction data.","Custom CRM for a UAE construction firm managing 200+ active projects.","AI-powered e-learning platform serving 100,000+ students with personalised paths.","On-demand food delivery app launched across 5 cities in 90 days.","Luxury hotel booking platform achieving 98/100 PageSpeed score.","Custom-trained LLM chatbot reducing support tickets by 65%.","Supply chain visibility platform tracking 10,000+ daily shipments across MENA."]
+  },
+  ar: {
+    "nav-home":"الرئيسية","nav-services":"خدماتنا","nav-about":"من نحن","nav-portfolio":"أعمالنا",
+    "nav-careers":"الوظائف","nav-contact":"اتصل بنا","nav-faq":"الأسئلة الشائعة","nav-team":"الفريق",
+    "m-nav-home":"الرئيسية","m-nav-services":"خدماتنا","m-nav-about":"من نحن","m-nav-portfolio":"أعمالنا",
+    "m-nav-careers":"الوظائف","m-nav-contact":"اتصل بنا","m-nav-faq":"الأسئلة الشائعة","m-nav-team":"الفريق",
+    "nav-cta-btn":"ابدأ الآن ←",
+    "hero-btn-0-0":"ابدأ مشروعك ←","hero-btn-0-1":"شاهد أعمالنا",
+    "hero-btn-1-0":"قصتنا ←","hero-btn-1-1":"ماذا نفعل",
+    "hero-btn-2-0":"استكشف خدمات الذكاء الاصطناعي ←","hero-btn-2-1":"ابدأ الآن",
+    "services-overview-btn":"نظرة عامة على الخدمات",
+    "home-team-view-all":"شاهد الفريق بالكامل ←",
+    "home-consult-btn":"ابدأ استشارة مجانية ←",
+    "services-cta-btn":"ابدأ الآن ←",
+    "services-footer-cta":"ابدأ استشارة مجانية ←",
+    "about-work-btn":"اعمل معنا ←","about-services-btn":"خدماتنا",
+    "about-lwt-cta":"قل مرحباً ←",
+    "portfolio-cta-btn":"ابدأ محادثة ←",
+    "careers-open-app-btn":"أرسل طلباً مفتوحاً ←","careers-footer-cta":"قدم اليوم ←",
+    "faq-contact-btn":"اتصل بنا ←","faq-footer-cta":"ابدأ استشارة مجانية ←",
+    "hero-h1-0":"هندسة<br>الواقع<br><span class=\"red\">الرقمي</span><br>للغد.",
+    "hero-sub-0":"نحن نصمم مواقع ويب عالية الأداء وتطبيقات قابلة للتطوير وأنظمة تسويق مدعومة بالذكاء الاصطناعي تهيمن على المشهد الرقمي.",
+    "hero-h1-1":"بناء<br>إرث<br><span class=\"red\">العلامات</span><br>التجارية.",
+    "hero-sub-1":"من الشركات الناشئة التي تحدث ثورة في الأسواق إلى المؤسسات العالمية — نصنع أنظمة رقمية تحقق نتائج ملموسة.",
+    "hero-h1-2":"تكنولوجيا<br>تتطور<br><span class=\"red\">معك</span>.",
+    "hero-sub-2":"نماذج ذكاء اصطناعي مخصصة وأتمتة ذكية وأطر بيانات تُزيل العوائق وتُسرّع النمو الهائل.",
+    "tm-intro-tag":"مارفيكس ميديا","tm-intro-title":"تعرف على<br><span class=\"red\">الفريق</span>",
+    "tm-intro-sub":"المبتكرون والمهندسون والمبدعون الذين يبنون الجيل القادم من التميز الرقمي.",
+    "tm-name-01":"سلمان أشرف","tm-title-01":"المؤسس والمدير الإداري",
+    "tm-bio-01":"رائد أعمال واستراتيجي ذو رؤية، يقود سلمان مارفيكس ميديا مع التركيز على هندسة حلول رقمية عالية التأثير وتوسيع نطاق العلامات التجارية عبر دول مجلس التعاون الخليجي.",
+    "tm-name-02":"أحمد","tm-title-02":"المؤسس المشارك وخبير التسويق الرقمي",
+    "tm-bio-02":"خبير تسويق يعتمد على الأداء ومتخصص في النمو القائم على البيانات والاستراتيجية الرقمية. يقود مبادرات التسويق في مارفيكس لتقديم حملات عالية التأثير وتحسين العائد على الاستثمار.",
+    "tm-name-03":"أفنيثا جليل","tm-title-03":"المؤسسة المشاركة والرئيسة التنفيذية",
+    "tm-bio-03":"مع تركيز حاد على نمو الأعمال وتجربة العملاء، تقود أفنيثا الرؤية الاستراتيجية والتميز التشغيلي في مارفيكس، وبناء شراكات دائمة وقيادة الفريق نحو النجاح العالمي.",
+    "presence-tag":"تواجدنا","presence-title":"أين نعمل",
+    "pi-name-ae":"الإمارات العربية المتحدة — المقر الرئيسي","pi-loc-ae":"عجمان، الإمارات","pi-tag-ae":"مركز العمليات الأساسي",
+    "pi-name-qa":"قطر — المكتب الإقليمي","pi-loc-qa":"الدوحة، قطر","pi-tag-qa":"خدمات عملاء مجلس التعاون",
+    "pi-name-in":"الهند — المركز التقني","pi-loc-in":"مركز التطوير، الهند","pi-tag-in":"الهندسة والتطوير",
+    "fp-brief":"<span class=\"material-icons-round\">data_object</span>بيانات خام",
+    "fp-goals":"<span class=\"material-icons-round\">architecture</span>الاستراتيجية",
+    "fp-budget":"<span class=\"material-icons-round\">lightbulb</span>المفهوم",
+    "fp-vision":"<span class=\"material-icons-round\">groups</span>احتياجات المستخدم",
+    "fp-web":"<span class=\"material-icons-round\">smart_toy</span>أتمتة ذكية",
+    "fp-app":"<span class=\"material-icons-round\">layers</span>تطبيقات قابلة للتوسع",
+    "fp-ai":"<span class=\"material-icons-round\">show_chart</span>نمو تنبؤي",
+    "fp-growth":"<span class=\"material-icons-round\">dashboard_customize</span>واجهات ذكية",
+    "c-btn-text":"احجز مكالمتي ←",
+    "stats":["مشروع مُنجز","عميل سعيد","سنوات تميز","رضا العملاء","متوسط التسليم"],
+    "ssi-names":["تطوير<br>المواقع","تطبيقات<br>الجوال","تحسين<br>البحث","التسويق<br>الاجتماعي","البنية<br>السحابية","الذكاء الاصطناعي<br>والأتمتة","حلول<br>التجارة الإلكترونية","الهوية التجارية<br>والتصميم"],
+    "ssi-descs":["بناء مواقع فائقة السرعة ومُحسَّنة للتحويل ومصممة للأداء والسيطرة على نتائج البحث.","تطبيقات متعددة المنصات تقدم تجارب متميزة على iOS وAndroid على نطاق واسع.","استراتيجيات مدعومة بالذكاء الاصطناعي تهيمن على نتائج البحث وتُضاعف النمو العضوي.","أنظمة محتوى جاهزة للانتشار وشبكات مؤثرين لتضخيم حضور علامتك التجارية.","قابلية توسع على مستوى المؤسسات مع توفر 99.9% ومراقبة على مدار الساعة.","نماذج ذكاء اصطناعي مخصصة وأطر أتمتة تُزيل العوائق وتُسرّع النمو.","متاجر عالية التحويل مع دفع سلس وإدارة مخزون وإعادة استهداف فعّال.","هويات تجارية لا تُنسى — من الشعار إلى منظومة العلامة التجارية الكاملة."],
+    "value-titles":["نجاح العميل أولاً","التميز الهندسي","الابتكار المستمر","الشراكة الشفافة","التفكير القائم على التصميم","عقلية عالمية"],
+    "value-descs":["نموك هو نمونا. كل سطر كود وكل حملة وكل قرار يُتخذ مع أهداف أعمالك في الاعتبار.","نلتزم بأعلى المعايير التقنية. الكود النظيف والبنية القابلة للتوسع والاختبار الدقيق غير قابلة للتفاوض.","نبقى في طليعة المشهد — نتبنى التقنيات والمنهجيات الناشئة لمنح عملائنا ميزة تنافسية.","لا صناديق سوداء. نتواصل بصراحة ونُبلّغ بأمانة ونبني علاقات طويلة الأمد قائمة على الثقة والاحترام المتبادل.","التكنولوجيا الرائعة لا شيء بدون تجربة مستخدم رائعة. نهوس بتجربة المستخدم في كل نقطة تماس لكل منتج نُطلقه.","بعمليات في الإمارات وقطر والهند، نُقدّم خبرة إقليمية بتنفيذ عالمي المستوى في كل مشاركة."],
+    "perk-titles":["تعويض تنافسي","عمل عن بُعد","التعلم والنمو","عمل عالي التأثير","مزايا صحية","ثقافة الملكية"],
+    "perk-descs":["رواتب رائدة في السوق وعلاوات أداء وخيارات ملكية لكبار الموظفين.","اعمل من أي مكان في الإمارات أو قطر أو الهند. ساعات مرنة بدون إدارة تفصيلية.","ميزانية تعلم سنوية ورعاية المؤتمرات وجلسات مشاركة المعرفة الداخلية.","بناء منتجات يستخدمها أكثر من 200 شركة وملايين المستخدمين حول العالم.","تغطية تأمين صحي شاملة لك ولأفراد أسرتك.","أفكارك مهمة هنا. نمنح الملكية والاستقلالية للجميع في الفريق."],
+    "faq-cats":["البداية","التسعير والجداول الزمنية","العملية والتعاون","التقنية والاستضافة"],
+    "faq-qs":["كيف أبدأ مشروعاً مع مارفيكس ميديا؟","هل تقدمون استشارة مجانية؟","ما المعلومات التي يجب إعدادها قبل مكالمتنا الأولى؟","كم تكلف موقع الويب أو التطبيق؟","كم من الوقت يستغرق المشروع النموذجي؟","هل تقدمون خطط دفع؟","كيف تديرون المشاريع وتُبقون العملاء على اطلاع؟","هل يمكنني رؤية تصاميم المفاهيم قبل بدء التطوير؟","ماذا لو احتجت تعديلات بعد الإطلاق؟","من يستضيف الموقع بعد بنائه؟","هل سيكون موقعي متوافقاً مع الجوال وسريعاً؟","هل تبنون بتقنيات مفتوحة المصدر أم مملوكة؟"],
+    "faq-as":["البداية بسيطة. انقر على 'ابدأ الآن' أو توجه إلى صفحة الاتصال واملأ نموذج الموجز. سيتواصل معك أحد مستشارينا خلال 24 ساعة لجدولة مكالمة استكشافية مجانية. لا ضغط ولا التزام في هذه المرحلة.","نعم — نقدم مكالمة استكشافية مجانية مدتها 45 دقيقة لكل استفسار مشروع جديد. نحدد فيها متطلباتك ونناقش أهدافك ونقدم تقييماً صادقاً للنهج الأفضل. لا عروض مبيعات، فقط نصائح حقيقية.","يساعد أن تكون لديك فكرة تقريبية عن: (1) المشكلة التي تحاول حلها، (2) جمهورك المستهدف، (3) نطاق ميزانيتك، (4) الجدول الزمني المطلوب. حتى الإجابات التقريبية مقبولة.","تتفاوت الأسعار حسب النطاق. موقع التسويق الاحترافي يبدأ عادةً من 8,000 — 18,000 درهم. تطبيق ويب مخصص أو تطبيق جوال يبدأ عادةً من 25,000 درهم فما فوق.","موقع التسويق القياسي يستغرق 3 — 6 أسابيع. تطبيق ويب معقد أو تطبيق جوال يستغرق عادةً 8 — 20 أسبوعاً حسب الميزات.","نعم. نُهيكل المدفوعات عادةً على مراحل: 30% مقدماً، 40% في منتصف المشروع، 30% عند التسليم. نقبل التحويل البنكي وWise والبطاقات الرئيسية.","كل عميل يحصل على مدير مشروع مخصص ووصول إلى مساحة عمل Notion مشتركة حيث يمكنك رؤية التقدم الفعلي والجداول الزمنية والمخرجات. نعقد مكالمات أسبوعية ونقدم تحديثات مكتوبة كل جمعة.","بالتأكيد. تحدث مرحلة التصميم قبل أي عمل تطوير. ستتلقى نماذج Figma لكل شاشة رئيسية ونتكرر حتى تكون راضياً 100%.","جميع المشاريع تتضمن نافذة دعم 30 يوماً بعد الإطلاق بدون تكلفة إضافية. بعدها نقدم خطط صيانة مرنة تبدأ من 1,500 درهم شهرياً.","أنت تملك كل الكود والأصول — بالكامل. يمكننا النشر على مزود الاستضافة المفضل لديك أو إدارة الاستضافة نيابةً عنك.","دائماً. التصميم المتجاوب الأول بالجوال معيار في كل مشروع. نستهدف نتائج PageSpeed فوق 90 على الجوال وسطح المكتب.","نستخدم stacks مفتوحة المصدر مُختبَرة (React وNext.js وFlutter وNode.js وPython) حيثما أمكن حتى لا تكون مقيداً بخدماتنا أبداً."],
+    "footer-h4s":["الخدمات","الشركة","اتصل بنا","مدعوم بـ"],
+    "process-titles":["الاستكشاف","الهندسة المعمارية","التطوير","الإطلاق والتوسع"],
+    "process-descs":["تحليل معمّق لأهدافك وجمهورك والمشهد التنافسي لتحديد استراتيجية رابحة.","تصميم النظام والنماذج الأولية واختيار التقنيات والمواصفات التقنية التفصيلية.","سبرينتات رشيقة مع تكامل مستمر وعروض أسبوعية وتعاون فوري.","نشر في بيئة الإنتاج ومراقبة وتحسين الأداء ودعم النمو المستمر."],
+    "portfolio-titles":["منصة LuxCart للتجارة الإلكترونية","تطبيق MedConnect للمرضى","لوحة تحليلات FinTrack المالية","نظام إدارة علاقات عملاء BuildRight","منصة EduPath للتعلم","تطبيق FoodRush للتوصيل","موقع فنادق Prestige","روبوت AutoServ الذكي","سلسلة توريد LogiPro"],
+    "portfolio-descs":["واجهة Shopify + Next.js لبائع تجزئة فاخر — ارتفاع معدل التحويل 3.2 ضعفاً بعد الإطلاق.","تطبيق Flutter يربط أكثر من 50,000 مريض بمقدمي الرعاية الصحية في منطقة الخليج.","منصة تحليلات مالية في الوقت الفعلي تعالج بيانات معاملات تتجاوز 2 مليار دولار.","نظام CRM مخصص لشركة إنشاءات إماراتية تدير أكثر من 200 مشروع نشط.","منصة تعلم إلكتروني مدعومة بالذكاء الاصطناعي تخدم أكثر من 100,000 طالب بمسارات مخصصة.","تطبيق توصيل طعام فوري أُطلق في 5 مدن خلال 90 يوماً.","منصة حجز فندقية فاخرة حققت 98/100 في نتيجة PageSpeed.","روبوت محادثة مدرَّب على نماذج LLM مخصصة قلّل تذاكر الدعم بنسبة 65%.","منصة رؤية سلسلة التوريد تتتبع أكثر من 10,000 شحنة يومية عبر منطقة الشرق الأوسط وشمال أفريقيا."]
+  }
+};
+
+function setLanguage(lang) {
+  var html = document.documentElement;
+  html.setAttribute('lang', lang);
+  html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+  document.querySelectorAll('.lang-switch button').forEach(function(btn){ btn.classList.remove('active'); });
+  var lb = document.getElementById('lang-' + lang);
+  if(lb) lb.classList.add('active');
+
+  var T = TRANSLATIONS[lang];
+
+  // 1. ID-based string updates
+  for(var id in T) {
+    if(Array.isArray(T[id])) continue;
+    var el = document.getElementById(id);
+    if(!el) continue;
+    if(T[id].indexOf('<') !== -1) el.innerHTML = T[id];
+    else el.textContent = T[id];
+  }
+
+  // 2. Hero slides (each has .hero-h1 and .hero-sub)
+  [0,1,2].forEach(function(i){
+    var slide = document.getElementById('hs-' + i);
+    if(!slide) return;
+    var h1 = slide.querySelector('.hero-h1');
+    var sub = slide.querySelector('.hero-sub');
+    if(h1 && T['hero-h1-' + i]) h1.innerHTML = T['hero-h1-' + i];
+    if(sub && T['hero-sub-' + i]) sub.textContent = T['hero-sub-' + i];
+  });
+
+  // Helper: update a list of elements by selector using a translations array
+  function arr(sel, key, html) {
+    var els = document.querySelectorAll(sel);
+    var data = T[key];
+    if(!data) return;
+    els.forEach(function(el, i){
+      var val = data[i % data.length];
+      if(val === undefined || val === null) return;
+      if(html) el.innerHTML = val;
+      else el.textContent = val;
+    });
+  }
+
+  // 3. Stats bar labels
+  arr('.hero-stat-item .lbl', 'stats');
+
+  // 4. Service item names (16 = 8 items × 2 pages)
+  arr('.ssi-name', 'ssi-names', true);
+
+  // 5. Service item descriptions (direct <p> child of .ssi-left)
+  arr('.ssi-left > p', 'ssi-descs');
+
+  // 6. About page — values cards
+  arr('.card h3', 'value-titles');
+  arr('.card p', 'value-descs');
+
+  // 7. Careers — perk cards
+  arr('.perk-card h4', 'perk-titles');
+  arr('.perk-card p', 'perk-descs');
+
+  // 7b. Home — process cards
+  arr('.process-card h3', 'process-titles');
+  arr('.process-card p', 'process-descs');
+
+  // 7c. Portfolio cards
+  arr('.portfolio-card .portfolio-body h3', 'portfolio-titles');
+  arr('.portfolio-card .portfolio-body p', 'portfolio-descs');
+
+  // 8. FAQ category labels
+  arr('.faq-category-label', 'faq-cats');
+
+  // 9. FAQ questions (replace innerHTML preserving the icon span)
+  var faqQs = T['faq-qs'];
+  if(faqQs) {
+    document.querySelectorAll('.faq-q').forEach(function(btn, i){
+      if(faqQs[i]) btn.innerHTML = faqQs[i] + ' <span class="faq-icon">+</span>';
+    });
+  }
+
+  // 10. FAQ answers
+  arr('.faq-a p', 'faq-as');
+
+  // 11. Footer column headings
+  var fh = T['footer-h4s'];
+  if(fh) document.querySelectorAll('.footer-col h4').forEach(function(el, i){ if(fh[i]) el.textContent = fh[i]; });
+
+  // 12. Consultation modal
+  var cEye = document.querySelector('.consult-eyebrow');
+  var cTit = document.querySelector('.consult-title');
+  var cSub = document.querySelector('.consult-sub');
+  var cLt  = document.querySelector('.c-loader-text');
+  var cSh  = document.querySelector('.consult-success h3');
+  var cSp  = document.querySelector('.consult-success p');
+  if(lang === 'ar') {
+    if(cEye) cEye.textContent = 'مكالمة استراتيجية مجانية';
+    if(cTit) cTit.textContent = 'لنتحدث.';
+    if(cSub) cSub.textContent = 'أترك بياناتك — سنتواصل معك خلال 24 ساعة.';
+    if(cLt)  cLt.textContent  = 'جارٍ إرسال طلبك…';
+    if(cSh)  cSh.textContent  = 'تم الحجز!';
+    if(cSp)  cSp.textContent  = 'سنتواصل معك خلال 24 ساعة لتأكيد مكالمتك.';
+    var cLabels = document.querySelectorAll('.consult-field label');
+    var labAr = ['الاسم الكامل','البريد الإلكتروني','الهاتف / واتساب'];
+    cLabels.forEach(function(lb, i){ if(labAr[i]) lb.textContent = labAr[i]; });
+  } else {
+    if(cEye) cEye.textContent = 'Free Strategy Call';
+    if(cTit) cTit.textContent = "LET'S TALK.";
+    if(cSub) cSub.textContent = "Drop your details — we'll reach out within 24 hours.";
+    if(cLt)  cLt.textContent  = 'Sending your request…';
+    if(cSh)  cSh.textContent  = "You're booked in!";
+    if(cSp)  cSp.textContent  = "We'll be in touch within 24 hours to confirm your call.";
+    var cLabels = document.querySelectorAll('.consult-field label');
+    var labEn = ['Full Name','Email Address','Phone / WhatsApp'];
+    cLabels.forEach(function(lb, i){ if(labEn[i]) lb.textContent = labEn[i]; });
+  }
+
+  // 13. SELECTOR_MAP — covers all page-scoped headings, paragraphs, tags, CTAs
+  SELECTOR_MAP.forEach(function(entry) {
+    var el = document.querySelector(entry[0]);
+    if (!el) return;
+    var val = lang === 'ar' ? entry[2] : entry[1];
+    if (entry[3]) el.innerHTML = val;
+    else el.textContent = val;
+  });
+
+  // 14. Contact form labels
+  var cfLabels = document.querySelectorAll('#page-contact .form-group label');
+  var cfArr = lang === 'ar' ? CONTACT_LABELS_AR : CONTACT_LABELS_EN;
+  cfLabels.forEach(function(lb, i){ if (cfArr[i]) lb.textContent = cfArr[i]; });
+
+  // 14b. Contact form placeholders
+  var cfInputs = document.querySelectorAll('#page-contact .form-group input, #page-contact .form-group textarea, #page-contact .form-group select');
+  var cfPh = lang === 'ar' ? CONTACT_PLACEHOLDERS_AR : CONTACT_PLACEHOLDERS_EN;
+  cfInputs.forEach(function(inp, i){ if (cfPh[i]) inp.setAttribute('placeholder', cfPh[i]); });
+
+  // 15. Contact info headings (Email Us / Call Us / Headquarters / Support Hours)
+  var ciH4s = document.querySelectorAll('#page-contact .contact-item-text h4');
+  var ciArr = lang === 'ar' ? CONTACT_INFO_AR : CONTACT_INFO_EN;
+  ciH4s.forEach(function(el, i){ if (ciArr[i]) el.textContent = ciArr[i]; });
+
+  // 16. Careers job card titles
+  var jtEls = document.querySelectorAll('.job-title');
+  var jtArr = lang === 'ar' ? JOB_TITLES_AR : JOB_TITLES_EN;
+  jtEls.forEach(function(el, i){ if (jtArr[i]) el.textContent = jtArr[i]; });
+
+  // 17. Careers job card meta tags (department / location / type)
+  document.querySelectorAll('.job-card').forEach(function(card, i) {
+    var metaTags = card.querySelectorAll('.job-tag');
+    var meta = lang === 'ar' ? JOB_META_AR[i] : JOB_META_EN[i];
+    if (meta) metaTags.forEach(function(t, j){ if (meta[j]) t.textContent = meta[j]; });
+  });
+
+  // 18a. Contact form submit button + success/loader text
+  (function() {
+    var cSubmit  = document.querySelector('#page-contact .btn-primary');
+    var cLoader  = document.querySelector('#page-contact .cl-text');
+    var cSuccess = document.getElementById('contact-success');
+    if (lang === 'ar') {
+      if (cSubmit)  cSubmit.textContent  = 'إرسال الرسالة ←';
+      if (cLoader)  cLoader.childNodes[0].textContent = 'جارٍ إرسال رسالتك';
+      if (cSuccess) cSuccess.textContent = '✓ شكراً! سنتواصل معك خلال 24 ساعة.';
+    } else {
+      if (cSubmit)  cSubmit.textContent  = 'Send Message →';
+      if (cLoader)  cLoader.childNodes[0].textContent = 'Sending your message';
+      if (cSuccess) cSuccess.textContent = "✓ Thank you! We'll be in touch within 24 hours.";
+    }
+  })();
+
+  // 18. Careers job card "Apply Now" buttons
+  document.querySelectorAll('.job-card .btn-primary').forEach(function(btn) {
+    btn.textContent = lang === 'ar' ? 'قدّم الآن ←' : 'Apply Now →';
+  });
+
+  // 19. Apply modal labels and submit button
+  (function() {
+    var applyEyebrow = document.querySelector('.apply-modal-inner > div:first-child');
+    var aSubmitBtn   = document.querySelector('#applyModal .btn-primary');
+    var aSuccess     = document.getElementById('apply-success');
+    if (lang === 'ar') {
+      if (applyEyebrow) applyEyebrow.textContent = 'قدّم الآن';
+      if (aSubmitBtn)   aSubmitBtn.textContent   = 'إرسال الطلب ←';
+      if (aSuccess)     aSuccess.textContent     = '✓ تم استلام طلبك! سنراجعه ونتواصل معك قريباً.';
+      var applyLabels = ['الاسم الأول *','اسم العائلة *','البريد الإلكتروني *','الهاتف','ملف LinkedIn','معرض الأعمال / GitHub','رسالة التقديم'];
+      document.querySelectorAll('#applyModal .form-group label').forEach(function(lb, i){ if (applyLabels[i]) lb.textContent = applyLabels[i]; });
+    } else {
+      if (applyEyebrow) applyEyebrow.textContent = 'Apply Now';
+      if (aSubmitBtn)   aSubmitBtn.textContent   = 'Submit Application →';
+      if (aSuccess)     aSuccess.textContent     = "✓ Application received! We'll review it and contact you soon.";
+      var applyLabels = ['First Name *','Last Name *','Email *','Phone','LinkedIn Profile','Portfolio / GitHub','Cover Letter'];
+      document.querySelectorAll('#applyModal .form-group label').forEach(function(lb, i){ if (applyLabels[i]) lb.textContent = applyLabels[i]; });
+    }
+  })();
+
+  localStorage.setItem('marvex_lang', lang);
+}
+
+function updateHeroTranslations(lang) {
+  [0,1,2].forEach(function(i){
+    var slide = document.getElementById('hs-' + i);
+    if(!slide) return;
+    var h1 = slide.querySelector('.hero-h1');
+    var sub = slide.querySelector('.hero-sub');
+    if(h1 && TRANSLATIONS[lang]['hero-h1-' + i]) h1.innerHTML = TRANSLATIONS[lang]['hero-h1-' + i];
+    if(sub && TRANSLATIONS[lang]['hero-sub-' + i]) sub.textContent = TRANSLATIONS[lang]['hero-sub-' + i];
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  var savedLang = localStorage.getItem('marvex_lang') || 'en';
+  if(savedLang === 'ar') setLanguage('ar');
+});
