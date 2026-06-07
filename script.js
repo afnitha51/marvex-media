@@ -13,9 +13,13 @@ function showPage(id){
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 function submitContact() {
-  var fname = document.getElementById('f-fname').value.trim();
-  var email = document.getElementById('f-email').value.trim();
-  var msg   = document.getElementById('f-msg').value.trim();
+  var fname   = document.getElementById('f-fname').value.trim();
+  var lname   = document.getElementById('f-lname').value.trim();
+  var email   = document.getElementById('f-email').value.trim();
+  var phone   = document.getElementById('f-phone').value.trim();
+  var service = document.getElementById('f-service').value.trim();
+  var msg     = document.getElementById('f-msg').value.trim();
+
   if (!fname || !email || !msg) {
     alert('Please fill in the required fields.');
     return;
@@ -25,26 +29,44 @@ function submitContact() {
   var success = document.getElementById('contact-success');
   var loader  = document.getElementById('contact-loader');
 
-  // Show loader, hide button
-  btn.style.display    = 'none';
-  loader.style.display = 'flex';
+  btn.style.display     = 'none';
+  loader.style.display  = 'flex';
   success.style.display = 'none';
 
-  // Simulate sending (2 s)
-  setTimeout(function () {
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: '62961f2c-6570-4db3-a495-d3e1dd2aa5ff',
+      subject:    'New Enquiry from Marvex Website — ' + fname + ' ' + lname,
+      name:       fname + ' ' + lname,
+      email:      email,
+      phone:      phone,
+      service:    service,
+      message:    msg
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
     loader.style.display  = 'none';
-    success.style.display = 'block';
-
-    // Clear all fields
-    ['f-fname','f-lname','f-email','f-phone','f-service','f-msg'].forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el) el.value = '';
-    });
-
-    // Restore button after 3 s, hide success after 5 s
-    setTimeout(function () { btn.style.display = 'flex'; }, 3000);
-    setTimeout(function () { success.style.display = 'none'; }, 5000);
-  }, 2000);
+    if (data.success) {
+      success.style.display = 'block';
+      ['f-fname','f-lname','f-email','f-phone','f-service','f-msg'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+      setTimeout(function () { btn.style.display = 'flex'; }, 3000);
+      setTimeout(function () { success.style.display = 'none'; }, 5000);
+    } else {
+      btn.style.display = 'flex';
+      alert('Something went wrong. Please try again.');
+    }
+  })
+  .catch(function() {
+    loader.style.display  = 'none';
+    btn.style.display     = 'flex';
+    alert('Network error. Please try again.');
+  });
 }
 function openApply(title){
   document.getElementById('applyTitle').textContent = title;
@@ -58,27 +80,60 @@ function openApply(title){
 }
 function closeApply(){document.getElementById('applyModal').classList.remove('open');document.body.style.overflow='';}
 function submitApply(){
-  var fname = document.getElementById('a-fname').value.trim();
-  var email = document.getElementById('a-email').value.trim();
+  var fname     = document.getElementById('a-fname').value.trim();
+  var lname     = document.getElementById('a-lname').value.trim();
+  var email     = document.getElementById('a-email').value.trim();
+  var phone     = document.getElementById('a-phone').value.trim();
+  var linkedin  = document.getElementById('a-linkedin') ? document.getElementById('a-linkedin').value.trim() : '';
+  var portfolio = document.getElementById('a-portfolio') ? document.getElementById('a-portfolio').value.trim() : '';
+  var cover     = document.getElementById('a-cover').value.trim();
+  var jobTitle  = document.getElementById('applyTitle').textContent;
+
   if(!fname || !email){
     alert('Please fill in the required fields.');
     return;
   }
-  var btn = document.querySelector('.apply-modal .btn-primary');
+
+  var btn     = document.querySelector('.apply-modal .btn-primary');
   var success = document.getElementById('apply-success');
   btn.style.opacity = '0.5';
-  btn.innerText = 'Submitting...';
-  
-  setTimeout(function(){
-    btn.style.display = 'none';
-    success.style.display = 'block';
-    setTimeout(function(){
-      closeApply();
-      btn.style.display = 'flex';
-      btn.style.opacity = '1';
-      btn.innerText = 'Submit Application →';
-    }, 2500);
-  }, 1500);
+  btn.innerText     = 'Submitting...';
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: '62961f2c-6570-4db3-a495-d3e1dd2aa5ff',
+      subject:    'New Job Application — ' + jobTitle + ' — ' + fname + ' ' + lname,
+      name:       fname + ' ' + lname,
+      email:      email,
+      phone:      phone,
+      position:   jobTitle,
+      linkedin:   linkedin,
+      portfolio:  portfolio,
+      cover_letter: cover
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    btn.style.opacity = '1';
+    btn.innerText     = 'Submit Application →';
+    if (data.success) {
+      btn.style.display     = 'none';
+      success.style.display = 'block';
+      setTimeout(function(){
+        closeApply();
+        btn.style.display = 'flex';
+      }, 2500);
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  })
+  .catch(function(){
+    btn.style.opacity = '1';
+    btn.innerText     = 'Submit Application →';
+    alert('Network error. Please try again.');
+  });
 }
 
 function checkGrid(){
@@ -1065,6 +1120,10 @@ var SELECTOR_MAP = [
   ['#page-home .services-scroll-section .section-title','SERVICES','الخدمات',false],
   ['#page-home .services-header-right > p','End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.','هندسة رقمية متكاملة للعلامات التجارية الطموحة في الإمارات وقطر والهند.',false],
 
+  /* ── HOME clients section ── */
+  ['#page-home .clients-header .section-tag','Trusted By','موثوق بنا من قِبَل',false],
+  ['#page-home .clients-title','BRANDS THAT TRUST MARVEX','العلامات التجارية التي تثق بمارفيكس',false],
+
   /* ── HOME CTA ── */
   ['#page-home .cta-section h2','READY TO BUILD SOMETHING EXTRAORDINARY?','هل أنت مستعد لبناء شيء استثنائي؟',false],
   ['#page-home .cta-section p',"Let's engineer your vision into a powerful digital product that drives real, measurable results.",'دعنا نُحوّل رؤيتك إلى منتج رقمي قوي يحقق نتائج حقيقية وقابلة للقياس.',false],
@@ -1099,6 +1158,10 @@ var SELECTOR_MAP = [
 
   /* ── ABOUT LWT ── */
   ['#page-about .lwt-tagline',"Work with us if average isn't your thing.<br>Drop it, we'll build it.",'اعمل معنا إن لم يكن المتوسط خيارك.<br>أخبرنا، سنبنيه لك.',true],
+
+  /* ── PORTFOLIO clients section ── */
+  ['#page-portfolio .pf-header-label','OUR CLIENTS','عملاؤنا',false],
+  ['#page-portfolio .pf-header-year','2024','٢٠٢٤',false],
 
   /* ── PORTFOLIO hero ── */
   ['#page-portfolio .page-hero .section-tag','Our Work','أعمالنا',false],
