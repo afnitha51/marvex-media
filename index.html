@@ -6,7 +6,7 @@
 <title>Marvex Media — Engineering Tomorrow's Digital Reality</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Bebas+Neue&family=Barlow+Condensed:wght@700;800;900&family=Big+Shoulders+Display:wght@700;800;900&family=Orbitron:wght@700;800;900&family=VT323&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?display=swap&family=Roboto:wght@300;400;500;700;900&family=Bebas+Neue&family=Barlow+Condensed:wght@700;800;900&family=Big+Shoulders+Display:wght@700;800;900&family=Orbitron:wght@700;800;900&family=VT323&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css?v=2"/>
 </head>
@@ -230,7 +230,7 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" onclick="showPage('home')">
-      <img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/>
+      <img src="logo_new_2.webp" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;">
       <span class="nav-logo-text">MARVEX MEDIA</span>
     </a>
     <ul class="nav-links">
@@ -276,7 +276,7 @@
 
       <!-- Slide 0: Server Room / Engineering -->
       <div class="hero-slide active" id="hs-0">
-        <div class="slide-bg"><img src="hero1.png" alt="Hero 1"/><div class="slide-overlay"></div></div>
+        <div class="slide-bg"><img src="hero1.webp" alt="Hero 1"/><div class="slide-overlay"></div></div>
         <div class="slide-content">
           <div class="hero-eyebrow">Next-Gen Technology Solutions</div>
           <h1 class="hero-h1">ENGINEERING<br>TOMORROW'S<br><span class="red">DIGITAL</span><br>REALITY.</h1>
@@ -290,7 +290,7 @@
 
       <!-- Slide 1: Architectural Corridor -->
       <div class="hero-slide" id="hs-1">
-        <div class="slide-bg"><img src="hero2.png" alt="Hero 2"/><div class="slide-overlay"></div></div>
+        <div class="slide-bg"><img src="hero2.webp" alt="Hero 2"/><div class="slide-overlay"></div></div>
         <div class="slide-content">
           <div class="hero-eyebrow">Strategic Brand Engineering</div>
           <h1 class="hero-h1">BUILDING<br>BRAND<br><span class="red">LEGACIES</span><br>THAT LAST.</h1>
@@ -304,7 +304,7 @@
 
       <!-- Slide 2: Digital Orb -->
       <div class="hero-slide" id="hs-2">
-        <div class="slide-bg"><img src="hero3.png" alt="Hero 3"/><div class="slide-overlay"></div></div>
+        <div class="slide-bg"><img src="hero3.webp" alt="Hero 3"/><div class="slide-overlay"></div></div>
         <div class="slide-content">
           <div class="hero-eyebrow">AI & Automation Pioneers</div>
           <h1 class="hero-h1">TECHNOLOGY<br>THAT<br><span class="red">EVOLVES</span><br>WITH YOU.</h1>
@@ -363,13 +363,13 @@
   
 
 
-  <div class="services-scroll-section"><div class="services-header-row"><div><div class="section-tag">What We Do</div><h2 class="section-title">SERVICES</h2></div><div class="services-header-right"><p>End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p><button class="btn-link" style="margin-top:20px" onclick="showPage('services')">Full Services Overview</button></div></div><div class="services-scroll-inner">    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+  <div class="services-scroll-section"><div class="services-header-row"><div><div class="section-tag">What We Do</div><h2 class="section-title">SERVICES</h2></div><div class="services-header-right"><p>End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p><button class="btn-link" style="margin-top:20px" onclick="showPage('services')">Full Services Overview</button></div></div><div class="services-scroll-inner">    <div class="service-scroll-item" onclick="showPage('sv-web')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">01</div>
         <div>
           <div class="ssi-name">WEBSITE<br>DEVELOPMENT</div>
           <div class="ssi-tags"><span class="ssi-tag">Next.js</span><span class="ssi-tag">React</span><span class="ssi-tag">Vue</span><span class="ssi-tag">CMS</span><span class="ssi-tag">SEO</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-web')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Build blazing-fast, conversion-optimised sites engineered for performance and SEO dominance.</p>
       </div>
@@ -377,13 +377,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">NEXT<br>WEB<br>FAST</div></div>
         <div class="ssi-visual" id="ssi-visual-01"><canvas id="ssi-canvas-01" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-mobile')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">02</div>
         <div>
           <div class="ssi-name">MOBILE<br>APPLICATIONS</div>
           <div class="ssi-tags"><span class="ssi-tag">Flutter</span><span class="ssi-tag">React Native</span><span class="ssi-tag">iOS</span><span class="ssi-tag">Android</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-mobile')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Cross-platform apps delivering native-grade experiences at scale across iOS and Android.</p>
       </div>
@@ -391,13 +391,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">APP<br>MOBILE<br>CROSS</div></div>
         <div class="ssi-visual" id="ssi-visual-02"><canvas id="ssi-canvas-02" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-seo')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">03</div>
         <div>
           <div class="ssi-name">SEO<br>OPTIMISATION</div>
           <div class="ssi-tags"><span class="ssi-tag">Technical SEO</span><span class="ssi-tag">Content</span><span class="ssi-tag">GCC</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-seo')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">AI-powered strategies that dominate search rankings and compound organic growth.</p>
       </div>
@@ -405,13 +405,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">RANK<br>SEARCH<br>SEO</div></div>
         <div class="ssi-visual" id="ssi-visual-03"><canvas id="ssi-canvas-03" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-social')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">04</div>
         <div>
           <div class="ssi-name">SOCIAL MEDIA<br>MARKETING</div>
           <div class="ssi-tags"><span class="ssi-tag">Instagram</span><span class="ssi-tag">TikTok</span><span class="ssi-tag">Meta Ads</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-social')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Viral-ready content systems and influencer pipelines to amplify your brand presence.</p>
       </div>
@@ -419,13 +419,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">SOCIAL<br>VIRAL<br>GROW</div></div>
         <div class="ssi-visual" id="ssi-visual-04"><canvas id="ssi-canvas-04" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-cloud')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">05</div>
         <div>
           <div class="ssi-name">CLOUD<br>INFRASTRUCTURE</div>
           <div class="ssi-tags"><span class="ssi-tag">AWS</span><span class="ssi-tag">GCP</span><span class="ssi-tag">Azure</span><span class="ssi-tag">DevOps</span><span class="ssi-tag">Docker</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-cloud')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Enterprise-grade scalability with 99.9% availability and 24/7 monitoring built in from day one.</p>
       </div>
@@ -433,13 +433,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">CLOUD<br>AWS<br>SCALE</div></div>
         <div class="ssi-visual" id="ssi-visual-05"><canvas id="ssi-canvas-05" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-ai')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">06</div>
         <div>
           <div class="ssi-name">AI &amp;<br>AUTOMATION</div>
           <div class="ssi-tags"><span class="ssi-tag">LLM</span><span class="ssi-tag">Chatbots</span><span class="ssi-tag">RPA</span><span class="ssi-tag">Analytics</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-ai')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Custom AI models and automation frameworks that eliminate bottlenecks and accelerate growth.</p>
       </div>
@@ -447,13 +447,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">AI<br>DATA<br>AUTO</div></div>
         <div class="ssi-visual" id="ssi-visual-06"><canvas id="ssi-canvas-06" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-ecom')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">07</div>
         <div>
           <div class="ssi-name">E-COMMERCE<br>SOLUTIONS</div>
           <div class="ssi-tags"><span class="ssi-tag">Shopify</span><span class="ssi-tag">WooCommerce</span><span class="ssi-tag">Payments</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-ecom')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">High-converting stores with seamless checkout, inventory management, and retargeting.</p>
       </div>
@@ -461,13 +461,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">SHOP<br>SELL<br>CONVERT</div></div>
         <div class="ssi-visual" id="ssi-visual-07"><canvas id="ssi-canvas-07" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-brand')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">08</div>
         <div>
           <div class="ssi-name">BRANDING<br>&amp; DESIGN</div>
           <div class="ssi-tags"><span class="ssi-tag">Logo</span><span class="ssi-tag">UI/UX</span><span class="ssi-tag">Figma</span><span class="ssi-tag">Identity</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-brand')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Memorable brand identities — from logo and visual language to full brand systems.</p>
       </div>
@@ -531,7 +531,7 @@
         <div class="tm-role-tag">Founder &amp; MD</div>
         <div class="tm-num">01</div>
         <div class="tm-photo-wrap">
-          <img src="Gemini_Generated_Image_qw6k46qw6k46qw6k-Photoroom.png" alt="Muhammed Salman" class="tm-photo"/>
+          <img src="Gemini_Generated_Image_qw6k46qw6k46qw6k-Photoroom.webp" alt="Muhammed Salman" class="tm-photo" loading="lazy">
         </div>
         <div class="tm-photo-fade"></div>
         <div class="tm-info">
@@ -553,46 +553,43 @@
   </section>
 
   <!-- ── TRUSTED BY ── -->
-  <section class="clients-section">
-    <div class="clients-header">
+  <section class="clients-section" style="padding:80px 0;border-top:1px solid var(--border);">
+    <div class="clients-header" style="text-align:center;margin-bottom:48px;">
       <span class="section-tag" style="justify-content:center">Trusted By</span>
       <h2 class="clients-title">BRANDS THAT TRUST MARVEX</h2>
     </div>
-    <div class="clients-track-wrap">
-      <div class="clients-track">
-        <img src="client/al_mubashir.png"        alt="Al Mubashir" />
-        <img src="client/bo.png"                  alt="Bo" />
-        <img src="client/codex_logo.png"         alt="Codex" />
-        <img src="client/delinut_logo.png"        alt="Delinut" />
-        <img src="client/dermacheck_logo.png"      alt="Dermacheck" />
-        <img src="client/fastride_logo.webp"       alt="Fast Ride" />
-        <img src="client/gac_logo.png"             alt="GAC" />
-        <img src="client/holland_barret_logo.png" alt="Holland & Barrett" />
-        <img src="client/meeqat_logo2.png"        alt="Meeqat" />
-        <img src="client/newbirth_logo.png"       alt="New Birth" />
-        <img src="client/niara_logo.png"           alt="Niara" />
-        <img src="client/nudle&hols_logo.png"      alt="Nudle & Hols" />
-        <img src="client/pranah_logo.png"          alt="Pranah" />
-        <img src="client/restorative_logo.png"    alt="Restorative" />
-        <img src="client/sk_designo_dark.png"      alt="SK Designo" />
-        <img src="client/tata_logo.png"            alt="Tata" />
-        <!-- Duplicate set for seamless loop -->
-        <img src="client/al_mubashir.png"        alt="Al Mubashir" />
-        <img src="client/bo.png"                  alt="Bo" />
-        <img src="client/codex_logo.png"         alt="Codex" />
-        <img src="client/delinut_logo.png"        alt="Delinut" />
-        <img src="client/dermacheck_logo.png"      alt="Dermacheck" />
-        <img src="client/fastride_logo.webp"       alt="Fast Ride" />
-        <img src="client/gac_logo.png"             alt="GAC" />
-        <img src="client/holland_barret_logo.png" alt="Holland & Barrett" />
-        <img src="client/meeqat_logo2.png"        alt="Meeqat" />
-        <img src="client/newbirth_logo.png"       alt="New Birth" />
-        <img src="client/niara_logo.png"           alt="Niara" />
-        <img src="client/nudle&hols_logo.png"      alt="Nudle & Hols" />
-        <img src="client/pranah_logo.png"          alt="Pranah" />
-        <img src="client/restorative_logo.png"    alt="Restorative" />
-        <img src="client/sk_designo_dark.png"      alt="SK Designo" />
-        <img src="client/tata_logo.png"            alt="Tata" />
+    <!-- Single-row portfolio-style carousel -->
+    <div class="pf-carousel-row" style="overflow:hidden;direction:ltr;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);">
+      <div class="pf-carousel-track" style="display:flex;align-items:center;gap:0;width:max-content;direction:ltr;animation:pf-scroll-left 35s linear infinite;">
+        <div class="pf-carousel-item"><img src="clients/client1.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client2.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client3.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client4.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client5.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client6.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client7.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client8.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client9.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client10.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client11.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client12.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client13.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client15.webp" alt="Client" loading="lazy"></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="pf-carousel-item"><img src="clients/client1.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client2.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client3.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client4.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client5.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client6.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client7.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client8.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client9.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client10.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client11.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client12.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client13.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client15.webp" alt="Client" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -620,13 +617,13 @@
       </div>
     </div>
     <div class="sh-cubes">
-      <img src="magnific_create-a-dark-futuristic-_2972465238.png" class="sh-hero-img" alt="">
+      <img src="magnific_create-a-dark-futuristic-_2972465238.webp" class="sh-hero-img" alt="">
     </div>
     <div class="sh-grid-bg"></div>
   </div>
 
 <!-- FLOW DIAGRAM ANIMATION -->
-  <div class="flow-section" id="flowSection">
+  <div class="flow-section" id="flowSection" style="direction:ltr">
 
     <div class="flow-header">
       <div class="section-tag" style="justify-content:center">AI-Powered Process</div>
@@ -634,7 +631,7 @@
       <p class="flow-subtitle">Watch how our team and AI systems process raw concepts into high-impact digital solutions.</p>
     </div>
 
-    <div class="flow-wrap" id="flowWrap">
+    <div class="flow-wrap" id="flowWrap" style="direction:ltr">
 
       <!-- Central glow -->
       <div class="flow-center-glow"></div>
@@ -662,7 +659,7 @@
           <div class="ai-orbit orbit-2"></div>
           <div class="ai-orbit orbit-3"></div>
           <div class="flow-box-sq flow-box-sq--core" style="position:relative; z-index:2; border-radius:50%;">
-            <img src="logo_new (2).png" alt="Marvex Engine" class="flow-core-img"/>
+            <img src="logo_new_2.webp" alt="Marvex Engine" class="flow-core-img" loading="lazy">
             <span class="flow-core-label">Marvex Media</span>
             <div class="flow-core-glow"></div>
           </div>
@@ -692,13 +689,13 @@
   </div>
 
 
-  <div class="services-scroll-section"><div class="services-header-row"><div><div class="section-tag">What We Do</div><h2 class="section-title">SERVICES</h2></div><div class="services-header-right"><p>End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p></div></div><div class="services-scroll-inner">    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+  <div class="services-scroll-section"><div class="services-header-row"><div><div class="section-tag">What We Do</div><h2 class="section-title">SERVICES</h2></div><div class="services-header-right"><p>End-to-end digital engineering for forward-thinking brands across UAE, Qatar, and India.</p></div></div><div class="services-scroll-inner">    <div class="service-scroll-item" onclick="showPage('sv-web')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">01</div>
         <div>
           <div class="ssi-name">WEBSITE<br>DEVELOPMENT</div>
           <div class="ssi-tags"><span class="ssi-tag">Next.js</span><span class="ssi-tag">React</span><span class="ssi-tag">Vue</span><span class="ssi-tag">CMS</span><span class="ssi-tag">SEO</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-web')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Build blazing-fast, conversion-optimised sites engineered for performance and SEO dominance.</p>
       </div>
@@ -706,13 +703,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">NEXT<br>WEB<br>FAST</div></div>
         <div class="ssi-visual" id="ssi-visual-01"><canvas id="ssi-canvas-01" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-mobile')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">02</div>
         <div>
           <div class="ssi-name">MOBILE<br>APPLICATIONS</div>
           <div class="ssi-tags"><span class="ssi-tag">Flutter</span><span class="ssi-tag">React Native</span><span class="ssi-tag">iOS</span><span class="ssi-tag">Android</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-mobile')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Cross-platform apps delivering native-grade experiences at scale across iOS and Android.</p>
       </div>
@@ -720,13 +717,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">APP<br>MOBILE<br>CROSS</div></div>
         <div class="ssi-visual" id="ssi-visual-02"><canvas id="ssi-canvas-02" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-seo')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">03</div>
         <div>
           <div class="ssi-name">SEO<br>OPTIMISATION</div>
           <div class="ssi-tags"><span class="ssi-tag">Technical SEO</span><span class="ssi-tag">Content</span><span class="ssi-tag">GCC</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-seo')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">AI-powered strategies that dominate search rankings and compound organic growth.</p>
       </div>
@@ -734,13 +731,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">RANK<br>SEARCH<br>SEO</div></div>
         <div class="ssi-visual" id="ssi-visual-03"><canvas id="ssi-canvas-03" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-social')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">04</div>
         <div>
           <div class="ssi-name">SOCIAL MEDIA<br>MARKETING</div>
           <div class="ssi-tags"><span class="ssi-tag">Instagram</span><span class="ssi-tag">TikTok</span><span class="ssi-tag">Meta Ads</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-social')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Viral-ready content systems and influencer pipelines to amplify your brand presence.</p>
       </div>
@@ -748,13 +745,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">SOCIAL<br>VIRAL<br>GROW</div></div>
         <div class="ssi-visual" id="ssi-visual-04"><canvas id="ssi-canvas-04" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-cloud')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">05</div>
         <div>
           <div class="ssi-name">CLOUD<br>INFRASTRUCTURE</div>
           <div class="ssi-tags"><span class="ssi-tag">AWS</span><span class="ssi-tag">GCP</span><span class="ssi-tag">Azure</span><span class="ssi-tag">DevOps</span><span class="ssi-tag">Docker</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-cloud')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Enterprise-grade scalability with 99.9% availability and 24/7 monitoring built in from day one.</p>
       </div>
@@ -762,13 +759,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">CLOUD<br>AWS<br>SCALE</div></div>
         <div class="ssi-visual" id="ssi-visual-05"><canvas id="ssi-canvas-05" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-ai')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">06</div>
         <div>
           <div class="ssi-name">AI &amp;<br>AUTOMATION</div>
           <div class="ssi-tags"><span class="ssi-tag">LLM</span><span class="ssi-tag">Chatbots</span><span class="ssi-tag">RPA</span><span class="ssi-tag">Analytics</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-ai')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Custom AI models and automation frameworks that eliminate bottlenecks and accelerate growth.</p>
       </div>
@@ -776,13 +773,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">AI<br>DATA<br>AUTO</div></div>
         <div class="ssi-visual" id="ssi-visual-06"><canvas id="ssi-canvas-06" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-ecom')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">07</div>
         <div>
           <div class="ssi-name">E-COMMERCE<br>SOLUTIONS</div>
           <div class="ssi-tags"><span class="ssi-tag">Shopify</span><span class="ssi-tag">WooCommerce</span><span class="ssi-tag">Payments</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-ecom')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">High-converting stores with seamless checkout, inventory management, and retargeting.</p>
       </div>
@@ -790,13 +787,13 @@
         <div class="ssi-placeholder"><div class="ssi-placeholder-text">SHOP<br>SELL<br>CONVERT</div></div>
         <div class="ssi-visual" id="ssi-visual-07"><canvas id="ssi-canvas-07" style="width:100%;height:100%;display:block;"></canvas></div>
       </div>
-    </div>    <div class="service-scroll-item" onclick="showPage('services')" style="cursor:pointer">
+    </div>    <div class="service-scroll-item" onclick="showPage('sv-brand')" style="cursor:pointer">
       <div class="ssi-left">
         <div class="ssi-num">08</div>
         <div>
           <div class="ssi-name">BRANDING<br>&amp; DESIGN</div>
           <div class="ssi-tags"><span class="ssi-tag">Logo</span><span class="ssi-tag">UI/UX</span><span class="ssi-tag">Figma</span><span class="ssi-tag">Identity</span></div>
-          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('services')" style="cursor:pointer" title="View Services">&#8594;</span>
+          <span class="ssi-arrow" onclick="event.stopPropagation();showPage('sv-brand')" style="cursor:pointer" title="View Services">&#8594;</span>
         </div>
         <p style="color:var(--text-muted);font-size:13px;font-weight:300;line-height:1.7;margin-top:16px;max-width:340px">Memorable brand identities — from logo and visual language to full brand systems.</p>
       </div>
@@ -891,47 +888,47 @@
   </div>
 
   <!-- Two-row flowing carousel -->
-  <div class="pf-carousel-wrap">
+  <div class="pf-carousel-wrap" style="direction:ltr">
 
     <!-- Row 1 — scrolls left -->
     <div class="pf-carousel-row">
       <div class="pf-carousel-track">
-        <div class="pf-carousel-item"><img src="clients/client1.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client2.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client3.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client4.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client5.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client6.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client7.png"  alt="Client"/></div>
+        <div class="pf-carousel-item"><img src="clients/client1.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client2.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client3.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client4.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client5.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client6.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client7.webp"  alt="Client" loading="lazy"></div>
         <!-- Duplicate for seamless loop -->
-        <div class="pf-carousel-item"><img src="clients/client1.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client2.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client3.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client4.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client5.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client6.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client7.png"  alt="Client"/></div>
+        <div class="pf-carousel-item"><img src="clients/client1.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client2.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client3.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client4.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client5.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client6.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client7.webp"  alt="Client" loading="lazy"></div>
       </div>
     </div>
 
     <!-- Row 2 — scrolls right (reverse) -->
     <div class="pf-carousel-row">
       <div class="pf-carousel-track pf-carousel-track--reverse">
-        <div class="pf-carousel-item"><img src="clients/client8.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client9.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client10.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client11.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client12.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client13.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client15.png" alt="Client"/></div>
+        <div class="pf-carousel-item"><img src="clients/client8.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client9.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client10.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client11.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client12.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client13.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client15.webp" alt="Client" loading="lazy"></div>
         <!-- Duplicate for seamless loop -->
-        <div class="pf-carousel-item"><img src="clients/client8.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client9.png"  alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client10.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client11.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client12.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client13.png" alt="Client"/></div>
-        <div class="pf-carousel-item"><img src="clients/client15.png" alt="Client"/></div>
+        <div class="pf-carousel-item"><img src="clients/client8.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client9.webp"  alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client10.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client11.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client12.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client13.webp" alt="Client" loading="lazy"></div>
+        <div class="pf-carousel-item"><img src="clients/client15.webp" alt="Client" loading="lazy"></div>
       </div>
     </div>
 
@@ -1253,7 +1250,7 @@
       <div class="tm-role-tag">Founder &amp; MD</div>
       <div class="tm-num">01</div>
       <div class="tm-photo-wrap">
-        <img src="Gemini_Generated_Image_qw6k46qw6k46qw6k-Photoroom.png" alt="Salman Asharaf" class="tm-photo"/>
+        <img src="Gemini_Generated_Image_qw6k46qw6k46qw6k-Photoroom.webp" alt="Salman Asharaf" class="tm-photo" loading="lazy">
       </div>
       <div class="tm-photo-fade"></div>
       <div class="tm-info">
@@ -1268,7 +1265,7 @@
       <div class="tm-role-tag">Digital Marketing Expert</div>
       <div class="tm-num">02</div>
       <div class="tm-photo-wrap">
-        <img src="digital marketing.png" alt="Ahammed" class="tm-photo"/>
+        <img src="digital marketing.png" alt="Ahammed" class="tm-photo" loading="lazy">
       </div>
       <div class="tm-photo-fade"></div>
       <div class="tm-info">
@@ -1283,7 +1280,7 @@
       <div class="tm-role-tag">Co-Founder &amp; CEO</div>
       <div class="tm-num">03</div>
       <div class="tm-photo-wrap">
-        <img src="Gemini_Generated_Image_f0hczif0hczif0hc-Photoroom.png" alt="Afnitha Jaleel" class="tm-photo"/>
+        <img src="Gemini_Generated_Image_f0hczif0hczif0hc-Photoroom.webp" alt="Afnitha Jaleel" class="tm-photo" loading="lazy">
       </div>
       <div class="tm-photo-fade"></div>
       <div class="tm-info">
@@ -1368,11 +1365,524 @@
 
 
 
+
+<!-- ══ SERVICE DETAIL: WEBSITE DEVELOPMENT ══════════════════════ -->
+<div id="page-sv-web" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 01 / 08</div>
+      <h1 class="section-title">WEBSITE<br><span style="color:var(--red-bright)">DEVELOPMENT</span></h1>
+      <p class="section-subtitle" style="max-width:580px">Build blazing-fast, conversion-optimised websites engineered for performance, SEO dominance, and long-term growth.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Start Your Project &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">Next.js</span><span class="ssi-tag">React</span><span class="ssi-tag">Vue</span><span class="ssi-tag">CMS</span><span class="ssi-tag">SEO</span><span class="ssi-tag">TypeScript</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">48h</div><div class="stat-label">Brief to First Wireframe</div></div>
+    <div class="stat-item"><div class="stat-num">99</div><div class="stat-label">Avg Lighthouse Score</div></div>
+    <div class="stat-item"><div class="stat-num">3×</div><div class="stat-label">Avg Organic Traffic Gain Yr1</div></div>
+    <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Sites Launched Across GCC</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">brush</span><h3>Custom Design & Development</h3><p>Pixel-perfect UI/UX built from scratch or from your brand guidelines — no templates, no shortcuts.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">speed</span><h3>Performance Engineering</h3><p>Core Web Vitals optimisation, lazy loading, CDN setup, and image compression for sub-second load times.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">travel_explore</span><h3>SEO-Ready Architecture</h3><p>Semantic HTML, structured data, sitemap generation, and on-page SEO baked in from day one.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">edit_note</span><h3>CMS Integration</h3><p>Headless CMS setup (Sanity, Contentful, or WordPress) so your team can manage content without touching code.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">devices</span><h3>Responsive & Accessible</h3><p>WCAG-compliant, device-tested across mobile, tablet, and desktop — every breakpoint, every screen.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">analytics</span><h3>Analytics & Tracking</h3><p>GA4, GTM, Meta Pixel, and full conversion tracking configured and verified before go-live.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Discovery</h3><p>Deep-dive into your brand, audience, goals, and competitors. We leave nothing undefined before we design.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>Architecture</h3><p>Information architecture, sitemap, and tech stack selection. We plan for scale from the very first commit.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Design</h3><p>Wireframes to high-fidelity Figma prototypes. You sign off before a single line of code is written.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Development</h3><p>Sprint-based build with staging previews delivered at every milestone. Full transparency, no black boxes.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>QA & Testing</h3><p>Cross-browser testing, performance audits, accessibility checks, and security review before launch.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Launch & Handover</h3><p>Live deployment, team training, full documentation, and 30-day post-launch support included.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>READY TO BUILD?</h2>
+    <p>Let's engineer your digital presence into a performance machine.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: MOBILE APPLICATIONS ══════════════════════ -->
+<div id="page-sv-mobile" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 02 / 08</div>
+      <h1 class="section-title">MOBILE<br><span style="color:var(--red-bright)">APPLICATIONS</span></h1>
+      <p class="section-subtitle" style="max-width:580px">Cross-platform apps built with Flutter and React Native — native performance, one codebase, unlimited scale across iOS and Android.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Build Your App &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">Flutter</span><span class="ssi-tag">React Native</span><span class="ssi-tag">iOS</span><span class="ssi-tag">Android</span><span class="ssi-tag">Firebase</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Codebase for Both Platforms</div></div>
+    <div class="stat-item"><div class="stat-num">4.8★</div><div class="stat-label">Avg App Store Rating</div></div>
+    <div class="stat-item"><div class="stat-num">40%</div><div class="stat-label">Faster Build vs Native</div></div>
+    <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Apps Live in GCC & India</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">smartphone</span><h3>Cross-Platform Development</h3><p>Single Flutter or React Native codebase delivering true native performance on iOS and Android simultaneously.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">palette</span><h3>Mobile-First UI/UX Design</h3><p>Custom design systems, micro-interactions, gesture-driven interfaces, and dark/light mode support built in.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">api</span><h3>Backend & API Integration</h3><p>RESTful and GraphQL APIs, Firebase, Supabase, or custom Node/Python server setups — whatever fits your stack.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">notifications_active</span><h3>Push Notifications & Engagement</h3><p>Smart notification flows, in-app messaging, deep link handling, and re-engagement campaign infrastructure.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">upload</span><h3>App Store Submission & ASO</h3><p>Full App Store and Google Play submission — listing copy, screenshots, keywords, and App Store Optimisation.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">monitoring</span><h3>Analytics & Crash Reporting</h3><p>Firebase Analytics, Sentry crash reporting, and custom event tracking configured from day one.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Strategy & Scoping</h3><p>Define features, user flows, and MVP scope. We cut scope ruthlessly so you launch fast and iterate with data.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>UX Research</h3><p>User persona mapping, competitive feature analysis, and journey mapping before any design begins.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Interactive Prototype</h3><p>Full Figma prototype with real interactions for stakeholder sign-off — before a single line of code.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Sprint Development</h3><p>Two-week sprints with TestFlight / internal builds delivered after each sprint for ongoing feedback.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>QA on Real Devices</h3><p>Automated and manual testing on a range of physical iOS and Android devices — not just simulators.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Launch & Post-Launch</h3><p>Store submission, ASO setup, launch strategy, and 30-day monitoring window included.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>YOUR APP. BOTH STORES. ONE TEAM.</h2>
+    <p>Let's take your product from concept to the App Store.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: SEO OPTIMISATION ═════════════════════════ -->
+<div id="page-sv-seo" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 03 / 08</div>
+      <h1 class="section-title">SEO<br><span style="color:var(--red-bright)">OPTIMISATION</span></h1>
+      <p class="section-subtitle" style="max-width:580px">AI-powered SEO built for the GCC market — engineering organic search dominance that compounds every single month.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Get a Free SEO Audit &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">Technical SEO</span><span class="ssi-tag">Content Strategy</span><span class="ssi-tag">GCC Markets</span><span class="ssi-tag">Link Building</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">2.4×</div><div class="stat-label">Avg Organic Traffic Increase</div></div>
+    <div class="stat-item"><div class="stat-num">6mo</div><div class="stat-label">To First Page Rankings (Avg)</div></div>
+    <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Black-Hat Tactics. Ever.</div></div>
+    <div class="stat-item"><div class="stat-num">UAE+QA+IN</div><div class="stat-label">Markets We Dominate</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">bug_report</span><h3>Technical SEO Audit</h3><p>Crawl analysis, Core Web Vitals, indexation issues, structured data, and canonical tag audit — a full technical health check.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">key</span><h3>Keyword Research & Mapping</h3><p>In-depth keyword strategy aligned to search intent and commercial value across your target GCC markets.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">article</span><h3>Content Strategy & Writing</h3><p>SEO-optimised blog posts, landing pages, and pillar content designed to rank and convert high-intent traffic.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">location_on</span><h3>Local SEO & GBP</h3><p>Google Business Profile optimisation, local citations, review strategy, and GCC geo-targeting for UAE and Qatar.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">link</span><h3>Backlink Building</h3><p>White-hat link acquisition through digital PR, editorial outreach, and authoritative industry placements.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">bar_chart</span><h3>Monthly Reporting</h3><p>Rank tracking, traffic attribution, conversion analysis — clear ROI reporting with no vanity metrics.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Baseline Audit</h3><p>Full technical and content audit with competitive gap analysis. We map exactly what's holding you back.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>Strategy Build</h3><p>Keyword targeting, content calendar, and a 6-month organic growth roadmap with clear milestones.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>On-Page Fixes</h3><p>Technical and content optimisation across all priority pages — quick wins first, long-term plays second.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Content Execution</h3><p>Monthly content production aligned to the keyword strategy — research-backed, conversion-oriented.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>Authority Building</h3><p>Ongoing backlink acquisition and digital PR to build domain authority month over month.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Review & Scale</h3><p>Monthly performance debrief with strategy iteration. We double down on what's working and cut what isn't.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>RANK HIGHER. GROW FASTER.</h2>
+    <p>Paid ads stop. SEO compounds. Let's build your organic engine.</p>
+    <button class="btn-white" onclick="showPage('contact')">Get Your Free Audit &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: SOCIAL MEDIA MARKETING ═══════════════════ -->
+<div id="page-sv-social" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 04 / 08</div>
+      <h1 class="section-title">SOCIAL MEDIA<br><span style="color:var(--red-bright)">MARKETING</span></h1>
+      <p class="section-subtitle" style="max-width:580px">End-to-end social management and performance advertising — from viral content systems to ROI-driven paid campaigns built for the GCC.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Grow My Brand &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">Instagram</span><span class="ssi-tag">TikTok</span><span class="ssi-tag">Meta Ads</span><span class="ssi-tag">LinkedIn</span><span class="ssi-tag">Influencers</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">5×</div><div class="stat-label">Avg ROAS on Meta Campaigns</div></div>
+    <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Brands Managed Across GCC</div></div>
+    <div class="stat-item"><div class="stat-num">Daily</div><div class="stat-label">Community Monitoring</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Original Content. Always.</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">map</span><h3>Social Strategy</h3><p>Platform selection, audience targeting, content pillars, and posting cadence tailored to your brand and goals.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">movie</span><h3>Content Creation</h3><p>Short-form video, Reels, TikToks, static graphics, and copywriting — all original, all on-brand.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">forum</span><h3>Community Management</h3><p>Daily monitoring, comment responses, DM handling, and reputation management across all platforms.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">ads_click</span><h3>Meta Ads Management</h3><p>Facebook and Instagram campaign strategy, creative testing, audience segmentation, and ROAS optimisation.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">groups</span><h3>Influencer & Creator Partnerships</h3><p>Sourcing, vetting, briefing, and managing influencer collaborations in the GCC — nano to macro.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">insights</span><h3>Monthly Analytics</h3><p>Performance dashboards covering reach, engagement, CPM, CPC, ROAS, and month-on-month growth.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Brand & Audience Audit</h3><p>Review existing channels, competitor analysis, and audience insight research to understand where you stand.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>Strategy Document</h3><p>Content pillars, platform priorities, tone of voice, and a 90-day campaign roadmap — agreed before we start.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Creative Production</h3><p>Monthly content shoots, graphic design, and video production. Everything created in-house, nothing outsourced.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Publishing & Community</h3><p>Scheduled posting, live monitoring, and active community engagement — every day, not just business hours.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>Paid Campaigns</h3><p>Launch, test, and iterate performance campaigns with weekly budget reviews and creative refresh cycles.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Monthly Review</h3><p>Results debrief, creative performance analysis, A/B testing insights, and next-month planning call.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>STOP THE SCROLL. START THE SALE.</h2>
+    <p>Content that converts. Campaigns that grow. Let's build your social presence.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: CLOUD INFRASTRUCTURE ═════════════════════ -->
+<div id="page-sv-cloud" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 05 / 08</div>
+      <h1 class="section-title">CLOUD<br><span style="color:var(--red-bright)">INFRASTRUCTURE</span></h1>
+      <p class="section-subtitle" style="max-width:580px">Enterprise-grade cloud architecture with 99.9% uptime, automated CI/CD pipelines, and 24/7 monitoring — built to handle whatever you throw at it.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Audit My Infrastructure &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">AWS</span><span class="ssi-tag">GCP</span><span class="ssi-tag">Azure</span><span class="ssi-tag">Docker</span><span class="ssi-tag">Kubernetes</span><span class="ssi-tag">Terraform</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">99.9%</div><div class="stat-label">Guaranteed Uptime SLA</div></div>
+    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Monitoring & Alerting</div></div>
+    <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Vendor Lock-In. You Own It.</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Cloud Platforms Supported</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">cloud</span><h3>Cloud Architecture Design</h3><p>Scalable, fault-tolerant architecture on AWS, GCP, or Azure — designed for your specific workload and budget.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">merge</span><h3>CI/CD Pipeline Setup</h3><p>Automated build, test, and deployment pipelines using GitHub Actions, GitLab CI, or Jenkins. Ship faster, break less.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">inventory_2</span><h3>Containerisation & Orchestration</h3><p>Docker and Kubernetes setup for portable, scalable, environment-consistent deployments across every stage.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">security</span><h3>Security & Compliance</h3><p>IAM policies, VPC config, encryption at rest and in transit — compliance-ready from day one.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">storage</span><h3>Database Management</h3><p>Managed databases (RDS, Cloud SQL, MongoDB Atlas) with automated backups, failover, and disaster recovery.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">notifications</span><h3>24/7 Monitoring & Alerting</h3><p>Datadog, Grafana, or CloudWatch dashboards with on-call incident response and SLA-backed support.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Infrastructure Audit</h3><p>Assessment of your current setup, pain points, scaling limits, and cost inefficiencies.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>Architecture Design</h3><p>Cloud design document with cost estimates, scaling projections, and risk analysis.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Setup & Migration</h3><p>Phased deployment or migration with a zero-downtime strategy. No surprise outages.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>CI/CD & IaC</h3><p>Pipeline setup and infrastructure-as-code via Terraform — reproducible, version-controlled infrastructure.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>Security Hardening</h3><p>Security review, penetration testing recommendations, and compliance checks before going live.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Handover & Ongoing</h3><p>Full documentation, team training, and optional managed services for ongoing peace of mind.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>INFRASTRUCTURE THAT NEVER SLEEPS.</h2>
+    <p>We build it right the first time — so you don't pay to rebuild it later.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: AI & AUTOMATION ══════════════════════════ -->
+<div id="page-sv-ai" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 06 / 08</div>
+      <h1 class="section-title">AI &amp;<br><span style="color:var(--red-bright)">AUTOMATION</span></h1>
+      <p class="section-subtitle" style="max-width:580px">Custom AI systems and automation frameworks that eliminate bottlenecks, cut operational costs, and unlock compounding efficiency at every layer of your business.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Explore AI for My Business &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">LLM</span><span class="ssi-tag">Chatbots</span><span class="ssi-tag">RPA</span><span class="ssi-tag">Predictive Analytics</span><span class="ssi-tag">n8n</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">2–4wk</div><div class="stat-label">Proof of Concept Delivery</div></div>
+    <div class="stat-item"><div class="stat-num">60%</div><div class="stat-label">Avg Operational Time Saved</div></div>
+    <div class="stat-item"><div class="stat-num">ROI</div><div class="stat-label">Every Build Starts With One</div></div>
+    <div class="stat-item"><div class="stat-num">GPT-4</div><div class="stat-label">Claude · Gemini · Open Source</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">smart_toy</span><h3>Custom AI Tools & Assistants</h3><p>LLM-based internal tools, customer-facing AI assistants, and document processing systems built on GPT-4, Claude, or open-source models.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">chat</span><h3>Intelligent Chatbots</h3><p>Context-aware bots for customer support, lead qualification, and internal helpdesks — integrated with WhatsApp, web, and CRM.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">precision_manufacturing</span><h3>Workflow Automation (RPA)</h3><p>Eliminating repetitive manual processes across HR, finance, operations, and customer service via n8n, Zapier, or custom pipelines.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">trending_up</span><h3>Predictive Analytics</h3><p>ML models for demand forecasting, churn prediction, pricing optimisation, and actionable business intelligence.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">auto_awesome</span><h3>AI-Powered Content Systems</h3><p>Automated content generation, personalisation engines, and product description generators that scale without headcount.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">hub</span><h3>API & Systems Integration</h3><p>Connecting AI tools to your existing CRM, ERP, e-commerce platform, or data warehouse — no silos.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Process Discovery</h3><p>Map your current workflows and identify the highest-ROI automation opportunities — we start where the biggest gains are.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>Solution Design</h3><p>Select models, tools, and architecture that fit your use case and data environment. No over-engineering.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Proof of Concept</h3><p>Working prototype in 2–4 weeks so you see results and ROI potential before full build commitment.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Production Build</h3><p>Scale the PoC into a production-ready system with monitoring, error handling, and logging built in.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>Training & Handover</h3><p>Team training and documentation so your staff can manage and extend the system independently.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Iteration</h3><p>Ongoing model fine-tuning and workflow optimisation as your data grows and your needs evolve.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>WORK SMARTER. SCALE WITHOUT LIMITS.</h2>
+    <p>We deliver AI outcomes — measured in hours saved, errors reduced, and revenue unlocked.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: E-COMMERCE SOLUTIONS ═════════════════════ -->
+<div id="page-sv-ecom" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 07 / 08</div>
+      <h1 class="section-title">E-COMMERCE<br><span style="color:var(--red-bright)">SOLUTIONS</span></h1>
+      <p class="section-subtitle" style="max-width:580px">High-converting stores engineered to maximise revenue at every step of the funnel — from first click to repeat purchase.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Start Selling More &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">Shopify</span><span class="ssi-tag">WooCommerce</span><span class="ssi-tag">Custom Build</span><span class="ssi-tag">Payments</span><span class="ssi-tag">Klaviyo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">35%</div><div class="stat-label">Avg Cart Abandonment Reduction</div></div>
+    <div class="stat-item"><div class="stat-num">4×</div><div class="stat-label">Avg Revenue Increase Yr1</div></div>
+    <div class="stat-item"><div class="stat-num">GCC</div><div class="stat-label">Regional Payment Methods Covered</div></div>
+    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Your Store Never Closes</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">storefront</span><h3>Store Design & Development</h3><p>Custom Shopify themes, WooCommerce builds, or fully bespoke e-commerce platforms — no generic templates.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">price_check</span><h3>Conversion Rate Optimisation</h3><p>Product page design, checkout flow optimisation, trust signals, and A/B testing frameworks baked in from day one.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">payments</span><h3>Payment Gateway Integration</h3><p>Stripe, PayTabs, Telr, Tamara (BNPL), and regional GCC payment methods — every customer's preferred option covered.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">inventory</span><h3>Inventory & Order Management</h3><p>Integration with inventory systems, fulfilment platforms, and multi-warehouse setups for seamless operations.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">email</span><h3>Email & SMS Automation</h3><p>Abandoned cart recovery, post-purchase sequences, and loyalty flows via Klaviyo — revenue on autopilot.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">search</span><h3>Performance & Product SEO</h3><p>Product page SEO, site speed optimisation, and structured data for Google Shopping visibility.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Store Audit or Brief</h3><p>New store: define goals, catalogue, and customer journey. Existing store: full CRO and performance audit.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>UX & Design</h3><p>Wireframe the key purchase flow, then design with conversion in mind — every element earns its place.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Development</h3><p>Clean, extensible code with full mobile optimisation. No bloated plugins, no technical debt.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Integrations</h3><p>Payment gateways, logistics, CRM, and marketing platform connections — fully tested before launch.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>Testing</h3><p>End-to-end checkout testing, device testing, and load testing. If it can break, we break it first.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Launch & Growth</h3><p>Go-live support, post-launch CRO recommendations, and ongoing optimisation included.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>BUILD A STORE THAT SELLS WHILE YOU SLEEP.</h2>
+    <p>Conversion-engineered from the first pixel to the final checkout step.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
+<!-- ══ SERVICE DETAIL: BRANDING & DESIGN ════════════════════════ -->
+<div id="page-sv-brand" class="page">
+
+  <div class="page-hero" style="padding:140px 5% 80px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(110,16,16,.18),transparent 65%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-tag">Service 08 / 08</div>
+      <h1 class="section-title">BRANDING<br><span style="color:var(--red-bright)">&amp; DESIGN</span></h1>
+      <p class="section-subtitle" style="max-width:580px">From logo and visual identity to full brand systems and UI/UX — we craft brands that are built to last and designed to stand out in any market.</p>
+      <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')">Start Your Brand Project &#8594;</button>
+        <button class="btn-outline" onclick="showPage('services')">&#8592; All Services</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
+        <span class="ssi-tag">Logo</span><span class="ssi-tag">UI/UX</span><span class="ssi-tag">Figma</span><span class="ssi-tag">Brand System</span><span class="ssi-tag">Identity</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">2wk</div><div class="stat-label">Logo Concept Delivery</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Unique Initial Concepts</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Source Files Yours to Keep</div></div>
+    <div class="stat-item"><div class="stat-num">Every</div><div class="stat-label">Touchpoint. On-Brand. Always.</div></div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">WHAT'S INCLUDED</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">stars</span><h3>Logo Design</h3><p>Custom logomarks, wordmarks, and combination marks with full usage guidelines and all file formats delivered.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">style</span><h3>Visual Identity System</h3><p>Colour palette, typography system, iconography, photography style, and illustration guidelines — the full language.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">menu_book</span><h3>Brand Guidelines</h3><p>A comprehensive brand book covering do's, don'ts, and correct usage across every media type.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">dashboard</span><h3>UI/UX Design</h3><p>User experience design for web and mobile — wireframes, component libraries, and high-fidelity Figma prototypes.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">print</span><h3>Marketing Collateral</h3><p>Business cards, letterheads, presentation templates, social media kits, and signage — all in one system.</p></div>
+      <div class="service-card"><span class="material-icons-round card-icon" style="color:var(--red-bright)">present_to_all</span><h3>Pitch Decks & Presentations</h3><p>Investor decks, sales presentations, and brand story narratives designed to persuade and convert.</p></div>
+    </div>
+  </section>
+
+  <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-tag" style="justify-content:center">How We Work</div>
+      <h2 class="section-title">OUR PROCESS</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-num">01</div><h3>Brand Discovery</h3><p>Workshop covering your vision, values, audience, competitors, and long-term positioning. Everything starts here.</p></div>
+      <div class="card"><div class="card-num">02</div><h3>Moodboarding</h3><p>2–3 distinct visual direction territories for your team to react to — direction before design.</p></div>
+      <div class="card"><div class="card-num">03</div><h3>Concept Design</h3><p>3 logo and identity concepts developed in full detail for your review and feedback.</p></div>
+      <div class="card"><div class="card-num">04</div><h3>Refinement</h3><p>Collaborative feedback rounds until the identity is right — no arbitrary revision limits.</p></div>
+      <div class="card"><div class="card-num">05</div><h3>System Build</h3><p>Expand the approved concept into a full identity system, component library, and brand guidelines document.</p></div>
+      <div class="card"><div class="card-num">06</div><h3>Delivery</h3><p>All source files (Figma, AI, PDF), export packages, and brand book — everything you need to scale the brand.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>BUILD A BRAND PEOPLE REMEMBER.</h2>
+    <p>Design is strategy made visible. Let's make yours impossible to ignore.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start Free Consultation &#8594;</button>
+  </div>
+
+</div>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo" style="margin-bottom:16px">
-        <img src="logo_new (2).png" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;"/>
+        <img src="logo_new_2.webp" alt="Marvex Media Logo" style="width:40px;height:40px;object-fit:contain;background:transparent;">
         <span class="nav-logo-text" style="color:white">MARVEX MEDIA</span>
       </div>
       <p>Engineering Tomorrow's Digital Reality. A full-stack technology partner for businesses that demand excellence.</p>
@@ -1397,10 +1907,10 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a onclick="showPage('services')" style="cursor:pointer">Website Development</a></li>
-        <li><a onclick="showPage('services')" style="cursor:pointer">Mobile Apps</a></li>
-        <li><a onclick="showPage('services')" style="cursor:pointer">SEO Optimisation</a></li>
-        <li><a onclick="showPage('services')" style="cursor:pointer">AI &amp; Automation</a></li>
+        <li><a onclick="showPage('sv-web')" style="cursor:pointer">Website Development</a></li>
+        <li><a onclick="showPage('sv-mobile')" style="cursor:pointer">Mobile Apps</a></li>
+        <li><a onclick="showPage('sv-seo')" style="cursor:pointer">SEO Optimisation</a></li>
+        <li><a onclick="showPage('sv-ai')" style="cursor:pointer">AI &amp; Automation</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1497,17 +2007,16 @@
       ctx.fillStyle = 'rgba('+baseR+','+baseG+','+baseB+','+alpha+')';
       ctx.save();
       ctx.translate(x, y);
-      ctx.rotate(angle + Math.PI / 2);
+      ctx.rotate(angle + rot * 1.5);
 
-      var t = SHAPES[i];
+      var t = SHAPES[i % N];
       if (t === 'dot') {
         ctx.beginPath();
-        ctx.arc(0, 0, 1.6, 0, Math.PI * 2);
+        ctx.arc(0, 0, 2.4, 0, Math.PI * 2);
         ctx.fill();
       } else if (t === 'square') {
         ctx.fillRect(-2.2, -2.2, 4.4, 4.4);
       } else {
-        /* triangle pointing outward */
         ctx.beginPath();
         ctx.moveTo(0, -3);
         ctx.lineTo(2.4, 2.2);

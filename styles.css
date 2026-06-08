@@ -4042,3 +4042,96 @@ html[dir="rtl"] .whatsapp-fab::after {
   margin-left: 0;
   animation: wa-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
+
+/* ── RTL: Keep carousels always LTR (animation direction must not flip) ── */
+html[dir="rtl"] .pf-carousel-wrap,
+html[dir="rtl"] .pf-carousel-row,
+html[dir="rtl"] .pf-carousel-track,
+html[dir="rtl"] .pf-carousel-item,
+html[dir="rtl"] .pf-carousel-item img,
+html[dir="rtl"] .clients-section,
+html[dir="rtl"] .clients-track-wrap,
+html[dir="rtl"] .clients-track,
+html[dir="rtl"] .clients-track img {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="rtl"] .pf-carousel-track {
+  flex-direction: row !important;
+}
+
+html[dir="rtl"] .clients-track {
+  flex-direction: row !important;
+  animation-direction: normal !important;
+}
+
+/* Keep carousel header text RTL but the track LTR */
+html[dir="rtl"] .clients-header {
+  direction: rtl;
+  text-align: center !important;
+}
+
+/* ── RTL: Keep carousels always LTR ── */
+html[dir="rtl"] .pf-carousel-wrap,
+html[dir="rtl"] .pf-carousel-row,
+html[dir="rtl"] .pf-carousel-track,
+html[dir="rtl"] .pf-carousel-item,
+html[dir="rtl"] .pf-carousel-item img,
+html[dir="rtl"] .clients-section,
+html[dir="rtl"] .clients-track-wrap,
+html[dir="rtl"] .clients-track,
+html[dir="rtl"] .clients-track img {
+  direction: ltr !important;
+  text-align: left !important;
+}
+html[dir="rtl"] .pf-carousel-track {
+  flex-direction: row !important;
+}
+html[dir="rtl"] .clients-track {
+  flex-direction: row !important;
+  animation-direction: normal !important;
+}
+html[dir="rtl"] .clients-header {
+  direction: rtl;
+  text-align: center !important;
+}
+
+/* ── RTL: Lock flow diagram to LTR layout — alignment must never flip ── */
+html[dir="rtl"] .flow-section,
+html[dir="rtl"] .flow-header,
+html[dir="rtl"] .flow-wrap,
+html[dir="rtl"] .flow-col,
+html[dir="rtl"] .flow-col--left,
+html[dir="rtl"] .flow-col--right,
+html[dir="rtl"] .flow-col--center,
+html[dir="rtl"] .flow-pill,
+html[dir="rtl"] .flow-pill--right,
+html[dir="rtl"] .flow-box-sq,
+html[dir="rtl"] .flow-box-sq--core,
+html[dir="rtl"] .ai-core-container,
+html[dir="rtl"] .flow-svg {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="rtl"] .flow-header .section-tag,
+html[dir="rtl"] .flow-header .section-title,
+html[dir="rtl"] .flow-header .flow-subtitle {
+  text-align: center !important;
+  direction: rtl !important;
+}
+
+/* ── RTL: Flow pills — keep icon+text order and alignment locked ── */
+html[dir="rtl"] .flow-pill,
+html[dir="rtl"] .flow-pill--right {
+  flex-direction: row !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+html[dir="rtl"] .flow-col--left {
+  align-items: flex-end !important;
+}
+html[dir="rtl"] .flow-col--right {
+  align-items: flex-start !important;
+}
